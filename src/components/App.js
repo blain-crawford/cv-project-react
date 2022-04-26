@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import MyDocument from './pdf_rendering/renderPDF';
 
-class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello, World</h1>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className='App'>
+      <PDFDownloadLink document={<MyDocument />} fileName='Test_Document'>
+        {({ loading }) =>
+          loading ? (
+            <button>Loading Document. . .</button>
+          ) : (
+            <button>'Download'</button>
+          )
+        }
+      </PDFDownloadLink>
+    </div>
+  );
 };
 
 export default App;
