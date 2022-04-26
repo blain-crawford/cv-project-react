@@ -19,11 +19,19 @@
   },
   "homepage": "https://github.com/blain-crawford/cv-project-react#readme",
   "dependencies": {
+    "@react-pdf/render": "^2.1.0",
+    "assert": "^2.0.0",
     "babel-plugin-macros": "^3.1.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-core": "^6.26.3",
