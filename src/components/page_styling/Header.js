@@ -8,7 +8,7 @@ class Header extends Component {
 
   render() {
     return(
-      <div id="header-container">Header</div>
+      <div className="text-xl bg-primary">Header</div>
     )
   }
 };

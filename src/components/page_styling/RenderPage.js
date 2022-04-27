@@ -10,7 +10,7 @@ class RenderPage extends Component {
   
   render() {
     return (
-      <div>
+      <div className="bg-purple-600">
         <Header />
         <PdfButton />
       </div>
