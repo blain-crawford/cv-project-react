@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/blain-crawford/cv-project-react#readme",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.3",
+    "@mui/system": "^5.6.3",
     "@react-pdf/render": "^2.1.0",
     "@react-pdf/renderer": "^2.1.1",
     "assert": "^2.0.0",

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import '../../styles/styles.css'
+import { AppBar, Typography } from '@mui/material';
+import {StyledHeader, headerStyles } from '../mui-styles/headerStyles';
+import AssignmentSharpIcon from '@mui/icons-material/AssignmentSharp';
 
 class Header extends Component {
   constructor() {
@@ -7,10 +9,16 @@ class Header extends Component {
   }
 
   render() {
-    return(
-      <div className="text-xl bg-primary">Header</div>
+    return (
+      <div>
+        <StyledHeader>
+            <AssignmentSharpIcon sx={{...headerStyles.icon}}/>
+            <Typography variant="h3">Custom CV Generator</Typography> 
+        </StyledHeader>
+      </div>
     )
   }
+
 };
 
 export default Header;
