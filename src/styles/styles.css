@@ -1,0 +1,20 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+
+}
+#header-container {
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+}
+
+.download-button {
+  margin: 0 auto;
+}

@@ -1,21 +1,18 @@
-import React from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import MyDocument from './pdf_rendering/renderPDF';
+import React, { Component } from 'react';
+import RenderPage from '../components/page_styling/RenderPage';
+import '../styles/styles.css';
 
-const App = () => {
-  return (
-    <div className='App'>
-      <PDFDownloadLink document={<MyDocument />} fileName='Test_Document'>
-        {({ loading }) =>
-          loading ? (
-            <button>Loading Document. . .</button>
-          ) : (
-            <button>'Download'</button>
-          )
-        }
-      </PDFDownloadLink>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super()
+  }
+  render () {
+    return (
+      <div className='app'>
+        <RenderPage />
+      </div>
+    );
+  }
 };
 
 export default App;
