@@ -1,7 +1,6 @@
 import { styled, Theme } from '@mui/system';
-import { AppBar } from '@mui/material';
 
-const StyledHeader = styled (AppBar, {
+const StyledHeader = styled ('div', {
   name: 'StyledHeader',
   slot: 'PageTopper'
 }) ({
