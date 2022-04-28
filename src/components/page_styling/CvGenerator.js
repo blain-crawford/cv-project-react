@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import { Box } from '@mui/material';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { PictureHolder, GeneralInfo } from '../mui-styles/CvGeneralInfoStyle'
+import { StyledGeneralInfo, StyledCvGenerator } from '../mui-styles/cvGeneralInfoStyle';
+import Avatar from './Avatar';
+import NameAndBio from './NameAndBio';
 
 class CvGenerator extends Component {
   constructor() {
-    super()
+    super();
   }
 
   render() {
     return (
-      <GeneralInfo id="general-info">
-        <div>
-          <PictureHolder>
-            <CameraAltIcon />
-          </PictureHolder>
-        </div>
-        <div id="name-bio">
-
-        </div>
-      </GeneralInfo>
-    )
+      <StyledCvGenerator>
+        <StyledGeneralInfo id='general-info'>
+          <Avatar />
+          <NameAndBio />
+        </StyledGeneralInfo>
+      </StyledCvGenerator>
+    );
   }
 }
 

@@ -5,8 +5,8 @@ const StyledMainPage = styled ('div', {
 }) ({
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  width: '100%',
 })
 
 export { StyledMainPage }

@@ -29,6 +29,7 @@ const HeaderLeft = styled('div', {}) ({
 
 const HeaderRight = styled('div', {}) ({
   display: 'flex',
+  width: '20%',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',

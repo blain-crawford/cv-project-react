@@ -1,31 +1,63 @@
 import { styled } from '@mui/system';
-import { Box } from '@mui/material'
+import { Box, TextField } from '@mui/material';
 
-const GeneralInfo = styled('div', {
-  name: "generalInfo"
+const StyledCvGenerator = styled('div', {
+  name: 'CvGenerator',
+})({
+  width: '80%',
+});
+const StyledGeneralInfo = styled('div', {
+  name: 'generalInfo',
 })({
   padding: '50px',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   backgroundColor: '',
-  border: '1px solid black'
-})
+});
 
-const PictureHolder = styled( Box, {
-  name: 'Avatar'
-}) ({
+const PictureHolder = styled(Box, {
+  name: 'Avatar',
+})({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '250px',
-  width: '250px',
+  width: '200px',
+  height: '200px',
   backgroundColor: 'rgb(200,200,200,.8)',
   borderRadius: '10px',
   '.MuiSvgIcon-root': {
-    fontSize: '100px',
-    opacity: '.4'
-  }
+    fontSize: '70px',
+    opacity: '.4',
+  },
 });
 
-export { PictureHolder, GeneralInfo }
+const StyledNameAndBio = styled('div', {
+  name: 'NameAndBio',
+})({
+  display: 'flex',
+  flexDirection: 'column',
+  marginLeft: '40px',
+  gap: '10px',
+  width: '60%',
+});
+
+const StyledNameInput = styled(TextField, {
+  name: 'Name',
+})({
+  width: '100%',
+});
+
+const StyledBioInput = styled(TextField, {
+  name: 'Bio',
+})({
+  width: '100%',
+});
+export {
+  PictureHolder,
+  StyledGeneralInfo,
+  StyledNameAndBio,
+  StyledNameInput,
+  StyledBioInput,
+  StyledCvGenerator,
+};
