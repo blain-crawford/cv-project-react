@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppBar, Typography } from '@mui/material';
-import {StyledHeader, headerStyles } from '../mui-styles/headerStyles';
+import { StyledHeader, HeaderLeft, HeaderRight }  from '../mui-styles/headerStyles.js';
 import AssignmentSharpIcon from '@mui/icons-material/AssignmentSharp';
 
 class Header extends Component {
@@ -10,12 +10,19 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        <StyledHeader>
-            <AssignmentSharpIcon sx={{...headerStyles.icon}}/>
-            <Typography variant="h3">Custom CV Generator</Typography> 
-        </StyledHeader>
-      </div>
+      <>
+        <div>
+          <StyledHeader>
+            <HeaderLeft>
+              <AssignmentSharpIcon />
+              <Typography variant="h4">Custom CV Generator</Typography> 
+            </HeaderLeft>
+            <HeaderRight>
+              <Typography variant="h5">Export to PDF for free!</Typography>
+            </HeaderRight>
+          </StyledHeader>
+        </div>
+      </>
     )
   }
 
