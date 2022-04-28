@@ -1,4 +1,4 @@
-import { styled, Theme } from '@mui/system';
+import { styled } from '@mui/system';
 
 const StyledHeader = styled ('div', {
   name: 'StyledHeader',
@@ -8,7 +8,7 @@ const StyledHeader = styled ('div', {
   color: 'white',
   padding: '15px',
   postition: 'relative',
-  borderBottom: '6px solid #FF6600',
+  outline: '6px solid rgb(255,102,0,.5)',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',

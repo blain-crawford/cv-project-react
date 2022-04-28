@@ -11,9 +11,9 @@ class NameAndBio extends Component {
       <StyledNameAndBio>
         <StyledNameInput
           required
-          id="outlined-required"
+          id="outlined-required-flexible"
           // label="Required"
-          defaultValue="Name"
+          label="Name"
         />
         <StyledBioInput
           required

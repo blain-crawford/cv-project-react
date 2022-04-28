@@ -9,7 +9,9 @@ const StyledCvGenerator = styled('div', {
 const StyledGeneralInfo = styled('div', {
   name: 'generalInfo',
 })({
-  padding: '50px',
+  paddingLeft: '50px',
+  paddingTop: '50px',
+  paddingBottom: '10px',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -39,7 +41,7 @@ const StyledNameAndBio = styled('div', {
   flexDirection: 'column',
   marginLeft: '40px',
   gap: '10px',
-  width: '60%',
+  width: '65%',
 });
 
 const StyledNameInput = styled(TextField, {
@@ -53,6 +55,34 @@ const StyledBioInput = styled(TextField, {
 })({
   width: '100%',
 });
+
+const StyledContactInfo = styled('div', {
+  name: 'StyledContactInfo'
+}) ({
+  width: '15%',
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '5px'
+  
+})
+
+const StyledContactDiv = styled('div', {
+  name: 'StyledContactDiv'
+}) ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+})
+
+const StyledContactInput = styled(TextField, {
+  name: 'StyledContactInput'
+}) ({
+  height: '10%',
+  width: '80%',
+  margin: '0 auto'
+})
 export {
   PictureHolder,
   StyledGeneralInfo,
@@ -60,4 +90,7 @@ export {
   StyledNameInput,
   StyledBioInput,
   StyledCvGenerator,
+  StyledContactInfo,
+  StyledContactDiv,
+  StyledContactInput
 };
