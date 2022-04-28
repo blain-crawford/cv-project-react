@@ -10,7 +10,7 @@ class RenderPage extends Component {
   
   render() {
     return (
-      <div>
+      <div id="page-header">
         <Header />
       </div>
     )
