@@ -1,10 +1,11 @@
 import { styled } from '@mui/system';
-import { Box, TextField } from '@mui/material';
+import { Box, TextField, Button  } from '@mui/material';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
 })({
   width: '80%',
+  borderBottom: '6px solid rgb(255,102,0,.3)'
 });
 const StyledGeneralInfo = styled('div', {
   name: 'generalInfo',
@@ -24,8 +25,9 @@ const PictureHolder = styled(Box, {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '200px',
-  height: '200px',
+  width: '150px',
+  height: '150px',
+  marginBottom: 'auto',
   backgroundColor: 'rgb(200,200,200,.8)',
   borderRadius: '10px',
   '.MuiSvgIcon-root': {
@@ -39,9 +41,11 @@ const StyledNameAndBio = styled('div', {
 })({
   display: 'flex',
   flexDirection: 'column',
-  marginLeft: '40px',
+  marginLeft: '20px',
+  marginRight: '10px',
+  marginBottom: 'auto',
   gap: '10px',
-  width: '65%',
+  width: '60%',
 });
 
 const StyledNameInput = styled(TextField, {
@@ -59,7 +63,7 @@ const StyledBioInput = styled(TextField, {
 const StyledContactInfo = styled('div', {
   name: 'StyledContactInfo'
 }) ({
-  width: '15%',
+  width: '20%',
   margin: '0 auto',
   display: 'flex',
   flexDirection: 'column',
@@ -83,6 +87,42 @@ const StyledContactInput = styled(TextField, {
   width: '80%',
   margin: '0 auto'
 })
+
+const StyledHeaderLabel = styled('div', {
+  name: 'StyledHeaderLabel'
+}) ({
+  display: 'flex',
+  marginLeft: '50px'
+})
+
+const StyledHeaderUnderline = styled('div', {
+  name:'StyledHeaderUnderline'
+}) ({
+  border: '1px solid #5b083a',
+  opacity: '.6',
+  width: '95%',
+})
+
+const StyledDeleteButton = styled(Button, {
+  name: 'StyledDeleteButton',
+})({
+  color: '#5b083a',
+  backgroundColor: 'rgb(255,102,0, .2)',
+  display: 'flex',
+  border: '1px solid purple',
+  justifyContent: 'center',
+  width: '10%',
+  margin: '10px',
+  '.MuiSvgIcon-root': {
+    margin: '0'
+  },
+  ":hover": {
+    color: 'white',
+    border: '#5b083a',
+    backgroundColor: 'rgb(91, 8, 58)'
+  }
+})
+
 export {
   PictureHolder,
   StyledGeneralInfo,
@@ -92,5 +132,8 @@ export {
   StyledCvGenerator,
   StyledContactInfo,
   StyledContactDiv,
-  StyledContactInput
+  StyledContactInput,
+  StyledHeaderLabel,
+  StyledHeaderUnderline,
+  StyledDeleteButton
 };

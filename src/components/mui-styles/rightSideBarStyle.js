@@ -8,7 +8,8 @@ const StyledRightSideBar = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  borderLeft: '6px solid rgb(255,102,0,.3)'
+  borderLeft: '6px solid rgb(255,102,0,.3)',
+  borderBottom: '6px solid rgb(255,102,0,.3)',
 });
 
 export { StyledRightSideBar };

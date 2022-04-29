@@ -16,41 +16,41 @@ class ContactInfo extends Component {
   render() {
     return (
     <StyledContactInfo>
-      <StyledContactDiv>
-        <LocationOnIcon></LocationOnIcon>
-        <StyledContactInput
-          size='small'
-          label='Location'
-        ></StyledContactInput>
-      </StyledContactDiv>
-      <StyledContactDiv>
-        <LocalPhoneIcon></LocalPhoneIcon>
-        <StyledContactInput
-          size='small'
-          label='Phone Number'
-        ></StyledContactInput>
-      </StyledContactDiv>
-      <StyledContactDiv>
-        <MailOutlineIcon></MailOutlineIcon>
-        <StyledContactInput
-          size='small'
-          label='Email'
-        ></StyledContactInput>
-      </StyledContactDiv>
-      <StyledContactDiv>
-        <LinkedInIcon></LinkedInIcon>
-        <StyledContactInput
-          size='small'
-          label='LinkedIn'
-        ></StyledContactInput>
-      </StyledContactDiv>
-      <StyledContactDiv>
-        <GitHubIcon></GitHubIcon>
-        <StyledContactInput
-          size='small'
-          label='GitHub'
-        ></StyledContactInput>
-      </StyledContactDiv>
+        <StyledContactDiv>
+          <LocationOnIcon></LocationOnIcon>
+          <StyledContactInput
+            size='small'
+            label='Location'
+          ></StyledContactInput>
+        </StyledContactDiv>
+        <StyledContactDiv>
+          <LocalPhoneIcon></LocalPhoneIcon>
+          <StyledContactInput
+            size='small'
+            label='Phone Number'
+          ></StyledContactInput>
+        </StyledContactDiv>
+        <StyledContactDiv>
+          <MailOutlineIcon></MailOutlineIcon>
+          <StyledContactInput
+            size='small'
+            label='Email'
+          ></StyledContactInput>
+        </StyledContactDiv>
+        <StyledContactDiv>
+          <LinkedInIcon></LinkedInIcon>
+          <StyledContactInput
+            size='small'
+            label='LinkedIn'
+          ></StyledContactInput>
+        </StyledContactDiv>
+        <StyledContactDiv>
+          <GitHubIcon></GitHubIcon>
+          <StyledContactInput
+            size='small'
+            label='GitHub'
+          ></StyledContactInput>
+        </StyledContactDiv>
     </StyledContactInfo>
     );
   }
