@@ -18,7 +18,6 @@ class RightSideBar extends Component {
         <StyledRightSideHeader>
           <Typography variant="h4">Preview View</Typography>
           <PreviewSwitch
-            label="Preview Mode"
             size="normal"
             onChange={this.props.changeMode}
           />

@@ -127,8 +127,14 @@ const StyledSkillInput = styled(TextField, {
   name: 'StyledSkillInput'
 }) ({
   height: '10%',
-  width: '80%',
+  width: '50%',
   margin: '0 auto'
+})
+
+const StyledInputAndAddButton = styled('div', {
+  name: 'StyledInputAndAddButton'
+}) ({
+  marginTop: '20px'
 })
 
 export {
@@ -144,5 +150,6 @@ export {
   StyledHeaderLabel,
   StyledHeaderUnderline,
   StyledAddButton,
-  StyledSkillInput
+  StyledSkillInput,
+  StyledInputAndAddButton
 };
