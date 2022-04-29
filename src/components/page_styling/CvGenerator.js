@@ -69,7 +69,9 @@ class CvGenerator extends Component {
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <Skills />
+          <Skills 
+            addSkills={this.addSkills}
+          />
         </StyledExperienceContainer>
       </StyledCvGenerator>
     );

@@ -123,6 +123,14 @@ const StyledAddButton = styled(Button, {
   }
 })
 
+const StyledSkillInput = styled(TextField, {
+  name: 'StyledSkillInput'
+}) ({
+  height: '10%',
+  width: '80%',
+  margin: '0 auto'
+})
+
 export {
   PictureHolder,
   StyledGeneralInfo,
@@ -135,5 +143,6 @@ export {
   StyledContactInput,
   StyledHeaderLabel,
   StyledHeaderUnderline,
-  StyledAddButton
+  StyledAddButton,
+  StyledSkillInput
 };
