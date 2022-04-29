@@ -4,9 +4,9 @@ import { Box, TextField, Button  } from '@mui/material';
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
 })({
-  width: '80%',
-  borderBottom: '6px solid rgb(255,102,0,.3)'
+  width: '80%'
 });
+
 const StyledGeneralInfo = styled('div', {
   name: 'generalInfo',
 })({
@@ -103,8 +103,8 @@ const StyledHeaderUnderline = styled('div', {
   width: '95%',
 })
 
-const StyledDeleteButton = styled(Button, {
-  name: 'StyledDeleteButton',
+const StyledAddButton = styled(Button, {
+  name: 'StyledAddButton',
 })({
   color: '#5b083a',
   backgroundColor: 'rgb(255,102,0, .2)',
@@ -135,5 +135,5 @@ export {
   StyledContactInput,
   StyledHeaderLabel,
   StyledHeaderUnderline,
-  StyledDeleteButton
+  StyledAddButton
 };

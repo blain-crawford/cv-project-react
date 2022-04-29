@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledNameAndBio, StyledNameInput, StyledBioInput } from '../mui-styles/cvGeneralInfoStyle';
+import { StyledNameAndBio, StyledNameInput, StyledBioInput } from '../mui-styles/cvGeneratorStyle';
 
 class NameAndBio extends Component {
   constructor() {

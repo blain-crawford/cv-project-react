@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, TextField } from '@mui/material';
-import { StyledContactInfo, StyledContactInput, StyledContactDiv } from '../mui-styles/cvGeneralInfoStyle';
+import { StyledContactInfo, StyledContactInput, StyledContactDiv } from '../mui-styles/cvGeneratorStyle';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';

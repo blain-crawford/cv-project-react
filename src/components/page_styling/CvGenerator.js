@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyledGeneralInfo, StyledCvGenerator } from '../mui-styles/cvGeneralInfoStyle';
-import { StyledExperienceContainer, StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
+import { StyledGeneralInfo, StyledCvGenerator } from '../mui-styles/cvGeneratorStyle';
+import { StyledExperienceContainer } from '../mui-styles/cvExperienceStyle';
 import Avatar from './Avatar';
 import NameAndBio from './NameAndBio';
 import ContactInfo from './ContactInfo';
 import Experience from './Experience';
 import Education from './Education';
+import Skills from './Skills';
 
 
 class CvGenerator extends Component {
@@ -27,6 +28,9 @@ class CvGenerator extends Component {
         </StyledExperienceContainer>
         <StyledExperienceContainer>
           <Education />
+        </StyledExperienceContainer>
+        <StyledExperienceContainer>
+          <Skills />
         </StyledExperienceContainer>
       </StyledCvGenerator>
     );

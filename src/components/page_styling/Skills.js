@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Typography } from '@mui/material';
 import { StyledHeaderUnderline, StyledHeaderLabel, StyledAddButton } from '../mui-styles/cvGeneratorStyle';
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
-import WorkIcon from '@mui/icons-material/Work';
+import HandymanIcon from '@mui/icons-material/Handyman';
 import AddIcon from '@mui/icons-material/Add';
 
-class Experience extends Component {
+class Skills extends Component {
   constructor() {
     super();
   }
@@ -14,8 +14,8 @@ class Experience extends Component {
     return (
       <StyledExperienceHeader>
         <StyledHeaderLabel>
-          <WorkIcon />
-          <Typography variant="h4">Experience</Typography>
+          <HandymanIcon/>
+          <Typography variant="h4">Skills</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
         <StyledAddButton variant="outlined" startIcon={<AddIcon />}>
@@ -26,4 +26,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default Skills;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Typography } from '@mui/material';
-import { StyledHeaderUnderline, StyledHeaderLabel, StyledDeleteButton } from '../mui-styles/cvGeneralInfoStyle';
+import { StyledHeaderUnderline, StyledHeaderLabel, StyledAddButton } from '../mui-styles/cvGeneratorStyle';
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
-import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
 import AddIcon from '@mui/icons-material/Add';
 
 class Education extends Component {
@@ -14,13 +14,13 @@ class Education extends Component {
     return (
       <StyledExperienceHeader>
         <StyledHeaderLabel>
-          <WorkIcon />
+          <SchoolIcon />
           <Typography variant="h4">Education</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
-        <StyledDeleteButton variant="outlined" startIcon={<AddIcon />}>
+        <StyledAddButton variant="outlined" startIcon={<AddIcon />}>
           Add
-        </StyledDeleteButton>
+        </StyledAddButton>
       </StyledExperienceHeader>
     );
   }
