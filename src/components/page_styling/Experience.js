@@ -6,8 +6,8 @@ import WorkIcon from '@mui/icons-material/Work';
 import AddIcon from '@mui/icons-material/Add';
 
 class Experience extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -18,7 +18,20 @@ class Experience extends Component {
           <Typography variant="h4">Experience</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
-        <StyledAddButton variant="outlined" startIcon={<AddIcon />}>
+        <div>
+          {this.props.previousExperience.map((experience) => {
+            return (
+              <div 
+              id={experience.experienceKey}
+              key={experience.experienceKey}
+              >{experience.experience}</div>
+              )
+          })}
+        </div>
+        <StyledAddButton 
+        onClick={this.props.addExperience}
+        variant="outlined" 
+        startIcon={<AddIcon />}>
           Add
         </StyledAddButton>
       </StyledExperienceHeader>

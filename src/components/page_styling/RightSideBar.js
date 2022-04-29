@@ -5,17 +5,22 @@ import { StyledRightSideBar, StyledRightSideHeader } from '../mui-styles/rightSi
 import { PreviewSwitch } from '../mui-styles/rightSideBarStyle';
 
 class RightSideBar extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
 
   render() {
     return (
-      <StyledRightSideBar>
+      <StyledRightSideBar
+        color={this.props.color}
+        mode={this.props.mode}
+      >
         <StyledRightSideHeader>
           <Typography variant="h4">Preview View</Typography>
           <PreviewSwitch
+            label="Preview Mode"
             size="normal"
+            onChange={this.props.changeMode}
           />
         </StyledRightSideHeader>
         <PdfButton />

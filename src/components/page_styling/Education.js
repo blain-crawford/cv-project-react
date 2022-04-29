@@ -6,8 +6,8 @@ import SchoolIcon from '@mui/icons-material/School';
 import AddIcon from '@mui/icons-material/Add';
 
 class Education extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -18,7 +18,21 @@ class Education extends Component {
           <Typography variant="h4">Education</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
-        <StyledAddButton variant="outlined" startIcon={<AddIcon />}>
+        <div>
+          {this.props.previousEducation.map((education) => {
+            return (
+              <div 
+              id={education.educationKey}
+              key={education.educationKey}
+              >{education.education}</div>
+              )
+          })}
+        </div>
+        <StyledAddButton 
+        variant="outlined" 
+        startIcon={<AddIcon />}
+        onClick={this.props.addEducation}
+        >
           Add
         </StyledAddButton>
       </StyledExperienceHeader>

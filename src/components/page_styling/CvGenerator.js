@@ -10,8 +10,41 @@ import Skills from './Skills';
 
 
 class CvGenerator extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.addExperience = this.addExperience.bind(this);
+    this.addEducation = this.addEducation.bind(this);
+    this.addSkills = this.addSkills.bind(this);
+    this.state = {
+      previousExperience: [],
+      experienceCount: 0,
+      previousEducation: [],
+      educationCount: 0,
+      skills: [],
+      skillCount: 0
+    }
+  };
+
+  addExperience () {
+    const newExperience = [...this.state.previousExperience, {
+      experience:'More Experience', 
+      experienceKey: this.state.experienceCount
+    }];
+    this.setState({previousExperience: newExperience, experienceCount: this.state.experienceCount + 1})
+    console.log(this.state)
+  }
+
+  addEducation () {
+    const newEducation = [...this.state.previousEducation, {
+      education: 'More Education', 
+      educationKey: this.state.educationCount
+    }];
+    this.setState({previousEducation: newEducation, educationCount: this.state.educationCount + 1})
+    console.log(this.state.previousExperience)
+  }
+
+  addSkills () {
+    //
   }
 
   render() {
@@ -24,10 +57,16 @@ class CvGenerator extends Component {
           <ContactInfo />
         </StyledGeneralInfo>
         <StyledExperienceContainer>
-          <Experience />
+          <Experience 
+            addExperience={this.addExperience}
+            previousExperience={this.state.previousExperience}
+          />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <Education />
+          <Education 
+          addEducation={this.addEducation}
+          previousEducation={this.state.previousEducation}
+          />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
           <Skills />

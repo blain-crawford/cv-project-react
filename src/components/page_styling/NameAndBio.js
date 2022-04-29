@@ -21,9 +21,9 @@ class NameAndBio extends Component {
           label="Bio"
           multiline
           rows={4}
-          maxRows={8}
-          // value=''
-          // onChange=''
+          // maxRows={8}
+          // // value=''
+          // // onChange=''
           variant="filled"
         />
       </StyledNameAndBio>
