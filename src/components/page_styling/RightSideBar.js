@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import PdfButton from '../pdf_rendering/PdfButton';
-import { Typography } from '@mui/material';
-import { StyledRightSideBar } from '../mui-styles/rightSideBarStyle';
+import { Typography, Switch } from '@mui/material';
+import { StyledRightSideBar, StyledRightSideHeader } from '../mui-styles/rightSideBarStyle';
 
 class RightSideBar extends Component {
   constructor() {
@@ -11,7 +11,13 @@ class RightSideBar extends Component {
   render() {
     return (
       <StyledRightSideBar>
-        <Typography variant="h3">Hello, App!</Typography>
+        <StyledRightSideHeader>
+          <Typography variant="h4">Preview View</Typography>
+          <Switch
+            name="loading"
+            color="primary"
+          />
+        </StyledRightSideHeader>
         <PdfButton />
       </StyledRightSideBar>
 

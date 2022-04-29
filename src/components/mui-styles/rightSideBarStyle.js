@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { Switch } from '@mui/material'
 
 const StyledRightSideBar = styled('div', {
   name: 'StyledRightSideBar'
@@ -12,4 +13,21 @@ const StyledRightSideBar = styled('div', {
   borderLeft: '6px solid rgb(255,102,0,.3)',
 });
 
-export { StyledRightSideBar };
+const StyledRightSideHeader = styled('div', {
+  name:'StyledRightSideHeader'
+}) ({
+  border: '1px solid black',
+  width: '90%',
+  textAlign: 'center',
+  padding: '5px',
+  borderRadius: '10px'
+
+})
+
+const PreviewSwitch = styled(Switch, {
+  name: 'PreviewSwitch'
+}) ({})
+
+
+
+export { StyledRightSideBar, StyledRightSideHeader };
