@@ -5,7 +5,7 @@ import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import WorkIcon from '@mui/icons-material/Work';
 import AddIcon from '@mui/icons-material/Add';
 
-class Experience extends Component {
+class Education extends Component {
   constructor() {
     super();
   }
@@ -26,4 +26,4 @@ class Experience extends Component {
   }
 }
 
-export default Experience;
+export default Education;
