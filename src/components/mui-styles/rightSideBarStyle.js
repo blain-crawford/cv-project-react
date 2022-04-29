@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
-import { Switch } from '@mui/material'
+import { Switch, withStyles } from '@mui/material';
+import { orange, purple } from '@mui/material/colors';
 
 const StyledRightSideBar = styled('div', {
   name: 'StyledRightSideBar'
@@ -26,8 +27,15 @@ const StyledRightSideHeader = styled('div', {
 
 const PreviewSwitch = styled(Switch, {
   name: 'PreviewSwitch'
-}) ({})
+}) ({
+  switchBase: {
+    color: orange,
+    '&$checked': {
+      color: purple
+    }
+  }
+})
 
 
 
-export { StyledRightSideBar, StyledRightSideHeader };
+export { StyledRightSideBar, StyledRightSideHeader, PreviewSwitch };
