@@ -1,10 +1,10 @@
 import { styled } from '@mui/system';
-import { Box, TextField, Button  } from '@mui/material';
+import { Box, TextField, Button } from '@mui/material';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
 })({
-  width: '80%'
+  width: '80%',
 });
 
 const StyledGeneralInfo = styled('div', {
@@ -61,47 +61,46 @@ const StyledBioInput = styled(TextField, {
 });
 
 const StyledContactInfo = styled('div', {
-  name: 'StyledContactInfo'
-}) ({
+  name: 'StyledContactInfo',
+})({
   width: '20%',
   margin: '0 auto',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '5px'
-  
-})
+  gap: '5px',
+});
 
 const StyledContactDiv = styled('div', {
-  name: 'StyledContactDiv'
-}) ({
+  name: 'StyledContactDiv',
+})({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-})
+});
 
 const StyledContactInput = styled(TextField, {
-  name: 'StyledContactInput'
-}) ({
+  name: 'StyledContactInput',
+})({
   height: '10%',
   width: '80%',
-  margin: '0 auto'
-})
+  margin: '0 auto',
+});
 
 const StyledHeaderLabel = styled('div', {
-  name: 'StyledHeaderLabel'
-}) ({
+  name: 'StyledHeaderLabel',
+})({
   display: 'flex',
-  marginLeft: '50px'
-})
+  marginLeft: '50px',
+});
 
 const StyledHeaderUnderline = styled('div', {
-  name:'StyledHeaderUnderline'
-}) ({
+  name: 'StyledHeaderUnderline',
+})({
   border: '1px solid #5b083a',
   opacity: '.6',
   width: '95%',
-})
+});
 
 const StyledAddButton = styled(Button, {
   name: 'StyledAddButton',
@@ -114,29 +113,52 @@ const StyledAddButton = styled(Button, {
   width: '10%',
   margin: '10px',
   '.MuiSvgIcon-root': {
-    margin: '0'
+    margin: '0',
   },
-  ":hover": {
+  ':hover': {
     color: 'white',
     border: '#5b083a',
-    backgroundColor: 'rgb(91, 8, 58)'
-  }
-})
+    backgroundColor: 'rgb(91, 8, 58)',
+  },
+});
 
 const StyledSkillInput = styled(TextField, {
-  name: 'StyledSkillInput'
-}) ({
+  name: 'StyledSkillInput',
+})({
   height: '10%',
   width: '50%',
-  margin: '0 auto'
-})
+  margin: '0 auto',
+});
 
 const StyledInputAndAddButton = styled('div', {
-  name: 'StyledInputAndAddButton'
-}) ({
-  marginTop: '20px'
+  name: 'StyledInputAndAddButton',
+})({
+  marginTop: '20px',
+});
+
+const StyledCvForm = styled('div', {
+  name: 'formContainer'
+})({
+  display: 'flex',
+  flexDirection: 'row'
 })
 
+const StyledCvInfoInputs = styled('div',{
+  name: 'infoInput'
+}) ({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '80%'
+})
+
+const StyledDateAndDeleteContainer = styled('div', {
+  name:'dateAndDeleteContainer'
+}) ({
+  display: 'flex',
+  flexDirection: 'column'
+})
+
+const 
 export {
   PictureHolder,
   StyledGeneralInfo,
@@ -151,5 +173,8 @@ export {
   StyledHeaderUnderline,
   StyledAddButton,
   StyledSkillInput,
-  StyledInputAndAddButton
+  StyledInputAndAddButton,
+  StyledCvForm,
+  StyledCvInfoInputs,
+  StyledDateAndDeleteContainer
 };
