@@ -71,11 +71,10 @@ class CvGenerator extends Component {
    
   }
 
-  deleteExperience(e) {
+  deleteExperience(experience) {
     const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences.splice(e.target.id, 1);
+    newPreviousExperiences.splice(experience, 1);
     this.setState({previousExperience: newPreviousExperiences});
-    console.log(this.state.previousExperience)
   }
 
   addExperience() {

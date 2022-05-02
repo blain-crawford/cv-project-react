@@ -120,7 +120,9 @@ class Experience extends Component {
                     />
                   </LocalizationProvider>
                   <StyledDeleteButton
-                    onClick={this.props.deleteExperience}
+                    onClick={() => {
+                      this.props.deleteExperience(experienceIndex)
+                    }}
                     id={experienceIndex}
                   >Delete</StyledDeleteButton>
                 </StyledDateAndDeleteContainer>
