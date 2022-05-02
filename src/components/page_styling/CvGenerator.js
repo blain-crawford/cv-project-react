@@ -39,7 +39,6 @@ class CvGenerator extends Component {
       previousExperience: newExperience,
       experienceCount: this.state.experienceCount + 1,
     });
-    console.log(this.state);
   }
 
   addEducation() {
@@ -54,7 +53,6 @@ class CvGenerator extends Component {
       previousEducation: newEducation,
       educationCount: this.state.educationCount + 1,
     });
-    console.log(this.state.previousExperience);
   }
 
   addSkills() {
@@ -71,7 +69,6 @@ class CvGenerator extends Component {
       skillCount: this.state.skillCount + 1
     })
 
-    console.log(this.state);
     SkillInput.value = '';
   }
 
