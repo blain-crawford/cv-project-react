@@ -19,9 +19,12 @@ class CvGenerator extends Component {
     this.addExperience = this.addExperience.bind(this);
     this.addEducation = this.addEducation.bind(this);
     this.addSkills = this.addSkills.bind(this);
+    this.setCompanyName = this.setCompanyName.bind(this);
+    this.setPositionTitle = this.setPositionTitle.bind(this);
+    this.setJobDescription = this.setJobDescription.bind(this);
+    this.deleteExperience = this.deleteExperience.bind(this)
     this.state = {
       previousExperience: [],
-      experienceCount: 0,
       previousEducation: [],
       educationCount: 0,
       skills: [],
@@ -29,32 +32,65 @@ class CvGenerator extends Component {
     };
   }
 
-  setStartDate(e) {
-    // this.setState({ startDate: startDate });
-    // this.setState({jobNumber: this.state.jobNumber + 1})
-    console.log(e)
-    for(let i = 0; i < this.state.previousExperience.length; i++) {
-      // console.log(this);
-    }
-
+  setCompanyName(name, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].companyName = name;
+    this.setState({ previousExperience: newPreviousExperiences });
   }
 
-  setEndDate(endDate) {
-    this.setState({ endDate: endDate });
-    console.log(this.state);
+  setPositionTitle(title, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].position = title;
+    this.setState({ previousExperience: newPreviousExperiences });
+    console.log(this.state.previousExperience[experienceIndex]);
+  }
+
+  setJobDescription(description, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].jobDescription = description;
+    this.setState({ previousExperience: newPreviousExperiences });
+    console.log(this.state.previousExperience[experienceIndex]);
+  }
+
+  setCompanyName(name, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].companyName = name;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setStartDate(startDate, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].startDate = startDate;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setEndDate(endDate, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].endDate = endDate;
+    this.setState({ previousExperience: newPreviousExperiences });
+   
+  }
+
+  deleteExperience(e) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences.splice(e.target.id, 1);
+    this.setState({previousExperience: newPreviousExperiences});
+    console.log(this.state.previousExperience)
   }
 
   addExperience() {
     const newExperience = [
       ...this.state.previousExperience,
       {
-        experience: 'More Experience',
-        experienceKey: this.state.experienceCount,
+        companyName: '',
+        position: '',
+        jobDescription: '',
+        startDate: '',
+        endDate: '',
       },
     ];
     this.setState({
       previousExperience: newExperience,
-      experienceCount: this.state.experienceCount + 1,
     });
   }
 
@@ -83,8 +119,8 @@ class CvGenerator extends Component {
     ];
     this.setState({
       skills: newSkillList,
-      skillCount: this.state.skillCount + 1
-    })
+      skillCount: this.state.skillCount + 1,
+    });
 
     SkillInput.value = '';
   }
@@ -103,6 +139,10 @@ class CvGenerator extends Component {
             previousExperience={this.state.previousExperience}
             setStartDate={this.setStartDate}
             setEndDate={this.setEndDate}
+            setCompanyName={this.setCompanyName}
+            setPositionTitle={this.setPositionTitle}
+            setJobDescription={this.setJobDescription}
+            deleteExperience={this.deleteExperience}
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
@@ -112,10 +152,7 @@ class CvGenerator extends Component {
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <Skills 
-            addSkills={this.addSkills} 
-            skills={this.state.skills} 
-          />
+          <Skills addSkills={this.addSkills} skills={this.state.skills} />
         </StyledExperienceContainer>
       </StyledCvGenerator>
     );

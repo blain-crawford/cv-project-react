@@ -60,22 +60,31 @@ class Experience extends Component {
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
         <div>
-          {this.props.previousExperience.map((experience) => {
+          {this.props.previousExperience.map((experience, experienceIndex) => {
             return (
               <StyledCvForm
-                id={experience.experienceKey}
-                key={experience.experienceKey}
+                id={experienceIndex}
+                key={experienceIndex}
+                className="form-container"
               >
                 <StyledCvInfoInputs>
                   <StyledNameInput
                     required
                     id='outlined-required-flexible'
                     label='Company Name'
+                    onChange={(e) => {
+                      this.props.setCompanyName(e.target.value, experienceIndex)
+                    }}
+                    value={experience.companyName}
                   />
                   <StyledNameInput
                     required
                     id='outlined-required-flexible'
                     label='Position'
+                    onChange={(e) => {
+                      this.props.setPositionTitle(e.target.value, experienceIndex)
+                    }}
+                    value={experience.position}
                   />
                   <StyledBioInput
                     required
@@ -83,6 +92,10 @@ class Experience extends Component {
                     multiline
                     rows={4}
                     label='Job Description (optional)'
+                    onChange={(e) => {
+                      this.props.setJobDescription(e.target.value, experienceIndex)
+                    }}
+                    value={experience.setJobDescription}
                   />
                 </StyledCvInfoInputs>
                 <StyledDateAndDeleteContainer>
@@ -90,19 +103,26 @@ class Experience extends Component {
                     <StyledDateInput
                       label='Start Date'
                       inputFormat='MM/dd/yyyy'
-                      onChange={this.props.setStartDate}
-                      value={this.state.startDate}
+                      onChange={(date) => {
+                        this.props.setStartDate(date, experienceIndex)
+                      }}
+                      value={experience.startDate}
                       renderInput={(params) => <TextField {...params} />}
                     />
                     <StyledDateInput
                       label='End Date'
                       inputFormat='MM/dd/yyyy'
-                      onChange={this.props.setEndDate}
-                      value={this.state.endDate}
+                      onChange={(date) => {
+                        this.props.setEndDate(date, experienceIndex)
+                      }}
+                      value={experience.endDate}
                       renderInput={(params) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
-                  <StyledDeleteButton>Delete</StyledDeleteButton>
+                  <StyledDeleteButton
+                    onClick={this.props.deleteExperience}
+                    id={experienceIndex}
+                  >Delete</StyledDeleteButton>
                 </StyledDateAndDeleteContainer>
               </StyledCvForm>
             );
