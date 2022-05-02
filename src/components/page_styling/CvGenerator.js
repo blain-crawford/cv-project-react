@@ -14,6 +14,8 @@ import Skills from './Skills';
 class CvGenerator extends Component {
   constructor(props) {
     super(props);
+    this.setStartDate = this.setStartDate.bind(this);
+    this.setEndDate = this.setEndDate.bind(this);
     this.addExperience = this.addExperience.bind(this);
     this.addEducation = this.addEducation.bind(this);
     this.addSkills = this.addSkills.bind(this);
@@ -25,6 +27,21 @@ class CvGenerator extends Component {
       skills: [],
       skillCount: 0,
     };
+  }
+
+  setStartDate(e) {
+    // this.setState({ startDate: startDate });
+    // this.setState({jobNumber: this.state.jobNumber + 1})
+    console.log(e)
+    for(let i = 0; i < this.state.previousExperience.length; i++) {
+      // console.log(this);
+    }
+
+  }
+
+  setEndDate(endDate) {
+    this.setState({ endDate: endDate });
+    console.log(this.state);
   }
 
   addExperience() {
@@ -84,6 +101,8 @@ class CvGenerator extends Component {
           <Experience
             addExperience={this.addExperience}
             previousExperience={this.state.previousExperience}
+            setStartDate={this.setStartDate}
+            setEndDate={this.setEndDate}
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>

@@ -123,6 +123,25 @@ const StyledAddButton = styled(Button, {
     backgroundColor: 'rgb(91, 8, 58)',
   },
 });
+const StyledDeleteButton = styled(Button, {
+  name: 'StyledAddButton',
+})({
+  color: '#5b083a',
+  backgroundColor: 'rgb(255,102,0, .2)',
+  display: 'flex',
+  border: '1px solid purple',
+  justifyContent: 'center',
+  width: '80%',
+  margin: 'auto',
+  '.MuiSvgIcon-root': {
+    margin: '0',
+  },
+  ':hover': {
+    color: 'white',
+    border: '#5b083a',
+    backgroundColor: 'rgb(91, 8, 58)',
+  },
+});
 
 const StyledSkillInput = styled(TextField, {
   name: 'StyledSkillInput',
@@ -144,9 +163,9 @@ const StyledCvForm = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   padding: '10px',
-  border: '1px solid black',
   width: '85%',
-  margin: '20px auto'
+  margin: '20px auto',
+  borderBottom: '2px solid rgb(255,102,0,.3)'
 })
 
 const StyledCvInfoInputs = styled('div',{
@@ -163,7 +182,10 @@ const StyledDateAndDeleteContainer = styled('div', {
 }) ({
   display: 'flex',
   flexDirection: 'column',
-  gap: '30px'
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '10px',
+  margin: '0 5px 0 5px'
 })
 
 const StyledDateInput = styled(DesktopDatePicker, {
@@ -184,6 +206,7 @@ export {
   StyledHeaderLabel,
   StyledHeaderUnderline,
   StyledAddButton,
+  StyledDeleteButton,
   StyledSkillInput,
   StyledInputAndAddButton,
   StyledCvForm,

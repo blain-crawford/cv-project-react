@@ -6,11 +6,12 @@ import {
   StyledAddButton,
   StyledCvInfoInputs,
   StyledDateAndDeleteContainer,
-  StyledCvForm, 
+  StyledCvForm,
   StyledNameInput,
-  StyledBioInput, 
+  StyledBioInput,
   StyledContactInput,
-  StyledDateInput
+  StyledDateInput,
+  StyledDeleteButton,
 } from '../mui-styles/cvGeneratorStyle';
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import WorkIcon from '@mui/icons-material/Work';
@@ -18,27 +19,36 @@ import AddIcon from '@mui/icons-material/Add';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
-
-
 class Experience extends Component {
   constructor(props) {
     super(props);
-    this.setStartDate = this.setStartDate.bind(this)
-    this.setEndDate = this.setEndDate.bind(this)
+    this.setStartDate = this.setStartDate.bind(this);
+    this.setEndDate = this.setEndDate.bind(this);
     this.state = {
       startDate: '',
-      endDate: ''
-    }
+      endDate: '',
+      jobNumber: 0,
+      previousJobs: [
+        {
+          jobNumber: 0,
+          companyName: '',
+          position: '',
+          startDate: '',
+          endDate: '',
+        },
+      ],
+    };
   }
 
-  setStartDate (startDate) {
-      this.setState({startDate: startDate})
-      console.log(this.state)
-  };
-
-  setEndDate (endDate) {
-    this.setState({endDate: endDate})
+  setStartDate(startDate) {
+    this.setState({ startDate: startDate });
+    // this.setState({jobNumber: this.state.jobNumber + 1})
     console.log(this.state)
+  }
+
+  setEndDate(endDate) {
+    this.setState({ endDate: endDate });
+    console.log(this.state);
   }
 
   render() {
@@ -52,46 +62,47 @@ class Experience extends Component {
         <div>
           {this.props.previousExperience.map((experience) => {
             return (
-              <StyledCvForm 
-                id={experience.experienceKey} 
+              <StyledCvForm
+                id={experience.experienceKey}
                 key={experience.experienceKey}
               >
                 <StyledCvInfoInputs>
-                  <StyledNameInput 
+                  <StyledNameInput
                     required
-                    id="outlined-required-flexible"
-                    label="Company Name"
+                    id='outlined-required-flexible'
+                    label='Company Name'
                   />
-                  <StyledNameInput 
+                  <StyledNameInput
                     required
-                    id="outlined-required-flexible"
-                    label="Position"
+                    id='outlined-required-flexible'
+                    label='Position'
                   />
-                  <StyledBioInput 
-                       required
-                       id="outlined-required-flexible"
-                       multiline
-                       rows={4}
-                       label="Job Description (optional)"
+                  <StyledBioInput
+                    required
+                    id='outlined-required-flexible'
+                    multiline
+                    rows={4}
+                    label='Job Description (optional)'
                   />
                 </StyledCvInfoInputs>
                 <StyledDateAndDeleteContainer>
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <StyledDateInput 
-                      label="Start Date"
-                      inputFormat="MM/dd/yyyy"
-                      onChange={this.setStartDate}
+                    <StyledDateInput
+                      label='Start Date'
+                      inputFormat='MM/dd/yyyy'
+                      onChange={this.props.setStartDate}
                       value={this.state.startDate}
                       renderInput={(params) => <TextField {...params} />}
                     />
-                    <StyledDateInput 
-                    label="End Date"
-                    inputFormat="MM/dd/yyyy"
-                    onChange={this.setEndDate}
-                    value={this.state.endDate}
-                    renderInput={(params) => <TextField {...params} />}
+                    <StyledDateInput
+                      label='End Date'
+                      inputFormat='MM/dd/yyyy'
+                      onChange={this.props.setEndDate}
+                      value={this.state.endDate}
+                      renderInput={(params) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
+                  <StyledDeleteButton>Delete</StyledDeleteButton>
                 </StyledDateAndDeleteContainer>
               </StyledCvForm>
             );
