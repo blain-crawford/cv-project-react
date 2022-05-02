@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Typography } from '@mui/material';
+import React, { Component, useState, newValue, setValue } from 'react';
+import { Typography, TextField } from '@mui/material';
 import {
   StyledHeaderUnderline,
   StyledHeaderLabel,
@@ -15,10 +15,30 @@ import {
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import WorkIcon from '@mui/icons-material/Work';
 import AddIcon from '@mui/icons-material/Add';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+
+
 
 class Experience extends Component {
   constructor(props) {
     super(props);
+    this.setStartDate = this.setStartDate.bind(this)
+    this.setEndDate = this.setEndDate.bind(this)
+    this.state = {
+      startDate: '',
+      endDate: ''
+    }
+  }
+
+  setStartDate (startDate) {
+      this.setState({startDate: startDate})
+      console.log(this.state)
+  };
+
+  setEndDate (endDate) {
+    this.setState({endDate: endDate})
+    console.log(this.state)
   }
 
   render() {
@@ -56,14 +76,22 @@ class Experience extends Component {
                   />
                 </StyledCvInfoInputs>
                 <StyledDateAndDeleteContainer>
-                  <StyledDateInput 
-                    label="Date desktop"
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <StyledDateInput 
+                      label="Start Date"
+                      inputFormat="MM/dd/yyyy"
+                      onChange={this.setStartDate}
+                      value={this.state.startDate}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                    <StyledDateInput 
+                    label="End Date"
                     inputFormat="MM/dd/yyyy"
-                  />
-                  <StyledDateInput 
-                  label="Date desktop"
-                  inputFormat="MM/dd/yyyy"
-                  />
+                    onChange={this.setEndDate}
+                    value={this.state.endDate}
+                    renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
                 </StyledDateAndDeleteContainer>
               </StyledCvForm>
             );

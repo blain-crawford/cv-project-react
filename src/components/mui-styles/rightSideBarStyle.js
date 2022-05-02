@@ -10,8 +10,7 @@ const StyledRightSideBar = styled('div', {
   padding: '25px',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  borderLeft: '6px solid rgb(255,102,0,.3)',
+  alignItems: 'center'
 });
 
 const StyledRightSideHeader = styled('div', {

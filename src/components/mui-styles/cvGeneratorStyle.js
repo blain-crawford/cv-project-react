@@ -1,11 +1,12 @@
 import { styled } from '@mui/system';
 import { Box, TextField, Button } from '@mui/material';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
 })({
   width: '80%',
+  borderRight: '6px solid rgb(255,102,0,.3)',
 });
 
 const StyledGeneralInfo = styled('div', {
@@ -142,9 +143,10 @@ const StyledCvForm = styled('div', {
 })({
   display: 'flex',
   flexDirection: 'row',
-  marginTop: '20px',
   padding: '10px',
-  border: '1px solid black'
+  border: '1px solid black',
+  width: '85%',
+  margin: '20px auto'
 })
 
 const StyledCvInfoInputs = styled('div',{
@@ -164,7 +166,7 @@ const StyledDateAndDeleteContainer = styled('div', {
   gap: '30px'
 })
 
-const StyledDateInput = styled(AdapterDateFns, {
+const StyledDateInput = styled(DesktopDatePicker, {
   name: 'DateInput'
 }) ({
 
