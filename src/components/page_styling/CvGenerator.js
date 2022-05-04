@@ -32,11 +32,13 @@ class CvGenerator extends Component {
     this.addEducation = this.addEducation.bind(this);
 
     //functionality for skill form
+    this.setSkillToAdd = this.setSkillToAdd.bind(this);
     this.addSkill = this.addSkill.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
       previousExperience: [],
       previousEducation: [],
+      skillToAdd: '',
       skills: [],
     };
   }
@@ -52,14 +54,12 @@ class CvGenerator extends Component {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].position = title;
     this.setState({ previousExperience: newPreviousExperiences });
-    console.log(this.state.previousExperience[experienceIndex]);
   }
 
   setJobDescription(description, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].jobDescription = description;
     this.setState({ previousExperience: newPreviousExperiences });
-    console.log(this.state.previousExperience[experienceIndex]);
   }
 
   setCompanyName(name, experienceIndex) {
@@ -119,21 +119,18 @@ class CvGenerator extends Component {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].startDate = date;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   setEducationEndDate(date, educationIndex) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].endDate = date;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   deleteEducation(education) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation.splice(education, 1);
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   addEducation() {
@@ -149,32 +146,24 @@ class CvGenerator extends Component {
     this.setState({
       previousEducation: newEducation,
     });
-    console.log(this.state.previousEducation);
   }
 
   //Declaring Skill Functions
-  deleteSkill(e) {
-    // const newSkillList = [this.state.skills];
-    // newSkillList.splice(skill, 1);
-    // this.setState({skills: newSkillList})
-    console.log(e.currentTarget);
+  setSkillToAdd(skill) {
+    let newSkill =''
+    newSkill += skill;
+    this.setState({skillToAdd: newSkill})
+  }
+
+  deleteSkill(skill) {
+    const newSkillList = [...this.state.skills];
+    newSkillList.splice(skill, 1);
+    this.setState({ skills: newSkillList });
   }
 
   addSkill() {
-    const SkillInput = document.querySelector('#skill-input');
-    const newSkillList = [
-      ...this.state.skills,
-      {
-        skills: SkillInput.value,
-        skillCount: this.state.skillCount,
-      },
-    ];
-    this.setState({
-      skills: newSkillList,
-      skillCount: this.state.skillCount + 1,
-    });
-
-    SkillInput.value = '';
+    let newSkillList = [...this.state.skills, this.state.skillToAdd];
+    this.setState({skills: newSkillList})
   }
 
   render() {
@@ -210,6 +199,7 @@ class CvGenerator extends Component {
         </StyledExperienceContainer>
         <StyledExperienceContainer>
           <Skills
+            setSkillToAdd={this.setSkillToAdd}
             addSkill={this.addSkill}
             skills={this.state.skills}
             deleteSkill={this.deleteSkill}

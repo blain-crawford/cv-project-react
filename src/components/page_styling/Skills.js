@@ -7,17 +7,19 @@ import {
   StyledAddButton,
   StyledInputAndAddButton,
   StyledSkillContainer,
-  StyledIndividualSkill, 
-  StyledClearIcon
+  StyledIndividualSkill,
+  StyledClearIcon,
 } from '../mui-styles/cvGeneratorStyle';
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import AddIcon from '@mui/icons-material/Add';
 
-
 class Skills extends Component {
   constructor() {
     super();
+    this.state = {
+      activeInputValue: '',
+    };
   }
 
   render() {
@@ -29,9 +31,23 @@ class Skills extends Component {
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
         <StyledInputAndAddButton>
-          <StyledSkillInput size='small' label='Skills' id='skill-input' />
+          <StyledSkillInput
+            size='small'
+            label='Skills'
+            value={this.state.activeInputValue}
+            id='skill-input'
+            onChange={(e) => {
+              this.props.setSkillToAdd(e.target.value);
+              let newValue = e.target.value;
+              this.setState({ activeInputValue: newValue });
+            }}
+          />
           <StyledAddButton
-            onClick={this.props.addSkill}
+            onClick={(e) => {
+              this.props.addSkill();
+              let clearedInputValue = '';
+              this.setState({ activeInputValue: clearedInputValue });
+            }}
             variant='outlined'
             startIcon={<AddIcon />}
           >
@@ -42,16 +58,15 @@ class Skills extends Component {
           <StyledSkillContainer>
             {this.props.skills.map((skill, skillIndex) => {
               return (
-                  <StyledIndividualSkill
-                  id={skillIndex} 
-                  key={skillIndex}
-                  >
-                    <Typography variant='h4'>{skill.skills}</Typography> 
-                    <StyledClearIcon 
-                      onClick={this.props.deleteSkill}
-                      id={skillIndex}
-                    />
-                  </StyledIndividualSkill>
+                <StyledIndividualSkill id={skillIndex} key={skillIndex}>
+                  <Typography variant='h4'>{skill}</Typography>
+                  <StyledClearIcon
+                    onClick={(e) => {
+                      this.props.deleteSkill(e.currentTarget.id);
+                    }}
+                    id={skillIndex}
+                  />
+                </StyledIndividualSkill>
               );
             })}
           </StyledSkillContainer>

@@ -159,7 +159,6 @@ const StyledSkillContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  border: '1px solid orange',
   gap: '10px',
   width: '95%'
 })
