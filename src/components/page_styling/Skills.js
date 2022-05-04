@@ -31,7 +31,7 @@ class Skills extends Component {
         <StyledInputAndAddButton>
           <StyledSkillInput size='small' label='Skills' id='skill-input' />
           <StyledAddButton
-            onClick={this.props.addSkills}
+            onClick={this.props.addSkill}
             variant='outlined'
             startIcon={<AddIcon />}
           >
@@ -47,7 +47,10 @@ class Skills extends Component {
                   key={skillIndex}
                   >
                     <Typography variant='h4'>{skill.skills}</Typography> 
-                    <StyledClearIcon />
+                    <StyledClearIcon 
+                      onClick={this.props.deleteSkill}
+                      id={skillIndex}
+                    />
                   </StyledIndividualSkill>
               );
             })}

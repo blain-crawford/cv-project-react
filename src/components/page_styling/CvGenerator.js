@@ -32,12 +32,12 @@ class CvGenerator extends Component {
     this.addEducation = this.addEducation.bind(this);
 
     //functionality for skill form
-    this.addSkills = this.addSkills.bind(this);
+    this.addSkill = this.addSkill.bind(this);
+    this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
       previousExperience: [],
       previousEducation: [],
       skills: [],
-      skillCount: 0,
     };
   }
 
@@ -132,8 +132,8 @@ class CvGenerator extends Component {
   deleteEducation(education) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation.splice(education, 1);
-    this.setState({previousEducation: newPreviousEducation});
-    console.log(this.state.previousEducation)
+    this.setState({ previousEducation: newPreviousEducation });
+    console.log(this.state.previousEducation);
   }
 
   addEducation() {
@@ -152,7 +152,15 @@ class CvGenerator extends Component {
     console.log(this.state.previousEducation);
   }
 
-  addSkills() {
+  //Declaring Skill Functions
+  deleteSkill(e) {
+    // const newSkillList = [this.state.skills];
+    // newSkillList.splice(skill, 1);
+    // this.setState({skills: newSkillList})
+    console.log(e.currentTarget);
+  }
+
+  addSkill() {
     const SkillInput = document.querySelector('#skill-input');
     const newSkillList = [
       ...this.state.skills,
@@ -201,7 +209,11 @@ class CvGenerator extends Component {
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <Skills addSkills={this.addSkills} skills={this.state.skills} />
+          <Skills
+            addSkill={this.addSkill}
+            skills={this.state.skills}
+            deleteSkill={this.deleteSkill}
+          />
         </StyledExperienceContainer>
       </StyledCvGenerator>
     );
