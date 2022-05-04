@@ -104,7 +104,7 @@ class Experience extends Component {
                       label='Start Date'
                       inputFormat='MM/dd/yyyy'
                       onChange={(date) => {
-                        this.props.setStartDate(date, experienceIndex)
+                        this.props.setExperienceStartDate(date, experienceIndex)
                       }}
                       value={experience.startDate}
                       renderInput={(params) => <TextField {...params} />}
@@ -113,7 +113,7 @@ class Experience extends Component {
                       label='End Date'
                       inputFormat='MM/dd/yyyy'
                       onChange={(date) => {
-                        this.props.setEndDate(date, experienceIndex)
+                        this.props.setExperienceEndDate(date, experienceIndex)
                       }}
                       value={experience.endDate}
                       renderInput={(params) => <TextField {...params} />}
@@ -121,7 +121,7 @@ class Experience extends Component {
                   </LocalizationProvider>
                   <StyledDeleteButton
                     onClick={() => {
-                      this.props.deleteExperience(experienceIndex)
+                      this.props.deleteExperience(experience.experienceIndex)
                     }}
                     id={experienceIndex}
                   >Delete</StyledDeleteButton>

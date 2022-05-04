@@ -14,24 +14,34 @@ import Skills from './Skills';
 class CvGenerator extends Component {
   constructor(props) {
     super(props);
-    this.setStartDate = this.setStartDate.bind(this);
-    this.setEndDate = this.setEndDate.bind(this);
-    this.addExperience = this.addExperience.bind(this);
-    this.addEducation = this.addEducation.bind(this);
-    this.addSkills = this.addSkills.bind(this);
+    //functionality for experience form
     this.setCompanyName = this.setCompanyName.bind(this);
     this.setPositionTitle = this.setPositionTitle.bind(this);
     this.setJobDescription = this.setJobDescription.bind(this);
-    this.deleteExperience = this.deleteExperience.bind(this)
+    this.setExperienceStartDate = this.setExperienceStartDate.bind(this);
+    this.setExperienceEndDate = this.setExperienceEndDate.bind(this);
+    this.deleteExperience = this.deleteExperience.bind(this);
+    this.addExperience = this.addExperience.bind(this);
+
+    //functionality for education form
+    this.setCollegeName = this.setCollegeName.bind(this);
+    this.setDegree = this.setDegree.bind(this);
+    this.setEducationStartDate = this.setEducationStartDate.bind(this);
+    this.setEducationEndDate = this.setEducationEndDate.bind(this);
+    this.deleteEducation = this.deleteEducation.bind(this);
+    this.addEducation = this.addEducation.bind(this);
+
+    //functionality for skill form
+    this.addSkills = this.addSkills.bind(this);
     this.state = {
       previousExperience: [],
       previousEducation: [],
-      educationCount: 0,
       skills: [],
       skillCount: 0,
     };
   }
 
+  //Declaring Experience functions
   setCompanyName(name, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].companyName = name;
@@ -58,23 +68,22 @@ class CvGenerator extends Component {
     this.setState({ previousExperience: newPreviousExperiences });
   }
 
-  setStartDate(startDate, experienceIndex) {
+  setExperienceStartDate(startDate, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].startDate = startDate;
     this.setState({ previousExperience: newPreviousExperiences });
   }
 
-  setEndDate(endDate, experienceIndex) {
+  setExperienceEndDate(endDate, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].endDate = endDate;
     this.setState({ previousExperience: newPreviousExperiences });
-   
   }
 
   deleteExperience(experience) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences.splice(experience, 1);
-    this.setState({previousExperience: newPreviousExperiences});
+    this.setState({ previousExperience: newPreviousExperiences });
   }
 
   addExperience() {
@@ -93,18 +102,54 @@ class CvGenerator extends Component {
     });
   }
 
+  //Declaring education Functions
+  setCollegeName(name, educationIndex) {
+    const newPreviousEducation = [...this.state.previousEducation];
+    newPreviousEducation[educationIndex].collegeName = name;
+    this.setState({ previousEducation: newPreviousEducation });
+  }
+
+  setDegree(degree, educationIndex) {
+    const newPreviousEducation = [...this.state.previousEducation];
+    newPreviousEducation[educationIndex].degree = degree;
+    this.setState({ previousEducation: newPreviousEducation });
+  }
+
+  setEducationStartDate(date, educationIndex) {
+    const newPreviousEducation = [...this.state.previousEducation];
+    newPreviousEducation[educationIndex].startDate = date;
+    this.setState({ previousEducation: newPreviousEducation });
+    console.log(this.state.previousEducation);
+  }
+
+  setEducationEndDate(date, educationIndex) {
+    const newPreviousEducation = [...this.state.previousEducation];
+    newPreviousEducation[educationIndex].endDate = date;
+    this.setState({ previousEducation: newPreviousEducation });
+    console.log(this.state.previousEducation);
+  }
+
+  deleteEducation(education) {
+    const newPreviousEducation = [...this.state.previousEducation];
+    newPreviousEducation.splice(education, 1);
+    this.setState({previousEducation: newPreviousEducation});
+    console.log(this.state.previousEducation)
+  }
+
   addEducation() {
     const newEducation = [
       ...this.state.previousEducation,
       {
-        education: 'More Education',
-        educationKey: this.state.educationCount,
+        collegeName: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
       },
     ];
     this.setState({
       previousEducation: newEducation,
-      educationCount: this.state.educationCount + 1,
     });
+    console.log(this.state.previousEducation);
   }
 
   addSkills() {
@@ -136,8 +181,8 @@ class CvGenerator extends Component {
           <Experience
             addExperience={this.addExperience}
             previousExperience={this.state.previousExperience}
-            setStartDate={this.setStartDate}
-            setEndDate={this.setEndDate}
+            setExperienceStartDate={this.setExperienceStartDate}
+            setExperienceEndDate={this.setExperienceEndDate}
             setCompanyName={this.setCompanyName}
             setPositionTitle={this.setPositionTitle}
             setJobDescription={this.setJobDescription}
@@ -146,6 +191,11 @@ class CvGenerator extends Component {
         </StyledExperienceContainer>
         <StyledExperienceContainer>
           <Education
+            setCollegeName={this.setCollegeName}
+            setDegree={this.setDegree}
+            setEducationStartDate={this.setEducationStartDate}
+            setEducationEndDate={this.setEducationEndDate}
+            deleteEducation={this.deleteEducation}
             addEducation={this.addEducation}
             previousEducation={this.state.previousEducation}
           />
