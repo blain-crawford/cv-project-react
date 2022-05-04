@@ -1,6 +1,7 @@
 import { styled } from '@mui/system';
 import { Box, TextField, Button } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
@@ -151,6 +152,41 @@ const StyledSkillInput = styled(TextField, {
   margin: '0 auto',
 });
 
+const StyledSkillContainer = styled('div', {
+  name: 'StyledSkillContainer'
+}) ({
+  marginTop: '30px',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  border: '1px solid orange',
+  gap: '10px',
+  width: '95%'
+})
+
+const StyledIndividualSkill = styled('div', {
+  name:'StyledIndividualSkill'
+}) ({
+  color: '#5b083a',
+  backgroundColor: 'rgb(255,102,0, .2)',
+  paddingLeft: '25px',
+  paddingRight: '10px',
+  display: 'flex',
+  alignItems: 'center',
+  border: '1px solid purple',
+  justifyContent: 'center',
+  gap: '20px'
+})
+
+const StyledClearIcon = styled(ClearIcon, {
+  name:'styledClearIcon'
+}) ({
+  cursor: 'pointer',
+  ':hover': {
+    fontSize: '42px'
+  },
+})
+
 const StyledInputAndAddButton = styled('div', {
   name: 'StyledInputAndAddButton',
 })({
@@ -191,8 +227,10 @@ const StyledDateAndDeleteContainer = styled('div', {
 const StyledDateInput = styled(DesktopDatePicker, {
   name: 'DateInput'
 }) ({
-
+  margin: 'auto'
 })
+
+
 export {
   PictureHolder,
   StyledGeneralInfo,
@@ -208,6 +246,9 @@ export {
   StyledAddButton,
   StyledDeleteButton,
   StyledSkillInput,
+  StyledSkillContainer,
+  StyledIndividualSkill,
+  StyledClearIcon,
   StyledInputAndAddButton,
   StyledCvForm,
   StyledCvInfoInputs,
