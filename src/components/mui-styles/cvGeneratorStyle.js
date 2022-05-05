@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Box, TextField, Button } from '@mui/material';
+import { Box, TextField, Button, CardMedia } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
 
@@ -22,9 +22,10 @@ const StyledGeneralInfo = styled('div', {
   backgroundColor: '',
 });
 
-const PictureHolder = styled(Box, {
+const PictureHolder = styled(CardMedia, {
   name: 'Avatar',
 })({
+  cursor: 'pointer',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

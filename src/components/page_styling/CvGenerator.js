@@ -16,6 +16,7 @@ class CvGenerator extends Component {
     super(props);
 
     //functionality for Avatar
+    this.setAvatarImage = this.setAvatarImage.bind(this);
 
     //functionality for name and bio
     this.setName = this.setName.bind(this);
@@ -88,35 +89,30 @@ class CvGenerator extends Component {
     let newLocation = { ...this.state.contactInfo }
     newLocation.location = location;
     this.setState({contactInfo: newLocation})
-    console.log(this.state.contactInfo);
   } 
 
   setPhoneNumber(phoneNumber) {
     let newPhoneNumber = { ...this.state.contactInfo }
     newPhoneNumber.phoneNumber = phoneNumber;
     this.setState({contactInfo: newPhoneNumber})
-    console.log(this.state.contactInfo)
   }
   
   setEmail(email) {
     let newEmail = { ...this.state.contactInfo };
     newEmail.email = email;
     this.setState({contactInfo: newEmail})
-    console.log(this.state.contactInfo);
   }
 
   setLinkedIn(linkedIn) {
     let newLinkedIn = { ...this.state.contactInfo }
     newLinkedIn.linkedIn = linkedIn;
     this.setState({contactInfo: newLinkedIn})
-    console.log(this.state.contactInfo);
   }
 
   setGitHub(gitHub) {
     let newGitHub = { ...this.state.contactInfo }
     newGitHub.gitHub = gitHub;
     this.setState({contactInfo: newGitHub})
-    console.log(this.state.contactInfo);
   }
   //declaring Experience functions
   setCompanyName(name, experienceIndex) {
@@ -245,7 +241,9 @@ class CvGenerator extends Component {
     return (
       <StyledCvGenerator>
         <StyledGeneralInfo id='general-info'>
-          <Avatar />
+          <Avatar 
+            avatarAlt={this.state.nameAndBio.name}
+          />
           <NameAndBio 
             setName={this.setName} 
             setBio={this.setBio}

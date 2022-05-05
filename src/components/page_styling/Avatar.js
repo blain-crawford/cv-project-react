@@ -9,7 +9,12 @@ class Avatar extends Component {
 
   render() {
     return (
-          <PictureHolder>
+          <PictureHolder
+            Component='img'
+            image=''
+            alt={this.props.avatarAlt}
+            onClick={this.props.setAvatarImage}
+          >
             <CameraAltIcon />
           </PictureHolder>
     )
