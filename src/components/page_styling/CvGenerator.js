@@ -14,6 +14,20 @@ import Skills from './Skills';
 class CvGenerator extends Component {
   constructor(props) {
     super(props);
+
+    //functionality for Avatar
+
+    //functionality for name and bio
+    this.setName = this.setName.bind(this);
+    this.setBio = this.setBio.bind(this)
+
+    //functionality for contact info
+    this.setLocation = this.setLocation.bind(this);
+    this.setPhoneNumber = this.setPhoneNumber.bind(this);
+    this.setEmail = this.setEmail.bind(this);
+    this.setLinkedIn = this.setLinkedIn.bind(this);
+    this.setGitHub = this.setGitHub.bind(this);
+
     //functionality for experience form
     this.setCompanyName = this.setCompanyName.bind(this);
     this.setPositionTitle = this.setPositionTitle.bind(this);
@@ -36,6 +50,17 @@ class CvGenerator extends Component {
     this.addSkill = this.addSkill.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
+      nameAndBio: {
+        name: '',
+        bio: '',
+      },
+      contactInfo: {
+        location: '',
+        phoneNumber: '',
+        email: '',
+        linkedIn: '',
+        gitHub: ''
+      },
       previousExperience: [],
       previousEducation: [],
       skillToAdd: '',
@@ -43,7 +68,57 @@ class CvGenerator extends Component {
     };
   }
 
-  //Declaring Experience functions
+  //declaring Avatar functions
+
+  //declaring name and bio functions
+  setName(name) {
+    let newName = { ...this.state.nameAndBio };
+    newName.name = name;
+    this.setState({nameAndBio: newName});
+  }
+
+  setBio(bio) {
+    let newBio = { ...this.state.nameAndBio };
+    newBio.bio = bio;
+    this.setState({nameAndBio: newBio});
+  }
+
+  //declaring contact info functions
+  setLocation(location) {
+    let newLocation = { ...this.state.contactInfo }
+    newLocation.location = location;
+    this.setState({contactInfo: newLocation})
+    console.log(this.state.contactInfo);
+  } 
+
+  setPhoneNumber(phoneNumber) {
+    let newPhoneNumber = { ...this.state.contactInfo }
+    newPhoneNumber.phoneNumber = phoneNumber;
+    this.setState({contactInfo: newPhoneNumber})
+    console.log(this.state.contactInfo)
+  }
+  
+  setEmail(email) {
+    let newEmail = { ...this.state.contactInfo };
+    newEmail.email = email;
+    this.setState({contactInfo: newEmail})
+    console.log(this.state.contactInfo);
+  }
+
+  setLinkedIn(linkedIn) {
+    let newLinkedIn = { ...this.state.contactInfo }
+    newLinkedIn.linkedIn = linkedIn;
+    this.setState({contactInfo: newLinkedIn})
+    console.log(this.state.contactInfo);
+  }
+
+  setGitHub(gitHub) {
+    let newGitHub = { ...this.state.contactInfo }
+    newGitHub.gitHub = gitHub;
+    this.setState({contactInfo: newGitHub})
+    console.log(this.state.contactInfo);
+  }
+  //declaring Experience functions
   setCompanyName(name, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
     newPreviousExperiences[experienceIndex].companyName = name;
@@ -102,7 +177,7 @@ class CvGenerator extends Component {
     });
   }
 
-  //Declaring education Functions
+  //declaring education Functions
   setCollegeName(name, educationIndex) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].collegeName = name;
@@ -148,11 +223,11 @@ class CvGenerator extends Component {
     });
   }
 
-  //Declaring Skill Functions
+  //declaring Skill Functions
   setSkillToAdd(skill) {
-    let newSkill =''
+    let newSkill = '';
     newSkill += skill;
-    this.setState({skillToAdd: newSkill})
+    this.setState({ skillToAdd: newSkill });
   }
 
   deleteSkill(skill) {
@@ -163,7 +238,7 @@ class CvGenerator extends Component {
 
   addSkill() {
     let newSkillList = [...this.state.skills, this.state.skillToAdd];
-    this.setState({skills: newSkillList})
+    this.setState({ skills: newSkillList });
   }
 
   render() {
@@ -171,8 +246,17 @@ class CvGenerator extends Component {
       <StyledCvGenerator>
         <StyledGeneralInfo id='general-info'>
           <Avatar />
-          <NameAndBio />
-          <ContactInfo />
+          <NameAndBio 
+            setName={this.setName} 
+            setBio={this.setBio}
+          />
+          <ContactInfo 
+            setLocation={this.setLocation}
+            setPhoneNumber={this.setPhoneNumber}
+            setEmail={this.setEmail}
+            setLinkedIn={this.setLinkedIn}
+            setGitHub={this.setGitHub}
+          />
         </StyledGeneralInfo>
         <StyledExperienceContainer>
           <Experience

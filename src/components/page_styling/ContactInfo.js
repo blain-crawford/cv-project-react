@@ -21,6 +21,9 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Location'
+            onChange={(e) =>{
+              this.props.setLocation(e.target.value);
+            }}
           ></StyledContactInput>
         </StyledContactDiv>
         <StyledContactDiv>
@@ -28,6 +31,9 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Phone Number'
+            onChange={(e) =>{
+              this.props.setPhoneNumber(e.target.value);
+            }}
           ></StyledContactInput>
         </StyledContactDiv>
         <StyledContactDiv>
@@ -35,6 +41,9 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Email'
+            onChange={(e) =>{
+              this.props.setEmail(e.target.value);
+            }}
           ></StyledContactInput>
         </StyledContactDiv>
         <StyledContactDiv>
@@ -42,6 +51,9 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='LinkedIn'
+            onChange={(e) =>{
+              this.props.setLinkedIn(e.target.value);
+            }}
           ></StyledContactInput>
         </StyledContactDiv>
         <StyledContactDiv>
@@ -49,6 +61,9 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='GitHub'
+            onChange={(e) =>{
+              this.props.setGitHub(e.target.value);
+            }}
           ></StyledContactInput>
         </StyledContactDiv>
     </StyledContactInfo>

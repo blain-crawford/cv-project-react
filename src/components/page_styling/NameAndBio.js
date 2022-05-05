@@ -14,6 +14,10 @@ class NameAndBio extends Component {
           id="outlined-required-flexible"
           label="Required"
           label="Name"
+          onChange={(e) => {
+            this.props.setName(e.target.value)
+            }
+          }
         />
         <StyledBioInput
           required
@@ -23,7 +27,9 @@ class NameAndBio extends Component {
           rows={4}
           // maxRows={8}
           // // value=''
-          // // onChange=''
+          onChange={(e) => {
+            this.props.setBio(e.target.value);
+          }}
           variant="filled"
         />
       </StyledNameAndBio>
