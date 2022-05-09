@@ -7,6 +7,7 @@ import { PreviewSwitch } from '../mui-styles/rightSideBarStyle';
 class RightSideBar extends Component {
   constructor(props) {
     super(props)
+    
   }
 
   render() {
@@ -22,7 +23,14 @@ class RightSideBar extends Component {
             onChange={this.props.changeMode}
           />
         </StyledRightSideHeader>
-        <PdfButton />
+        <PdfButton 
+          name={this.props.name}
+          bio={this.props.bio}
+          contactInfo={this.props.contactInfo}
+          previousExperience={this.props.previousExperience}
+          previousEducation={this.props.previousEducation}
+          skills={this.props.skills}
+        />
       </StyledRightSideBar>
 
     )

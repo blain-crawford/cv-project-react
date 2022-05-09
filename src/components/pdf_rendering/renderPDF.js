@@ -8,6 +8,7 @@ import {
   Font,
   Link
 } from '@react-pdf/renderer';
+import Experience from '../page_styling/Experience';
 
 const styles = StyleSheet.create({
   title: {
@@ -58,8 +59,15 @@ Font.register({
 });
 
 class RenderedPdf extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.convertDate = this.convertDate.bind(this)
+  }
+
+  convertDate(date) {
+    if(date) {
+      return date.toLocaleDateString()
+    }
   }
   render () {
     return (
@@ -67,40 +75,74 @@ class RenderedPdf extends Component {
         <Page size='A4'>
           <Link
             style={styles.title}
-            src='https://es.wikipedia.org/wiki/Lorem_ipsum'
+            src='http://www.blaincrawford.com'
           >
-            Lorem Ipsum
+            {this.props.name}
           </Link>
           <View style={styles.body}>
             <View style={styles.row}>
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.bio}
               </Text>
               <View style={styles.fill1} />
             </View>
             <View style={styles.row}>
               <View style={styles.fill2} />
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.contactInfo.location}
+                {this.props.contactInfo.phoneNumber}
+                {this.props.contactInfo.email}
+                {this.props.contactInfo.linkedIn}
+                {this.props.contactInfo.gitHub}
               </Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.previousExperience.map((experience, experienceIndex) => {
+                  return (
+                    <div 
+                    key={experienceIndex}
+                    id={experienceIndex}
+                    >
+                      <h3>Company: {experience.companyName}</h3>
+                      <h4>Position: {experience.position}</h4>
+                      <h5>Description: {experience.jobDescription}</h5>
+                      <p>Start Date: {this.convertDate(experience.startDate)}</p>
+                      <p>End Date: {this.convertDate(experience.endDate)}</p>
+                    </div>
+                  )
+                })}
               </Text>
               <View style={styles.fill3} />
+              <Text style={styles.text}>
+                {this.props.previousEducation.map((education, educationIndex) => {
+                  return (
+                    <div 
+                    key={educationIndex}
+                    id={educationIndex}
+                    >
+                      <h3>College: {education.college}</h3>
+                      <h4>Degree: {education.degree}</h4>
+                      <p>Start Date: {this.convertDate(education.startDate)}</p>
+                      <p>End Date: {this.convertDate(education.endDate)}</p>
+                    </div>
+                  )
+                })}
+              </Text>
+              <Text style={styles.text}>
+              {this.props.skills.map(
+                  (skill, skillIndex) => {
+                    return (
+                      <div
+                        id={skillIndex}
+                        key={skillIndex}
+                      >
+                        <p>{skill}</p>
+                      </div>
+                    )
+                  },
+                )}
+              </Text>
             </View>
           </View>
           <Text
