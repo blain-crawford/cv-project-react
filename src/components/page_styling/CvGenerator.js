@@ -25,20 +25,20 @@ class CvGenerator extends Component {
     // this.setBio = this.setBio.bind(this);
 
     //functionality for contact info
-    this.setLocation = this.setLocation.bind(this);
-    this.setPhoneNumber = this.setPhoneNumber.bind(this);
-    this.setEmail = this.setEmail.bind(this);
-    this.setLinkedIn = this.setLinkedIn.bind(this);
-    this.setGitHub = this.setGitHub.bind(this);
+    // this.setLocation = this.setLocation.bind(this);
+    // this.setPhoneNumber = this.setPhoneNumber.bind(this);
+    // this.setEmail = this.setEmail.bind(this);
+    // this.setLinkedIn = this.setLinkedIn.bind(this);
+    // this.setGitHub = this.setGitHub.bind(this);
 
     //functionality for experience form
-    this.setCompanyName = this.setCompanyName.bind(this);
-    this.setPositionTitle = this.setPositionTitle.bind(this);
-    this.setJobDescription = this.setJobDescription.bind(this);
-    this.setExperienceStartDate = this.setExperienceStartDate.bind(this);
-    this.setExperienceEndDate = this.setExperienceEndDate.bind(this);
-    this.deleteExperience = this.deleteExperience.bind(this);
-    this.addExperience = this.addExperience.bind(this);
+    // this.setCompanyName = this.setCompanyName.bind(this);
+    // this.setPositionTitle = this.setPositionTitle.bind(this);
+    // this.setJobDescription = this.setJobDescription.bind(this);
+    // this.setExperienceStartDate = this.setExperienceStartDate.bind(this);
+    // this.setExperienceEndDate = this.setExperienceEndDate.bind(this);
+    // this.deleteExperience = this.deleteExperience.bind(this);
+    // this.addExperience = this.addExperience.bind(this);
 
     //functionality for education form
     this.setCollegeName = this.setCollegeName.bind(this);
@@ -102,94 +102,94 @@ class CvGenerator extends Component {
   // }
 
   //declaring contact info functions
-  setLocation(location) {
-    let newLocation = { ...this.state.contactInfo };
-    newLocation.location = location;
-    this.setState({ contactInfo: newLocation });
-  }
+  // setLocation(location) {
+  //   let newLocation = { ...this.state.contactInfo };
+  //   newLocation.location = location;
+  //   this.setState({ contactInfo: newLocation });
+  // }
 
-  setPhoneNumber(phoneNumber) {
-    let newPhoneNumber = { ...this.state.contactInfo };
-    newPhoneNumber.phoneNumber = phoneNumber;
-    this.setState({ contactInfo: newPhoneNumber });
-  }
+  // setPhoneNumber(phoneNumber) {
+  //   let newPhoneNumber = { ...this.state.contactInfo };
+  //   newPhoneNumber.phoneNumber = phoneNumber;
+  //   this.setState({ contactInfo: newPhoneNumber });
+  // }
 
-  setEmail(email) {
-    let newEmail = { ...this.state.contactInfo };
-    newEmail.email = email;
-    this.setState({ contactInfo: newEmail });
-  }
+  // setEmail(email) {
+  //   let newEmail = { ...this.state.contactInfo };
+  //   newEmail.email = email;
+  //   this.setState({ contactInfo: newEmail });
+  // }
 
-  setLinkedIn(linkedIn) {
-    let newLinkedIn = { ...this.state.contactInfo };
-    newLinkedIn.linkedIn = linkedIn;
-    this.setState({ contactInfo: newLinkedIn });
-  }
+  // setLinkedIn(linkedIn) {
+  //   let newLinkedIn = { ...this.state.contactInfo };
+  //   newLinkedIn.linkedIn = linkedIn;
+  //   this.setState({ contactInfo: newLinkedIn });
+  // }
 
-  setGitHub(gitHub) {
-    let newGitHub = { ...this.state.contactInfo };
-    newGitHub.gitHub = gitHub;
-    this.setState({ contactInfo: newGitHub });
-  }
+  // setGitHub(gitHub) {
+  //   let newGitHub = { ...this.state.contactInfo };
+  //   newGitHub.gitHub = gitHub;
+  //   this.setState({ contactInfo: newGitHub });
+  // }
 
   //declaring Experience functions
-  setCompanyName(name, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].companyName = name;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setCompanyName(name, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].companyName = name;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  setPositionTitle(title, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].position = title;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setPositionTitle(title, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].position = title;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  setJobDescription(description, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].jobDescription = description;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setJobDescription(description, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].jobDescription = description;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  setCompanyName(name, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].companyName = name;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setCompanyName(name, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].companyName = name;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  setExperienceStartDate(startDate, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].startDate = startDate;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setExperienceStartDate(startDate, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].startDate = startDate;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  setExperienceEndDate(endDate, experienceIndex) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences[experienceIndex].endDate = endDate;
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // setExperienceEndDate(endDate, experienceIndex) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences[experienceIndex].endDate = endDate;
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  deleteExperience(experience) {
-    const newPreviousExperiences = [...this.state.previousExperience];
-    newPreviousExperiences.splice(experience, 1);
-    this.setState({ previousExperience: newPreviousExperiences });
-  }
+  // deleteExperience(experience) {
+  //   const newPreviousExperiences = [...this.state.previousExperience];
+  //   newPreviousExperiences.splice(experience, 1);
+  //   this.setState({ previousExperience: newPreviousExperiences });
+  // }
 
-  addExperience() {
-    const newExperience = [
-      ...this.state.previousExperience,
-      {
-        companyName: '',
-        position: '',
-        jobDescription: '',
-        startDate: '',
-        endDate: '',
-      },
-    ];
-    this.setState({
-      previousExperience: newExperience,
-    });
-  }
+  // addExperience() {
+  //   const newExperience = [
+  //     ...this.state.previousExperience,
+  //     {
+  //       companyName: '',
+  //       position: '',
+  //       jobDescription: '',
+  //       startDate: '',
+  //       endDate: '',
+  //     },
+  //   ];
+  //   this.setState({
+  //     previousExperience: newExperience,
+  //   });
+  // }
 
   //declaring education Functions
   setCollegeName(name, educationIndex) {
@@ -279,14 +279,14 @@ class CvGenerator extends Component {
         </StyledGeneralInfo>
         <StyledExperienceContainer>
           <Experience
-            addExperience={this.addExperience}
-            previousExperience={this.state.previousExperience}
-            setExperienceStartDate={this.setExperienceStartDate}
-            setExperienceEndDate={this.setExperienceEndDate}
-            setCompanyName={this.setCompanyName}
-            setPositionTitle={this.setPositionTitle}
-            setJobDescription={this.setJobDescription}
-            deleteExperience={this.deleteExperience}
+            addExperience={this.props.addExperience}
+            previousExperience={this.props.previousExperience}
+            setExperienceStartDate={this.props.setExperienceStartDate}
+            setExperienceEndDate={this.props.setExperienceEndDate}
+            setCompanyName={this.props.setCompanyName}
+            setPositionTitle={this.props.setPositionTitle}
+            setJobDescription={this.props.setJobDescription}
+            deleteExperience={this.props.deleteExperience}
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>

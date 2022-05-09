@@ -25,6 +25,16 @@ class RenderPage extends Component {
     this.setEmail = this.setEmail.bind(this);
     this.setLinkedIn = this.setLinkedIn.bind(this);
     this.setGitHub = this.setGitHub.bind(this);
+
+    
+    //functionality for experience form
+    this.setCompanyName = this.setCompanyName.bind(this);
+    this.setPositionTitle = this.setPositionTitle.bind(this);
+    this.setJobDescription = this.setJobDescription.bind(this);
+    this.setExperienceStartDate = this.setExperienceStartDate.bind(this);
+    this.setExperienceEndDate = this.setExperienceEndDate.bind(this);
+    this.deleteExperience = this.deleteExperience.bind(this);
+    this.addExperience = this.addExperience.bind(this);
     
     //functionality for changing between generate cv and view cv
     this.changeMode = this.changeMode.bind(this)
@@ -114,6 +124,65 @@ class RenderPage extends Component {
     this.setState({ contactInfo: newGitHub });
     console.log(this.state.contactInfo);
   }
+
+  //declaring Experience functions
+  setCompanyName(name, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].companyName = name;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setPositionTitle(title, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].position = title;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setJobDescription(description, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].jobDescription = description;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setCompanyName(name, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].companyName = name;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setExperienceStartDate(startDate, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].startDate = startDate;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  setExperienceEndDate(endDate, experienceIndex) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences[experienceIndex].endDate = endDate;
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  deleteExperience(experience) {
+    const newPreviousExperiences = [...this.state.previousExperience];
+    newPreviousExperiences.splice(experience, 1);
+    this.setState({ previousExperience: newPreviousExperiences });
+  }
+
+  addExperience() {
+    const newExperience = [
+      ...this.state.previousExperience,
+      {
+        companyName: '',
+        position: '',
+        jobDescription: '',
+        startDate: '',
+        endDate: '',
+      },
+    ];
+    this.setState({
+      previousExperience: newExperience,
+    });
+  }
   
   //declaring view switching functions
   changeMode () {
@@ -150,14 +219,27 @@ class RenderPage extends Component {
                 setEmail={this.setEmail}
                 setLinkedIn={this.setLinkedIn}
                 setGitHub={this.setGitHub}
+
+                //passing to experience component
+                addExperience={this.addExperience}
+                previousExperience={this.state.previousExperience}
+                setExperienceStartDate={this.setExperienceStartDate}
+                setExperienceEndDate={this.setExperienceEndDate}
+                setCompanyName={this.setCompanyName}
+                setPositionTitle={this.setPositionTitle}
+                setJobDescription={this.setJobDescription}
+                deleteExperience={this.deleteExperience}
               />
               <RightSideBar 
                 changeMode={this.changeMode}
                 mode={this.state.mode}
+                previouosExperience={this.state.previousExperience}
 
                 //sending name and bio state to RightSideBar
                 name={this.state.nameAndBio.name}
                 bio={this.state.nameAndBio.bio}
+                contactInfo={this.state.contactInfo}
+                previousExperience={this.state.previousExperience}
               />
             </StyledMainPage>
         </div>
@@ -176,6 +258,24 @@ class RenderPage extends Component {
                 <h3>
                   {this.state.nameAndBio.bio}
                 </h3>
+                <p>{this.state.contactInfo.location}</p>
+                <p>{this.state.contactInfo.phoneNumber}</p>
+                <p>{this.state.contactInfo.email}</p>
+                <p>{this.state.contactInfo.linkedIn}</p>
+                <p>{this.state.contactInfo.gitHub}</p>
+                <div>
+                  {this.state.previousExperience.map((experience) => {
+                    return (
+                      <div>
+                        <h3>{experience.companyName}</h3>
+                        <h4>{experience.position}</h4>
+                        <p>{experience.jobDescription}</p>
+                        <p>{experience.startDate.toLocaleDateString()}</p>
+                        <p>{experience.endDate.toLocaleDateString()}</p>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
               <RightSideBar 
                 changeMode={this.changeMode}
@@ -184,6 +284,8 @@ class RenderPage extends Component {
                 //sending name and bio state to RightSideBar
                 name={this.state.nameAndBio.name}
                 bio={this.state.nameAndBio.bio}
+                contactInfo={this.state.contactInfo}
+                previousExperience={this.state.previousExperience}
               />
             </StyledMainPage>
         </div>

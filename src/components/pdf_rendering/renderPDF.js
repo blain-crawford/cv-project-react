@@ -8,6 +8,7 @@ import {
   Font,
   Link
 } from '@react-pdf/renderer';
+import Experience from '../page_styling/Experience';
 
 const styles = StyleSheet.create({
   title: {
@@ -74,23 +75,33 @@ class RenderedPdf extends Component {
           <View style={styles.body}>
             <View style={styles.row}>
               <Text style={styles.text}>
-                {this.props.name}
+                {this.props.bio}
               </Text>
               <View style={styles.fill1} />
             </View>
             <View style={styles.row}>
               <View style={styles.fill2} />
               <Text style={styles.text}>
-                {this.props.bio}
+                {this.props.contactInfo.location}
+                {this.props.contactInfo.phoneNumber}
+                {this.props.contactInfo.email}
+                {this.props.contactInfo.linkedIn}
+                {this.props.contactInfo.gitHub}
               </Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.previousExperience.map((experience) => {
+                  return (
+                    <div>
+                      <h3>{experience.companyName}</h3>
+                      <h4>{experience.position}</h4>
+                      <h5>{experience.jobDescription}</h5>
+                      {/* <p>{experience.startDate.toDateString()}</p>
+                      <p>{experience.endDate.toDateString()}</p> */}
+                    </div>
+                  )
+                })}
               </Text>
               <View style={styles.fill3} />
             </View>

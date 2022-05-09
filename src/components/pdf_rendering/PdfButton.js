@@ -12,12 +12,12 @@ class PdfButton extends Component {
     return (
       <div className='button-container'>
         <PDFDownloadLink 
-        name={this.props.name}
-        bio={this.props.bio}
         className="download-button" 
         document={<RenderedPdf 
           name={this.props.name}
           bio={this.props.bio}
+          contactInfo={this.props.contactInfo}
+          previousExperience={this.props.previousExperience}
         />} 
         fileName='Test_Document'>
           {({ loading }) =>

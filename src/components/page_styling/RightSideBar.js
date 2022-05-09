@@ -26,6 +26,8 @@ class RightSideBar extends Component {
         <PdfButton 
           name={this.props.name}
           bio={this.props.bio}
+          contactInfo={this.props.contactInfo}
+          previousExperience={this.props.previousExperience}
         />
       </StyledRightSideBar>
 
