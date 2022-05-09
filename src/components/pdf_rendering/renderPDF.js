@@ -58,8 +58,8 @@ Font.register({
 });
 
 class RenderedPdf extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
   render () {
     return (
@@ -67,29 +67,21 @@ class RenderedPdf extends Component {
         <Page size='A4'>
           <Link
             style={styles.title}
-            src='https://es.wikipedia.org/wiki/Lorem_ipsum'
+            src='http://www.blaincrawford.com'
           >
-            Lorem Ipsum
+            {this.props.name}
           </Link>
           <View style={styles.body}>
             <View style={styles.row}>
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.name}
               </Text>
               <View style={styles.fill1} />
             </View>
             <View style={styles.row}>
               <View style={styles.fill2} />
               <Text style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum.
+                {this.props.bio}
               </Text>
             </View>
             <View style={styles.row}>

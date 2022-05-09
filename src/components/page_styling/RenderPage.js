@@ -154,6 +154,10 @@ class RenderPage extends Component {
               <RightSideBar 
                 changeMode={this.changeMode}
                 mode={this.state.mode}
+
+                //sending name and bio state to RightSideBar
+                name={this.state.nameAndBio.name}
+                bio={this.state.nameAndBio.bio}
               />
             </StyledMainPage>
         </div>
@@ -165,9 +169,21 @@ class RenderPage extends Component {
             <Header />
           </div>
             <StyledMainPage id="main-page">
+                <div>
+                <h1>
+                  {this.state.nameAndBio.name}
+                </h1>
+                <h3>
+                  {this.state.nameAndBio.bio}
+                </h3>
+              </div>
               <RightSideBar 
                 changeMode={this.changeMode}
                 mode={this.state.mode}
+
+                //sending name and bio state to RightSideBar
+                name={this.state.nameAndBio.name}
+                bio={this.state.nameAndBio.bio}
               />
             </StyledMainPage>
         </div>
