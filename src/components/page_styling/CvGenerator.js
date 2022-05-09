@@ -266,15 +266,23 @@ class CvGenerator extends Component {
             imagePlaceHolder={this.props.imagePlaceHolder}
           />
           <NameAndBio 
+            name={this.props.name}
+            bio={this.props.bio}
             setName={this.props.setName} 
             setBio={this.props.setBio} 
           />
           <ContactInfo
             setLocation={this.props.setLocation}
+            location={this.props.location}
             setPhoneNumber={this.props.setPhoneNumber}
+            phoneNumber={this.props.phoneNumber}
             setEmail={this.props.setEmail}
+            email={this.props.email}
             setLinkedIn={this.props.setLinkedIn}
+            linkedIn={this.props.linkedIn}
             setGitHub={this.props.setGitHub}
+            gitHub={this.props.gitHub}
+            
           />
         </StyledGeneralInfo>
         <StyledExperienceContainer>

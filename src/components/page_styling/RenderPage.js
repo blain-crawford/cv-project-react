@@ -210,15 +210,22 @@ class RenderPage extends Component {
                 imagePlaceHolder={this.state.imagePlaceHolder}
 
                 //passing to name and bio component
+                name={this.state.nameAndBio.name}
+                bio={this.state.nameAndBio.bio}
                 setName={this.setName} 
                 setBio={this.setBio} 
 
                 //passing to contact info component
                 setLocation={this.setLocation}
+                location={this.state.contactInfo.location}
                 setPhoneNumber={this.setPhoneNumber}
+                phoneNumber={this.state.contactInfo.phoneNumber}
                 setEmail={this.setEmail}
+                email={this.state.contactInfo.email}
                 setLinkedIn={this.setLinkedIn}
+                linkedIn={this.state.contactInfo.linkedIn}
                 setGitHub={this.setGitHub}
+                gitHub={this.state.contactInfo.gitHub}
 
                 //passing to experience component
                 addExperience={this.addExperience}
@@ -264,14 +271,17 @@ class RenderPage extends Component {
                 <p>{this.state.contactInfo.linkedIn}</p>
                 <p>{this.state.contactInfo.gitHub}</p>
                 <div>
-                  {this.state.previousExperience.map((experience) => {
+                  {this.state.previousExperience.map((experience, experienceIndex) => {
                     return (
-                      <div>
-                        <h3>{experience.companyName}</h3>
-                        <h4>{experience.position}</h4>
-                        <p>{experience.jobDescription}</p>
-                        <p>{experience.startDate.toLocaleDateString()}</p>
-                        <p>{experience.endDate.toLocaleDateString()}</p>
+                      <div 
+                      key={experienceIndex}
+                      id={experienceIndex}
+                      >
+                        <h3>Company: {experience.companyName}</h3>
+                        <h4>Position: {experience.position}</h4>
+                        <p>Description: {experience.jobDescription}</p>
+                        <p>Start Date:{experience.startDate.toLocaleDateString()}</p>
+                        <p>End Date: {experience.endDate.toLocaleDateString()}</p>
                       </div>
                     )
                   })}

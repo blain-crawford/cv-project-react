@@ -61,6 +61,13 @@ Font.register({
 class RenderedPdf extends Component {
   constructor(props) {
     super(props)
+    this.convertDate = this.convertDate.bind(this)
+  }
+
+  convertDate(date) {
+    if(date) {
+      return date.toLocaleDateString()
+    }
   }
   render () {
     return (
@@ -91,14 +98,17 @@ class RenderedPdf extends Component {
             </View>
             <View style={styles.row}>
               <Text style={styles.text}>
-                {this.props.previousExperience.map((experience) => {
+                {this.props.previousExperience.map((experience, experienceIndex) => {
                   return (
-                    <div>
-                      <h3>{experience.companyName}</h3>
-                      <h4>{experience.position}</h4>
-                      <h5>{experience.jobDescription}</h5>
-                      {/* <p>{experience.startDate.toDateString()}</p>
-                      <p>{experience.endDate.toDateString()}</p> */}
+                    <div 
+                    key={experienceIndex}
+                    id={experienceIndex}
+                    >
+                      <h3>Company: {experience.companyName}</h3>
+                      <h4>Position: {experience.position}</h4>
+                      <h5>Description: {experience.jobDescription}</h5>
+                      <p>Start Date: {this.convertDate(experience.startDate)}</p>
+                      <p>End Date: {this.convertDate(experience.endDate)}</p>
                     </div>
                   )
                 })}

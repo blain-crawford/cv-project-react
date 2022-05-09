@@ -12,6 +12,7 @@ class NameAndBio extends Component {
         <StyledNameInput
           required
           id="outlined-required-flexible"
+          value={this.props.name}
           label="Required"
           label="Name"
           onChange={(e) => {
@@ -22,6 +23,7 @@ class NameAndBio extends Component {
         <StyledBioInput
           required
           id="outlined-multiline-flexible"
+          value={this.props.bio}
           label="Bio"
           multiline
           rows={4}

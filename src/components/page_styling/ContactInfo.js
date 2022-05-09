@@ -21,6 +21,7 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Location'
+            value={this.props.location}
             onChange={(e) =>{
               this.props.setLocation(e.target.value);
             }}
@@ -31,6 +32,7 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Phone Number'
+            value={this.props.phoneNumber}
             onChange={(e) =>{
               this.props.setPhoneNumber(e.target.value);
             }}
@@ -41,6 +43,7 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='Email'
+            value={this.props.email}
             onChange={(e) =>{
               this.props.setEmail(e.target.value);
             }}
@@ -51,6 +54,7 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='LinkedIn'
+            value={this.props.linkedIn}
             onChange={(e) =>{
               this.props.setLinkedIn(e.target.value);
             }}
@@ -61,6 +65,7 @@ class ContactInfo extends Component {
           <StyledContactInput
             size='small'
             label='GitHub'
+            value={this.props.gitHub}
             onChange={(e) =>{
               this.props.setGitHub(e.target.value);
             }}
