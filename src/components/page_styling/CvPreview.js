@@ -8,8 +8,8 @@ class CvPreview extends Component {
   }
 
   convertDate(date) {
-    if(date) {
-      return date.toLocaleDateString()
+    if (date) {
+      return date.toLocaleDateString();
     }
   }
 
@@ -32,23 +32,25 @@ class CvPreview extends Component {
           <p>Email: {this.props.contactInfo.email}</p>
           <p>LinkedIn: {this.props.contactInfo.linkedIn}</p>
           <p>GitHub: {this.props.contactInfo.gitHub}</p>
-          </div>
+        </div>
         <div>
           <div>
             <h1>Previous Work Experience</h1>
           </div>
           <div>
-            {this.props.previousExperience.map((experience, experienceIndex) => {
-              return (
-                <div key={experienceIndex} id={experienceIndex}>
-                  <h3>Company: {experience.companyName}</h3>
-                  <h4>Position: {experience.position}</h4>
-                  <p>Description: {experience.jobDescription}</p>
-                  <p>Start Date:{this.convertDate(experience.startDate)}</p>
-                  <p>End Date: {this.convertDate(experience.endDate)}</p>
-                </div>
-              );
-            })}
+            {this.props.previousExperience.map(
+              (experience, experienceIndex) => {
+                return (
+                  <div key={experienceIndex} id={experienceIndex}>
+                    <h3>Company: {experience.companyName}</h3>
+                    <h4>Position: {experience.position}</h4>
+                    <p>Description: {experience.jobDescription}</p>
+                    <p>Start Date:{this.convertDate(experience.startDate)}</p>
+                    <p>End Date: {this.convertDate(experience.endDate)}</p>
+                  </div>
+                );
+              },
+            )}
           </div>
         </div>
         <div>
@@ -85,6 +87,6 @@ class CvPreview extends Component {
       </StyledCvPreview>
     );
   }
-};
+}
 
 export default CvPreview;
