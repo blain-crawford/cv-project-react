@@ -14,13 +14,15 @@ import Skills from './Skills';
 class CvGenerator extends Component {
   constructor(props) {
     super(props);
+    //functionality for handling image files
+    this.handleCapture = this.handleCapture.bind(this);
 
     //functionality for Avatar
     this.setAvatarImage = this.setAvatarImage.bind(this);
 
     //functionality for name and bio
     this.setName = this.setName.bind(this);
-    this.setBio = this.setBio.bind(this)
+    this.setBio = this.setBio.bind(this);
 
     //functionality for contact info
     this.setLocation = this.setLocation.bind(this);
@@ -51,6 +53,7 @@ class CvGenerator extends Component {
     this.addSkill = this.addSkill.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
+      avatarImage: '',
       nameAndBio: {
         name: '',
         bio: '',
@@ -60,7 +63,7 @@ class CvGenerator extends Component {
         phoneNumber: '',
         email: '',
         linkedIn: '',
-        gitHub: ''
+        gitHub: '',
       },
       previousExperience: [],
       previousEducation: [],
@@ -70,49 +73,62 @@ class CvGenerator extends Component {
   }
 
   //declaring Avatar functions
+  handleCapture = ({ target }) => {
+    console.log(target.files);
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(target.files[0]);
+    fileReader.onload = (e) => {
+      this.setState({ avatarImage: e.target.result });
+    };
+  };
+
+  setAvatarImage(image) {
+    let newAvatarImage = this.handleCapture(image);
+    console.log(image);
+  }
 
   //declaring name and bio functions
   setName(name) {
     let newName = { ...this.state.nameAndBio };
     newName.name = name;
-    this.setState({nameAndBio: newName});
+    this.setState({ nameAndBio: newName });
   }
 
   setBio(bio) {
     let newBio = { ...this.state.nameAndBio };
     newBio.bio = bio;
-    this.setState({nameAndBio: newBio});
+    this.setState({ nameAndBio: newBio });
   }
 
   //declaring contact info functions
   setLocation(location) {
-    let newLocation = { ...this.state.contactInfo }
+    let newLocation = { ...this.state.contactInfo };
     newLocation.location = location;
-    this.setState({contactInfo: newLocation})
-  } 
+    this.setState({ contactInfo: newLocation });
+  }
 
   setPhoneNumber(phoneNumber) {
-    let newPhoneNumber = { ...this.state.contactInfo }
+    let newPhoneNumber = { ...this.state.contactInfo };
     newPhoneNumber.phoneNumber = phoneNumber;
-    this.setState({contactInfo: newPhoneNumber})
+    this.setState({ contactInfo: newPhoneNumber });
   }
-  
+
   setEmail(email) {
     let newEmail = { ...this.state.contactInfo };
     newEmail.email = email;
-    this.setState({contactInfo: newEmail})
+    this.setState({ contactInfo: newEmail });
   }
 
   setLinkedIn(linkedIn) {
-    let newLinkedIn = { ...this.state.contactInfo }
+    let newLinkedIn = { ...this.state.contactInfo };
     newLinkedIn.linkedIn = linkedIn;
-    this.setState({contactInfo: newLinkedIn})
+    this.setState({ contactInfo: newLinkedIn });
   }
 
   setGitHub(gitHub) {
-    let newGitHub = { ...this.state.contactInfo }
+    let newGitHub = { ...this.state.contactInfo };
     newGitHub.gitHub = gitHub;
-    this.setState({contactInfo: newGitHub})
+    this.setState({ contactInfo: newGitHub });
   }
   //declaring Experience functions
   setCompanyName(name, experienceIndex) {
@@ -241,14 +257,14 @@ class CvGenerator extends Component {
     return (
       <StyledCvGenerator>
         <StyledGeneralInfo id='general-info'>
-          <Avatar 
-            avatarAlt={this.state.nameAndBio.name}
+          <Avatar
+            avatarAlt={this.state.nameAndBio}
+            setAvatarImage={this.setAvatarImage}
+            imageSrc={this.state.avatarImage}
+            handleCapture={this.handleCapture}
           />
-          <NameAndBio 
-            setName={this.setName} 
-            setBio={this.setBio}
-          />
-          <ContactInfo 
+          <NameAndBio setName={this.setName} setBio={this.setBio} />
+          <ContactInfo
             setLocation={this.setLocation}
             setPhoneNumber={this.setPhoneNumber}
             setEmail={this.setEmail}

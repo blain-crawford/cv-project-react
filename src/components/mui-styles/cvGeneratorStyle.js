@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Box, TextField, Button, CardMedia } from '@mui/material';
+import { TextField, Button, CardMedia } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
 
@@ -22,6 +22,40 @@ const StyledGeneralInfo = styled('div', {
   backgroundColor: '',
 });
 
+const StyledAvatarSection = styled('div', {
+  name: 'StyledAvatarSection'
+}) ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '10px'
+})
+
+const StyledAddPhotoInput = styled('input', {
+  name: "StyledAddPhotoInput"
+}) ({
+  display: 'none'
+})
+
+const StyledAddPhotoButton = styled(Button, {
+  name: 'StyledAddPhotoButton'
+}) ({
+  color: '#5b083a',
+  backgroundColor: 'rgb(255,102,0, .2)',
+  display: 'flex',
+  border: '1px solid purple',
+  justifyContent: 'center',
+  margin: '10px',
+  '.MuiSvgIcon-root': {
+    margin: '0',
+  },
+  ':hover': {
+    color: 'white',
+    border: '#5b083a',
+    backgroundColor: 'rgb(91, 8, 58)',
+  },
+})
+
 const PictureHolder = styled(CardMedia, {
   name: 'Avatar',
 })({
@@ -29,8 +63,8 @@ const PictureHolder = styled(CardMedia, {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '150px',
-  height: '150px',
+  width: '200px',
+  height: '200px',
   marginBottom: 'auto',
   backgroundColor: 'rgb(200,200,200,.8)',
   borderRadius: '10px',
@@ -232,6 +266,9 @@ const StyledDateInput = styled(DesktopDatePicker, {
 
 
 export {
+  StyledAvatarSection,
+  StyledAddPhotoInput,
+  StyledAddPhotoButton,
   PictureHolder,
   StyledGeneralInfo,
   StyledNameAndBio,
