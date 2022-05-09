@@ -2,7 +2,6 @@ import { styled } from '@mui/system';
 import { TextField, Button, CardMedia } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
@@ -24,23 +23,23 @@ const StyledGeneralInfo = styled('div', {
 });
 
 const StyledAvatarSection = styled('div', {
-  name: 'StyledAvatarSection'
-}) ({
+  name: 'StyledAvatarSection',
+})({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '10px'
-})
+  gap: '10px',
+});
 
 const StyledAddPhotoInput = styled('input', {
-  name: "StyledAddPhotoInput"
-}) ({
-  display: 'none'
-})
+  name: 'StyledAddPhotoInput',
+})({
+  display: 'none',
+});
 
 const StyledAddPhotoButton = styled(Button, {
-  name: 'StyledAddPhotoButton'
-}) ({
+  name: 'StyledAddPhotoButton',
+})({
   color: '#5b083a',
   backgroundColor: 'rgb(255,102,0, .2)',
   display: 'flex',
@@ -55,7 +54,7 @@ const StyledAddPhotoButton = styled(Button, {
     border: '#5b083a',
     backgroundColor: 'rgb(91, 8, 58)',
   },
-})
+});
 
 const PictureHolder = styled(CardMedia, {
   name: 'Avatar',
@@ -189,19 +188,19 @@ const StyledSkillInput = styled(TextField, {
 });
 
 const StyledSkillContainer = styled('div', {
-  name: 'StyledSkillContainer'
-}) ({
+  name: 'StyledSkillContainer',
+})({
   marginTop: '30px',
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   gap: '10px',
-  width: '95%'
-})
+  width: '95%',
+});
 
 const StyledIndividualSkill = styled('div', {
-  name:'StyledIndividualSkill'
-}) ({
+  name: 'StyledIndividualSkill',
+})({
   color: '#5b083a',
   backgroundColor: 'rgb(255,102,0, .2)',
   paddingLeft: '25px',
@@ -210,17 +209,17 @@ const StyledIndividualSkill = styled('div', {
   alignItems: 'center',
   border: '1px solid purple',
   justifyContent: 'center',
-  gap: '20px'
-})
+  gap: '20px',
+});
 
 const StyledClearIcon = styled(ClearIcon, {
-  name:'styledClearIcon'
-}) ({
+  name: 'styledClearIcon',
+})({
   cursor: 'pointer',
   ':hover': {
-    fontSize: '42px'
+    fontSize: '42px',
   },
-})
+});
 
 const StyledInputAndAddButton = styled('div', {
   name: 'StyledInputAndAddButton',
@@ -229,42 +228,41 @@ const StyledInputAndAddButton = styled('div', {
 });
 
 const StyledCvForm = styled('div', {
-  name: 'formContainer'
+  name: 'formContainer',
 })({
   display: 'flex',
   flexDirection: 'row',
   padding: '10px',
   width: '85%',
   margin: '20px auto',
-  borderBottom: '2px solid rgb(255,102,0,.3)'
-})
+  borderBottom: '2px solid rgb(255,102,0,.3)',
+});
 
-const StyledCvInfoInputs = styled('div',{
-  name: 'InfoInput'
-}) ({
+const StyledCvInfoInputs = styled('div', {
+  name: 'InfoInput',
+})({
   display: 'flex',
   flexDirection: 'column',
   width: '80%',
-  gap: '10px'
-})
+  gap: '10px',
+});
 
 const StyledDateAndDeleteContainer = styled('div', {
-  name:'DateAndDeleteContainer'
-}) ({
+  name: 'DateAndDeleteContainer',
+})({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'center',
   gap: '10px',
-  margin: '0 5px 0 5px'
-})
+  margin: '0 5px 0 5px',
+});
 
 const StyledDateInput = styled(DesktopDatePicker, {
-  name: 'DateInput'
-}) ({
-  margin: 'auto'
-})
-
+  name: 'DateInput',
+})({
+  margin: 'auto',
+});
 
 export {
   StyledAvatarSection,
@@ -291,5 +289,5 @@ export {
   StyledCvForm,
   StyledCvInfoInputs,
   StyledDateAndDeleteContainer,
-  StyledDateInput
+  StyledDateInput,
 };
