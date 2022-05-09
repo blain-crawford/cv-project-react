@@ -17,8 +17,8 @@ class CvGenerator extends Component {
     super(props);
 
     //functionality for Avatar
-    this.setAvatarImage = this.setAvatarImage.bind(this);
-    this.setImagePlaceHolder = this.setImagePlaceHolder.bind(this);
+    // this.setAvatarImage = this.setAvatarImage.bind(this);
+    // this.setImagePlaceHolder = this.setImagePlaceHolder.bind(this);
 
     //functionality for name and bio
     this.setName = this.setName.bind(this);
@@ -74,19 +74,19 @@ class CvGenerator extends Component {
   }
 
   //declaring Avatar functions
-  setAvatarImage = ({ target }) => {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(target.files[0]);
-    fileReader.onload = (e) => {
-      this.setState({ avatarImage: e.target.result });
-    };
-    this.setImagePlaceHolder();
-  };
+  // setAvatarImage = ({ target }) => {
+  //   const fileReader = new FileReader();
+  //   fileReader.readAsDataURL(target.files[0]);
+  //   fileReader.onload = (e) => {
+  //     this.setState({ avatarImage: e.target.result });
+  //   };
+  //   this.setImagePlaceHolder();
+  // };
 
-  setImagePlaceHolder() {
-    const newImagePlaceHolder = <></>;
-    this.setState({imagePlaceHolder: newImagePlaceHolder});
-  }
+  // setImagePlaceHolder() {
+  //   const newImagePlaceHolder = <></>;
+  //   this.setState({ imagePlaceHolder: newImagePlaceHolder });
+  // }
 
   //declaring name and bio functions
   setName(name) {
@@ -259,10 +259,10 @@ class CvGenerator extends Component {
       <StyledCvGenerator>
         <StyledGeneralInfo id='general-info'>
           <Avatar
-            avatarAlt={this.state.nameAndBio}
-            imageSrc={this.state.avatarImage}
-            setAvatarImage={this.setAvatarImage}
-            imagePlaceHolder={this.state.imagePlaceHolder}
+            avatarAlt={this.props.avatarAlt}
+            imageSrc={this.props.imageSrc}
+            setAvatarImage={this.props.setAvatarImage}
+            imagePlaceHolder={this.props.imagePlaceHolder}
           />
           <NameAndBio setName={this.setName} setBio={this.setBio} />
           <ContactInfo
