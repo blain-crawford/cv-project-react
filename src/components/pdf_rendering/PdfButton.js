@@ -5,23 +5,26 @@ import '../../styles/styles.css';
 
 class PdfButton extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
-  
-  render () {
+
+  render() {
     return (
       <div className='button-container'>
-        <PDFDownloadLink 
-        className="download-button" 
-        document={<RenderedPdf 
-          name={this.props.name}
-          bio={this.props.bio}
-          contactInfo={this.props.contactInfo}
-          previousExperience={this.props.previousExperience}
-          previousEducation={this.props.previousEducation}
-          skills={this.props.skills}
-        />} 
-        fileName='Test_Document'>
+        <PDFDownloadLink
+          className='download-button'
+          document={
+            <RenderedPdf
+              name={this.props.name}
+              bio={this.props.bio}
+              contactInfo={this.props.contactInfo}
+              previousExperience={this.props.previousExperience}
+              previousEducation={this.props.previousEducation}
+              skills={this.props.skills}
+            />
+          }
+          fileName='Test_Document'
+        >
           {({ loading }) =>
             loading ? (
               <button>Loading Document. . .</button>
@@ -33,6 +36,6 @@ class PdfButton extends Component {
       </div>
     );
   }
-};
+}
 
 export default PdfButton;

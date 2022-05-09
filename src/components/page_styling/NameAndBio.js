@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { StyledNameAndBio, StyledNameInput, StyledBioInput } from '../mui-styles/cvGeneratorStyle';
+import {
+  StyledNameAndBio,
+  StyledNameInput,
+  StyledBioInput,
+} from '../mui-styles/cvGeneratorStyle';
 
 class NameAndBio extends Component {
   constructor() {
@@ -7,32 +11,29 @@ class NameAndBio extends Component {
   }
 
   render() {
-    return ( 
+    return (
       <StyledNameAndBio>
         <StyledNameInput
           required
-          id="outlined-required-flexible"
+          id='outlined-required-flexible'
           value={this.props.name}
-          label="Required"
-          label="Name"
+          label='Required'
+          label='Name'
           onChange={(e) => {
-            this.props.setName(e.target.value)
-            }
-          }
+            this.props.setName(e.target.value);
+          }}
         />
         <StyledBioInput
           required
-          id="outlined-multiline-flexible"
+          id='outlined-multiline-flexible'
           value={this.props.bio}
-          label="Bio"
+          label='Bio'
           multiline
           rows={4}
-          // maxRows={8}
-          // // value=''
           onChange={(e) => {
             this.props.setBio(e.target.value);
           }}
-          variant="filled"
+          variant='filled'
         />
       </StyledNameAndBio>
     );

@@ -1,4 +1,4 @@
-import React, { Component, useState, newValue, setValue } from 'react';
+import React, { Component } from 'react';
 import { Typography, TextField } from '@mui/material';
 import {
   StyledHeaderUnderline,
@@ -9,7 +9,6 @@ import {
   StyledCvForm,
   StyledNameInput,
   StyledBioInput,
-  StyledContactInput,
   StyledDateInput,
   StyledDeleteButton,
 } from '../mui-styles/cvGeneratorStyle';
@@ -42,13 +41,10 @@ class Experience extends Component {
 
   setStartDate(startDate) {
     this.setState({ startDate: startDate });
-    // this.setState({jobNumber: this.state.jobNumber + 1})
-    console.log(this.state)
   }
 
   setEndDate(endDate) {
     this.setState({ endDate: endDate });
-    console.log(this.state);
   }
 
   render() {
@@ -65,7 +61,7 @@ class Experience extends Component {
               <StyledCvForm
                 id={experienceIndex}
                 key={experienceIndex}
-                className="form-container"
+                className='form-container'
               >
                 <StyledCvInfoInputs>
                   <StyledNameInput
@@ -73,7 +69,10 @@ class Experience extends Component {
                     id='outlined-required-flexible'
                     label='Company Name'
                     onChange={(e) => {
-                      this.props.setCompanyName(e.target.value, experienceIndex)
+                      this.props.setCompanyName(
+                        e.target.value,
+                        experienceIndex,
+                      );
                     }}
                     value={experience.companyName}
                   />
@@ -82,7 +81,10 @@ class Experience extends Component {
                     id='outlined-required-flexible'
                     label='Position'
                     onChange={(e) => {
-                      this.props.setPositionTitle(e.target.value, experienceIndex)
+                      this.props.setPositionTitle(
+                        e.target.value,
+                        experienceIndex,
+                      );
                     }}
                     value={experience.position}
                   />
@@ -93,7 +95,10 @@ class Experience extends Component {
                     rows={4}
                     label='Job Description (optional)'
                     onChange={(e) => {
-                      this.props.setJobDescription(e.target.value, experienceIndex)
+                      this.props.setJobDescription(
+                        e.target.value,
+                        experienceIndex,
+                      );
                     }}
                     value={experience.setJobDescription}
                   />
@@ -104,7 +109,10 @@ class Experience extends Component {
                       label='Start Date'
                       inputFormat='MM/dd/yyyy'
                       onChange={(date) => {
-                        this.props.setExperienceStartDate(date, experienceIndex)
+                        this.props.setExperienceStartDate(
+                          date,
+                          experienceIndex,
+                        );
                       }}
                       value={experience.startDate}
                       renderInput={(params) => <TextField {...params} />}
@@ -113,7 +121,7 @@ class Experience extends Component {
                       label='End Date'
                       inputFormat='MM/dd/yyyy'
                       onChange={(date) => {
-                        this.props.setExperienceEndDate(date, experienceIndex)
+                        this.props.setExperienceEndDate(date, experienceIndex);
                       }}
                       value={experience.endDate}
                       renderInput={(params) => <TextField {...params} />}
@@ -121,10 +129,12 @@ class Experience extends Component {
                   </LocalizationProvider>
                   <StyledDeleteButton
                     onClick={() => {
-                      this.props.deleteExperience(experience.experienceIndex)
+                      this.props.deleteExperience(experience.experienceIndex);
                     }}
                     id={experienceIndex}
-                  >Delete</StyledDeleteButton>
+                  >
+                    Delete
+                  </StyledDeleteButton>
                 </StyledDateAndDeleteContainer>
               </StyledCvForm>
             );

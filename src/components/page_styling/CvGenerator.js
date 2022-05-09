@@ -26,11 +26,11 @@ class CvGenerator extends Component {
             setAvatarImage={this.props.setAvatarImage}
             imagePlaceHolder={this.props.imagePlaceHolder}
           />
-          <NameAndBio 
+          <NameAndBio
             name={this.props.name}
             bio={this.props.bio}
-            setName={this.props.setName} 
-            setBio={this.props.setBio} 
+            setName={this.props.setName}
+            setBio={this.props.setBio}
           />
           <ContactInfo
             setLocation={this.props.setLocation}
@@ -43,7 +43,6 @@ class CvGenerator extends Component {
             linkedIn={this.props.linkedIn}
             setGitHub={this.props.setGitHub}
             gitHub={this.props.gitHub}
-            
           />
         </StyledGeneralInfo>
         <StyledExperienceContainer>

@@ -9,8 +9,7 @@ import {
   StyledNameInput,
   StyledDateAndDeleteContainer,
   StyledDateInput,
-  StyledDeleteButton
-
+  StyledDeleteButton,
 } from '../mui-styles/cvGeneratorStyle';
 import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import SchoolIcon from '@mui/icons-material/School';

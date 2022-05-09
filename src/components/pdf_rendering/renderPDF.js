@@ -8,7 +8,6 @@ import {
   Font,
   Link
 } from '@react-pdf/renderer';
-import Experience from '../page_styling/Experience';
 
 const styles = StyleSheet.create({
   title: {

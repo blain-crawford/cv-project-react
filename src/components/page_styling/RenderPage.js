@@ -105,35 +105,30 @@ class RenderPage extends Component {
     let newLocation = { ...this.state.contactInfo };
     newLocation.location = location;
     this.setState({ contactInfo: newLocation });
-    console.log(this.state.contactInfo);
   }
 
   setPhoneNumber(phoneNumber) {
     let newPhoneNumber = { ...this.state.contactInfo };
     newPhoneNumber.phoneNumber = phoneNumber;
     this.setState({ contactInfo: newPhoneNumber });
-    console.log(this.state.contactInfo);
   }
 
   setEmail(email) {
     let newEmail = { ...this.state.contactInfo };
     newEmail.email = email;
     this.setState({ contactInfo: newEmail });
-    console.log(this.state.contactInfo);
   }
 
   setLinkedIn(linkedIn) {
     let newLinkedIn = { ...this.state.contactInfo };
     newLinkedIn.linkedIn = linkedIn;
     this.setState({ contactInfo: newLinkedIn });
-    console.log(this.state.contactInfo);
   }
 
   setGitHub(gitHub) {
     let newGitHub = { ...this.state.contactInfo };
     newGitHub.gitHub = gitHub;
     this.setState({ contactInfo: newGitHub });
-    console.log(this.state.contactInfo);
   }
 
   //declaring Experience functions
@@ -200,35 +195,30 @@ class RenderPage extends Component {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].collegeName = name;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   setDegree(degree, educationIndex) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].degree = degree;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   setEducationStartDate(date, educationIndex) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].startDate = date;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   setEducationEndDate(date, educationIndex) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation[educationIndex].endDate = date;
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   deleteEducation(education) {
     const newPreviousEducation = [...this.state.previousEducation];
     newPreviousEducation.splice(education, 1);
     this.setState({ previousEducation: newPreviousEducation });
-    console.log(this.state.previousEducation);
   }
 
   addEducation() {
@@ -288,13 +278,11 @@ class RenderPage extends Component {
               imageSrc={this.state.avatarImage}
               setAvatarImage={this.setAvatarImage}
               imagePlaceHolder={this.state.imagePlaceHolder}
-
               //passing to name and bio component
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
               setName={this.setName}
               setBio={this.setBio}
-
               //passing to contact info component
               setLocation={this.setLocation}
               location={this.state.contactInfo.location}
@@ -306,7 +294,6 @@ class RenderPage extends Component {
               linkedIn={this.state.contactInfo.linkedIn}
               setGitHub={this.setGitHub}
               gitHub={this.state.contactInfo.gitHub}
-
               //passing to experience component
               addExperience={this.addExperience}
               previousExperience={this.state.previousExperience}
@@ -316,7 +303,6 @@ class RenderPage extends Component {
               setPositionTitle={this.setPositionTitle}
               setJobDescription={this.setJobDescription}
               deleteExperience={this.deleteExperience}
-
               //passing to education Component
               setCollegeName={this.setCollegeName}
               setDegree={this.setDegree}
@@ -325,7 +311,6 @@ class RenderPage extends Component {
               deleteEducation={this.deleteEducation}
               addEducation={this.addEducation}
               previousEducation={this.state.previousEducation}
-
               //passing to skills component
               setSkillToAdd={this.setSkillToAdd}
               addSkill={this.addSkill}
@@ -400,18 +385,13 @@ class RenderPage extends Component {
                 )}
               </div>
               <div>
-              {this.state.skills.map(
-                  (skill, skillIndex) => {
-                    return (
-                      <div
-                        id={skillIndex}
-                        key={skillIndex}
-                      >
-                        <p>{skill}</p>
-                      </div>
-                    )
-                  },
-                )}
+                {this.state.skills.map((skill, skillIndex) => {
+                  return (
+                    <div id={skillIndex} key={skillIndex}>
+                      <p>{skill}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <RightSideBar
