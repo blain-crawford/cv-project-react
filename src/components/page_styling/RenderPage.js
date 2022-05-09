@@ -279,7 +279,7 @@ class RenderPage extends Component {
               imageSrc={this.state.avatarImage}
               setAvatarImage={this.setAvatarImage}
               imagePlaceHolder={this.state.imagePlaceHolder}
-
+              
               //passing to name and bio component
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
@@ -326,8 +326,7 @@ class RenderPage extends Component {
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
-              previouosExperience={this.state.previousExperience}
-              
+
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
@@ -346,62 +345,6 @@ class RenderPage extends Component {
             <Header />
           </div>
           <StyledMainPage id='main-page'>
-            {/* <div>
-              <h1>{this.state.nameAndBio.name}</h1>
-              <h3>{this.state.nameAndBio.bio}</h3>
-              <p>{this.state.contactInfo.location}</p>
-              <p>Phone Number: {this.state.contactInfo.phoneNumber}</p>
-              <p>Email: {this.state.contactInfo.email}</p>
-              <p>LinkedIn: {this.state.contactInfo.linkedIn}</p>
-              <p>GitHub: {this.state.contactInfo.gitHub}</p>
-              <div>
-                {this.state.previousExperience.map(
-                  (experience, experienceIndex) => {
-                    return (
-                      <div key={experienceIndex} id={experienceIndex}>
-                        <h3>Company: {experience.companyName}</h3>
-                        <h4>Position: {experience.position}</h4>
-                        <p>Description: {experience.jobDescription}</p>
-                        <p>
-                          Start Date:{experience.startDate.toLocaleDateString()}
-                        </p>
-                        <p>
-                          End Date: {experience.endDate.toLocaleDateString()}
-                        </p>
-                      </div>
-                    );
-                  },
-                )}
-              </div>
-              <div>
-                {this.state.previousEducation.map(
-                  (education, educationIndex) => {
-                    return (
-                      <div key={educationIndex} id={educationIndex}>
-                        <h3>College: {education.collegeName}</h3>
-                        <h4>Degree: {education.degree}</h4>
-                        <p>
-                          Start Date:{education.startDate.toLocaleDateString()}
-                        </p>
-                        <p>
-                          End Date: {education.endDate.toLocaleDateString()}
-                        </p>
-                      </div>
-                    );
-                  },
-                )}
-              </div>
-              <div>
-                {this.state.skills.map((skill, skillIndex) => {
-                  return (
-                    <div id={skillIndex} key={skillIndex}>
-                      <p>{skill}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div> */}
-            
             <CvPreview
               nameAndBio={this.state.nameAndBio}
               contactInfo={this.state.contactInfo}
@@ -412,6 +355,7 @@ class RenderPage extends Component {
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
+
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
