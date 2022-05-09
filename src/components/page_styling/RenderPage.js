@@ -19,6 +19,12 @@ class RenderPage extends Component {
     this.setName = this.setName.bind(this);
     this.setBio = this.setBio.bind(this);
 
+    //functionality for contact info
+    this.setLocation = this.setLocation.bind(this);
+    this.setPhoneNumber = this.setPhoneNumber.bind(this);
+    this.setEmail = this.setEmail.bind(this);
+    this.setLinkedIn = this.setLinkedIn.bind(this);
+    this.setGitHub = this.setGitHub.bind(this);
     
     //functionality for changing between generate cv and view cv
     this.changeMode = this.changeMode.bind(this)
@@ -72,6 +78,42 @@ class RenderPage extends Component {
     newBio.bio = bio;
     this.setState({ nameAndBio: newBio });
   }
+
+  //declaring contact info functions
+  setLocation(location) {
+    let newLocation = { ...this.state.contactInfo };
+    newLocation.location = location;
+    this.setState({ contactInfo: newLocation });
+    console.log(this.state.contactInfo);
+  }
+
+  setPhoneNumber(phoneNumber) {
+    let newPhoneNumber = { ...this.state.contactInfo };
+    newPhoneNumber.phoneNumber = phoneNumber;
+    this.setState({ contactInfo: newPhoneNumber });
+    console.log(this.state.contactInfo);
+  }
+
+  setEmail(email) {
+    let newEmail = { ...this.state.contactInfo };
+    newEmail.email = email;
+    this.setState({ contactInfo: newEmail });
+    console.log(this.state.contactInfo);
+  }
+
+  setLinkedIn(linkedIn) {
+    let newLinkedIn = { ...this.state.contactInfo };
+    newLinkedIn.linkedIn = linkedIn;
+    this.setState({ contactInfo: newLinkedIn });
+    console.log(this.state.contactInfo);
+  }
+
+  setGitHub(gitHub) {
+    let newGitHub = { ...this.state.contactInfo };
+    newGitHub.gitHub = gitHub;
+    this.setState({ contactInfo: newGitHub });
+    console.log(this.state.contactInfo);
+  }
   
   //declaring view switching functions
   changeMode () {
@@ -101,6 +143,13 @@ class RenderPage extends Component {
                 //passing to name and bio component
                 setName={this.setName} 
                 setBio={this.setBio} 
+
+                //passing to contact info component
+                setLocation={this.setLocation}
+                setPhoneNumber={this.setPhoneNumber}
+                setEmail={this.setEmail}
+                setLinkedIn={this.setLinkedIn}
+                setGitHub={this.setGitHub}
               />
               <RightSideBar 
                 changeMode={this.changeMode}

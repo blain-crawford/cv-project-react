@@ -21,8 +21,8 @@ class CvGenerator extends Component {
     // this.setImagePlaceHolder = this.setImagePlaceHolder.bind(this);
 
     //functionality for name and bio
-    this.setName = this.setName.bind(this);
-    this.setBio = this.setBio.bind(this);
+    // this.setName = this.setName.bind(this);
+    // this.setBio = this.setBio.bind(this);
 
     //functionality for contact info
     this.setLocation = this.setLocation.bind(this);
@@ -53,12 +53,12 @@ class CvGenerator extends Component {
     this.addSkill = this.addSkill.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
-      avatarImage: '',
-      imagePlaceHolder: <CameraAltIcon />,
-      nameAndBio: {
-        name: '',
-        bio: '',
-      },
+      // avatarImage: '',
+      // imagePlaceHolder: <CameraAltIcon />,
+      // nameAndBio: {
+      //   name: '',
+      //   bio: '',
+      // },
       contactInfo: {
         location: '',
         phoneNumber: '',
@@ -89,17 +89,17 @@ class CvGenerator extends Component {
   // }
 
   //declaring name and bio functions
-  setName(name) {
-    let newName = { ...this.state.nameAndBio };
-    newName.name = name;
-    this.setState({ nameAndBio: newName });
-  }
+  // setName(name) {
+  //   let newName = { ...this.state.nameAndBio };
+  //   newName.name = name;
+  //   this.setState({ nameAndBio: newName });
+  // }
 
-  setBio(bio) {
-    let newBio = { ...this.state.nameAndBio };
-    newBio.bio = bio;
-    this.setState({ nameAndBio: newBio });
-  }
+  // setBio(bio) {
+  //   let newBio = { ...this.state.nameAndBio };
+  //   newBio.bio = bio;
+  //   this.setState({ nameAndBio: newBio });
+  // }
 
   //declaring contact info functions
   setLocation(location) {
@@ -131,6 +131,7 @@ class CvGenerator extends Component {
     newGitHub.gitHub = gitHub;
     this.setState({ contactInfo: newGitHub });
   }
+
   //declaring Experience functions
   setCompanyName(name, experienceIndex) {
     const newPreviousExperiences = [...this.state.previousExperience];
@@ -269,11 +270,11 @@ class CvGenerator extends Component {
             setBio={this.props.setBio} 
           />
           <ContactInfo
-            setLocation={this.setLocation}
-            setPhoneNumber={this.setPhoneNumber}
-            setEmail={this.setEmail}
-            setLinkedIn={this.setLinkedIn}
-            setGitHub={this.setGitHub}
+            setLocation={this.props.setLocation}
+            setPhoneNumber={this.props.setPhoneNumber}
+            setEmail={this.props.setEmail}
+            setLinkedIn={this.props.setLinkedIn}
+            setGitHub={this.props.setGitHub}
           />
         </StyledGeneralInfo>
         <StyledExperienceContainer>
