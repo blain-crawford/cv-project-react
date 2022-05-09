@@ -18,6 +18,8 @@ class PdfButton extends Component {
           bio={this.props.bio}
           contactInfo={this.props.contactInfo}
           previousExperience={this.props.previousExperience}
+          previousEducation={this.props.previousEducation}
+          skills={this.props.skills}
         />} 
         fileName='Test_Document'>
           {({ loading }) =>

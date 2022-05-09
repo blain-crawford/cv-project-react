@@ -114,6 +114,35 @@ class RenderedPdf extends Component {
                 })}
               </Text>
               <View style={styles.fill3} />
+              <Text style={styles.text}>
+                {this.props.previousEducation.map((education, educationIndex) => {
+                  return (
+                    <div 
+                    key={educationIndex}
+                    id={educationIndex}
+                    >
+                      <h3>College: {education.college}</h3>
+                      <h4>Degree: {education.degree}</h4>
+                      <p>Start Date: {this.convertDate(education.startDate)}</p>
+                      <p>End Date: {this.convertDate(education.endDate)}</p>
+                    </div>
+                  )
+                })}
+              </Text>
+              <Text style={styles.text}>
+              {this.props.skills.map(
+                  (skill, skillIndex) => {
+                    return (
+                      <div
+                        id={skillIndex}
+                        key={skillIndex}
+                      >
+                        <p>{skill}</p>
+                      </div>
+                    )
+                  },
+                )}
+              </Text>
             </View>
           </View>
           <Text
