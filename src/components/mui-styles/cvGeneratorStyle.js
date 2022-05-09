@@ -2,6 +2,7 @@ import { styled } from '@mui/system';
 import { TextField, Button, CardMedia } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
 const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',

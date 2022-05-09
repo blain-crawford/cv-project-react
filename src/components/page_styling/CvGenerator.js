@@ -10,15 +10,15 @@ import ContactInfo from './ContactInfo';
 import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
 class CvGenerator extends Component {
   constructor(props) {
     super(props);
-    //functionality for handling image files
-    this.handleCapture = this.handleCapture.bind(this);
 
     //functionality for Avatar
     this.setAvatarImage = this.setAvatarImage.bind(this);
+    this.setImagePlaceHolder = this.setImagePlaceHolder.bind(this);
 
     //functionality for name and bio
     this.setName = this.setName.bind(this);
@@ -54,6 +54,7 @@ class CvGenerator extends Component {
     this.deleteSkill = this.deleteSkill.bind(this);
     this.state = {
       avatarImage: '',
+      imagePlaceHolder: <CameraAltIcon />,
       nameAndBio: {
         name: '',
         bio: '',
@@ -73,18 +74,18 @@ class CvGenerator extends Component {
   }
 
   //declaring Avatar functions
-  handleCapture = ({ target }) => {
-    console.log(target.files);
+  setAvatarImage = ({ target }) => {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(target.files[0]);
     fileReader.onload = (e) => {
       this.setState({ avatarImage: e.target.result });
     };
+    this.setImagePlaceHolder();
   };
 
-  setAvatarImage(image) {
-    let newAvatarImage = this.handleCapture(image);
-    console.log(image);
+  setImagePlaceHolder() {
+    const newImagePlaceHolder = <></>;
+    this.setState({imagePlaceHolder: newImagePlaceHolder});
   }
 
   //declaring name and bio functions
@@ -259,9 +260,9 @@ class CvGenerator extends Component {
         <StyledGeneralInfo id='general-info'>
           <Avatar
             avatarAlt={this.state.nameAndBio}
-            setAvatarImage={this.setAvatarImage}
             imageSrc={this.state.avatarImage}
-            handleCapture={this.handleCapture}
+            setAvatarImage={this.setAvatarImage}
+            imagePlaceHolder={this.state.imagePlaceHolder}
           />
           <NameAndBio setName={this.setName} setBio={this.setBio} />
           <ContactInfo

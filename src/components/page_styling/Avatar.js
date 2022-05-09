@@ -24,7 +24,7 @@ class Avatar extends Component {
           // }}
         >
           {/* <img /> */}
-          {/* <CameraAltIcon /> */}
+          {this.props.imagePlaceHolder}
         </PictureHolder>
         <Stack direction="row" alignItems="center" spacing={2}>
           <label htmlFor="contained-button-file">
@@ -33,7 +33,7 @@ class Avatar extends Component {
             id="contained-button-file" 
             multiple 
             type="file" 
-            onChange={this.props.handleCapture}
+            onChange={this.props.setAvatarImage}
             />
             <StyledAddPhotoButton 
             variant="contained" 
