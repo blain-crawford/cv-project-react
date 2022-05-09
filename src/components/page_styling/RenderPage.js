@@ -3,6 +3,7 @@ import '../../styles/styles.css';
 import Header from './Header';
 import RightSideBar from './RightSideBar';
 import CvGenerator from './CvGenerator';
+import CvPreview from './CvPreview';
 import { StyledMainPage } from '../mui-styles/mainPageStyles';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 
@@ -278,11 +279,13 @@ class RenderPage extends Component {
               imageSrc={this.state.avatarImage}
               setAvatarImage={this.setAvatarImage}
               imagePlaceHolder={this.state.imagePlaceHolder}
+
               //passing to name and bio component
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
               setName={this.setName}
               setBio={this.setBio}
+
               //passing to contact info component
               setLocation={this.setLocation}
               location={this.state.contactInfo.location}
@@ -294,6 +297,7 @@ class RenderPage extends Component {
               linkedIn={this.state.contactInfo.linkedIn}
               setGitHub={this.setGitHub}
               gitHub={this.state.contactInfo.gitHub}
+
               //passing to experience component
               addExperience={this.addExperience}
               previousExperience={this.state.previousExperience}
@@ -303,6 +307,7 @@ class RenderPage extends Component {
               setPositionTitle={this.setPositionTitle}
               setJobDescription={this.setJobDescription}
               deleteExperience={this.deleteExperience}
+
               //passing to education Component
               setCollegeName={this.setCollegeName}
               setDegree={this.setDegree}
@@ -311,6 +316,7 @@ class RenderPage extends Component {
               deleteEducation={this.deleteEducation}
               addEducation={this.addEducation}
               previousEducation={this.state.previousEducation}
+
               //passing to skills component
               setSkillToAdd={this.setSkillToAdd}
               addSkill={this.addSkill}
@@ -321,6 +327,7 @@ class RenderPage extends Component {
               changeMode={this.changeMode}
               mode={this.state.mode}
               previouosExperience={this.state.previousExperience}
+              
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
@@ -339,7 +346,7 @@ class RenderPage extends Component {
             <Header />
           </div>
           <StyledMainPage id='main-page'>
-            <div>
+            {/* <div>
               <h1>{this.state.nameAndBio.name}</h1>
               <h3>{this.state.nameAndBio.bio}</h3>
               <p>{this.state.contactInfo.location}</p>
@@ -393,7 +400,15 @@ class RenderPage extends Component {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
+            
+            <CvPreview
+              nameAndBio={this.state.nameAndBio}
+              contactInfo={this.state.contactInfo}
+              previousExperience={this.state.previousExperience}
+              previousEducation={this.state.previousEducation}
+              skills={this.state.skills}
+            />
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
