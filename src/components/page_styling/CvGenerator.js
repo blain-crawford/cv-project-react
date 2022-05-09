@@ -264,7 +264,10 @@ class CvGenerator extends Component {
             setAvatarImage={this.props.setAvatarImage}
             imagePlaceHolder={this.props.imagePlaceHolder}
           />
-          <NameAndBio setName={this.setName} setBio={this.setBio} />
+          <NameAndBio 
+            setName={this.props.setName} 
+            setBio={this.props.setBio} 
+          />
           <ContactInfo
             setLocation={this.setLocation}
             setPhoneNumber={this.setPhoneNumber}

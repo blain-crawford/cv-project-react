@@ -14,6 +14,15 @@ class RenderPage extends Component {
     this.setAvatarImage = this.setAvatarImage.bind(this);
     this.setImagePlaceHolder = this.setImagePlaceHolder.bind(this);
 
+    
+    //functionality for name and bio
+    this.setName = this.setName.bind(this);
+    this.setBio = this.setBio.bind(this);
+
+    
+    //functionality for changing between generate cv and view cv
+    this.changeMode = this.changeMode.bind(this)
+   
     this.state = {
       mode: 'generate',
       avatarImage: '',
@@ -34,9 +43,6 @@ class RenderPage extends Component {
       skillToAdd: '',
       skills: [],
     }
-    
-    //functionality for changing between generate cv and view cv
-    this.changeMode = this.changeMode.bind(this)
   }
 
   //declaring Avatar functions
@@ -52,6 +58,19 @@ class RenderPage extends Component {
   setImagePlaceHolder() {
     const newImagePlaceHolder = <></>;
     this.setState({ imagePlaceHolder: newImagePlaceHolder });
+  }
+  
+  //declaring name and bio functions
+  setName(name) {
+    let newName = { ...this.state.nameAndBio };
+    newName.name = name;
+    this.setState({ nameAndBio: newName });
+  }
+
+  setBio(bio) {
+    let newBio = { ...this.state.nameAndBio };
+    newBio.bio = bio;
+    this.setState({ nameAndBio: newBio });
   }
   
   //declaring view switching functions
@@ -78,6 +97,10 @@ class RenderPage extends Component {
                 imageSrc={this.state.avatarImage}
                 setAvatarImage={this.setAvatarImage}
                 imagePlaceHolder={this.state.imagePlaceHolder}
+
+                //passing to name and bio component
+                setName={this.setName} 
+                setBio={this.setBio} 
               />
               <RightSideBar 
                 changeMode={this.changeMode}
