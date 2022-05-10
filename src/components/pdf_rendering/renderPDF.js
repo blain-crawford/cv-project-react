@@ -135,11 +135,11 @@ class RenderedPdf extends Component {
                 })}
               </Text>
               <Text>
-                {this.props.developerToold.map(
-                  (developerTool, developerTooldIndex) => {
+                {this.props.developerTools.map(
+                  (developerTool, developerToolIndex) => {
                     return (
-                      <div id={developerTooldIndex} key={developerTooldIndex}>
-                        <p>{tool}</p>
+                      <div id={developerToolIndex} key={developerToolIndex}>
+                        <p>{developerTool}</p>
                       </div>
                     );
                   },

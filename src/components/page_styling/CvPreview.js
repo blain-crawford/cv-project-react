@@ -11,7 +11,8 @@ import {
   StyledSectionHeaderText,
   StyledSectionUnderline,
   StyledSkillsContainer,
-  StyledFrontEndSkills
+  StyledFrontEndSkills,
+  StyledSkillsAndToolsSection
 } from '../mui-styles/CvPreviewStyles';
 
 class CvPreview extends Component {
@@ -73,38 +74,40 @@ class CvPreview extends Component {
           </StyledSectionHeaderText>
         </StyledSectionHeader>
         <StyledSectionUnderline />
-        <StyledSkillsContainer>
-          <StyledFrontEndSkills>
-            <p style={{fontWeight: 'bold'}}>Front end: </p>
-            {this.props.skills.map((skill, skillIndex) => {
-              return (
-                <div 
-                  id={skillIndex} 
-                  key={skillIndex} 
-                  style={{marginLeft: '3px'}}
-                >
-                  <p>{skill}</p>
-                </div>
-              );
-            })}
-          </StyledFrontEndSkills>
-        </StyledSkillsContainer>
-        <StyledSkillsContainer>
-          <StyledFrontEndSkills>
-            <p style={{fontWeight: 'bold'}}>Developer Tools: </p>
-            {this.props.developerTools.map((developerTool, developerToolIndex) => {
-              return (
-                <div 
-                  id={developerToolIndex} 
-                  key={developerToolIndex} 
-                  style={{marginLeft: '3px'}}
-                >
-                  <p>{developerTool}</p>
-                </div>
-              );
-            })}
-          </StyledFrontEndSkills>
-        </StyledSkillsContainer>
+        <StyledSkillsAndToolsSection>
+          <StyledSkillsContainer>
+            <StyledFrontEndSkills>
+              <p style={{fontWeight: 'bold', margin: '0px 3px 0px 3px'}}>Front end: </p>
+              {this.props.skills.map((skill, skillIndex) => {
+                return (
+                  <div 
+                    id={skillIndex} 
+                    key={skillIndex} 
+                    // style={{margin: '0px 3px 0px 3px'}}
+                  >
+                    <p style={{margin: '0px 3px 0px 3px'}}>{skill}</p>
+                  </div>
+                );
+              })}
+            </StyledFrontEndSkills>
+          </StyledSkillsContainer>
+          <StyledSkillsContainer>
+            <StyledFrontEndSkills>
+              <p style={{fontWeight: 'bold', margin: '0px 3px 0px 3px'}}>Developer Tools: </p>
+              {this.props.developerTools.map((developerTool, developerToolIndex) => {
+                return (
+                  <div 
+                    id={developerToolIndex} 
+                    key={developerToolIndex} 
+                    // style={{margin: '0px 3px 0px 3px'}}
+                  >
+                    <p style={{margin: '0px 3px 0px 3px'}}>{developerTool}</p>
+                  </div>
+                );
+              })}
+            </StyledFrontEndSkills>
+          </StyledSkillsContainer>
+        </StyledSkillsAndToolsSection>
           <StyledSectionHeader>
             <StyledSectionHeaderText variant='h6'>
               Experience

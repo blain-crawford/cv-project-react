@@ -34,7 +34,6 @@ const StyledContactInfo = styled('div', {
   width: '30%',
   justifyContent: 'center',
   flexWrap: 'wrap',
-  // gap: '5px',
   margin: '0 auto',
   padding: '1px'
 })
@@ -74,12 +73,19 @@ const StyledSectionUnderline = styled('div', {
   margin: '0 auto'
 });
 
+const StyledSkillsAndToolsSection = styled('div', {
+  name: 'StyledSkillsAndToolsSection'
+}) ({
+  marginTop: '10px',
+  marginBottom: '10px'
+})
+
 const StyledSkillsContainer = styled('div', {
   name: 'StyledSkillsContainer'
 }) ({
   width: '85%',
   margin: '0 auto',
-  
+  padding: '2px'
 })
 
 const StyledFrontEndSkills = styled('div', {
@@ -100,6 +106,7 @@ export {
   StyledSectionHeader,
   StyledSectionHeaderText,
   StyledSectionUnderline,
+  StyledSkillsAndToolsSection,
   StyledSkillsContainer,
-  StyledFrontEndSkills
+  StyledFrontEndSkills,
 }
