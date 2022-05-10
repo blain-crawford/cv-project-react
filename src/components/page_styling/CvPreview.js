@@ -12,18 +12,37 @@ import {
   StyledSectionUnderline,
   StyledSkillsContainer,
   StyledFrontEndSkills,
-  StyledSkillsAndToolsSection
+  StyledSkillsAndToolsSection,
+  StyledExperienceContainer,
+  StyledExperienceHeader, 
+  StyledNameAndPosition,
+  StyledStartAndEndDate, 
+  StyledExperienceList
 } from '../mui-styles/CvPreviewStyles';
 
 class CvPreview extends Component {
   constructor(props) {
     super(props);
     this.convertDate = this.convertDate.bind(this);
+    this.convertToList = this.convertToList.bind(this);
   }
 
   convertDate(date) {
     if (date) {
       return date.toLocaleDateString();
+    } else {
+      return 'present';
+    }
+  }
+
+  convertToList(string) {
+    if (string) {
+      let newJobDescriptionList = string.split('. ');
+      return newJobDescriptionList.map((sentence, sentenceIndex) => {
+        <li id={sentenceIndex} key={sentenceIndex}>
+          {sentence}
+        </li>;
+      });
     }
   }
 
@@ -69,23 +88,23 @@ class CvPreview extends Component {
           </StyledContactInfo>
         </StyledNameAndContactInfo>
         <StyledSectionHeader>
-          <StyledSectionHeaderText variant='h6'>
-            Skills
-          </StyledSectionHeaderText>
+          <StyledSectionHeaderText variant='h6'>Skills</StyledSectionHeaderText>
         </StyledSectionHeader>
         <StyledSectionUnderline />
         <StyledSkillsAndToolsSection>
           <StyledSkillsContainer>
             <StyledFrontEndSkills>
-              <p style={{fontWeight: 'bold', margin: '0px 3px 0px 3px'}}>Front end: </p>
+              <p style={{ fontWeight: 'bold', margin: '0px 3px 0px 3px' }}>
+                Front end:{' '}
+              </p>
               {this.props.skills.map((skill, skillIndex) => {
                 return (
-                  <div 
-                    id={skillIndex} 
-                    key={skillIndex} 
+                  <div
+                    id={skillIndex}
+                    key={skillIndex}
                     // style={{margin: '0px 3px 0px 3px'}}
                   >
-                    <p style={{margin: '0px 3px 0px 3px'}}>{skill}</p>
+                    <p style={{ margin: '0px 3px 0px 3px' }}>{skill}</p>
                   </div>
                 );
               })}
@@ -93,60 +112,85 @@ class CvPreview extends Component {
           </StyledSkillsContainer>
           <StyledSkillsContainer>
             <StyledFrontEndSkills>
-              <p style={{fontWeight: 'bold', margin: '0px 3px 0px 3px'}}>Developer Tools: </p>
-              {this.props.developerTools.map((developerTool, developerToolIndex) => {
-                return (
-                  <div 
-                    id={developerToolIndex} 
-                    key={developerToolIndex} 
-                    // style={{margin: '0px 3px 0px 3px'}}
-                  >
-                    <p style={{margin: '0px 3px 0px 3px'}}>{developerTool}</p>
-                  </div>
-                );
-              })}
+              <p style={{ fontWeight: 'bold', margin: '0px 3px 0px 3px' }}>
+                Developer Tools:{' '}
+              </p>
+              {this.props.developerTools.map(
+                (developerTool, developerToolIndex) => {
+                  return (
+                    <div
+                      id={developerToolIndex}
+                      key={developerToolIndex}
+                      // style={{margin: '0px 3px 0px 3px'}}
+                    >
+                      <p style={{ margin: '0px 3px 0px 3px' }}>
+                        {developerTool}
+                      </p>
+                    </div>
+                  );
+                },
+              )}
             </StyledFrontEndSkills>
           </StyledSkillsContainer>
         </StyledSkillsAndToolsSection>
-          <StyledSectionHeader>
-            <StyledSectionHeaderText variant='h6'>
-              Experience
-            </StyledSectionHeaderText>
-          </StyledSectionHeader>
-          <StyledSectionUnderline />
-          <div>
-            {this.props.previousExperience.map(
-              (experience, experienceIndex) => {
-                return (
-                  <div key={experienceIndex} id={experienceIndex}>
-                    <h3>Company: {experience.companyName}</h3>
-                    <h4>Position: {experience.position}</h4>
-                    <p>Description: {experience.jobDescription}</p>
-                    <p>Start Date:{this.convertDate(experience.startDate)}</p>
-                    <p>End Date: {this.convertDate(experience.endDate)}</p>
-                  </div>
-                );
-              },
-            )}
-          </div>
+        <StyledSectionHeader>
+          <StyledSectionHeaderText variant='h6'>
+            Experience
+          </StyledSectionHeaderText>
+        </StyledSectionHeader>
+        <StyledSectionUnderline />
+        <div>
+          {this.props.previousExperience.map((experience, experienceIndex) => {
+            return (
+              <StyledExperienceContainer key={experienceIndex} id={experienceIndex}>
+                <StyledExperienceHeader>
+                  <StyledNameAndPosition>
+                    <h3 style={{margin: '0px 3px 0px 3px'}}>{experience.companyName}</h3>  /  
+                    <h4 style={{margin: '0px 3px 0px 3px'}}>{experience.position}</h4>
+                  </StyledNameAndPosition>
+                  <StyledStartAndEndDate>
+                    <p style={{margin: '0px 3px 0px 3px'}}>
+                      {this.convertDate(experience.startDate)}  -  
+                      {this.convertDate(experience.endDate)}
+                    </p>
+                  </StyledStartAndEndDate>
+                </StyledExperienceHeader>
+                <StyledExperienceList>
+                  {experience.jobDescription
+                    .split('. ')
+                    .map((sentence, sentenceIndex) => {
+                      return (
+                        <li id={sentenceIndex} key={sentenceIndex}>
+                          {sentence}
+                        </li>
+                      );
+                    })}
+                </StyledExperienceList>
+                <div>
+                  <ul></ul>
+                </div>
+              </StyledExperienceContainer>
+            );
+          })}
+        </div>
         <StyledSectionHeader>
           <StyledSectionHeaderText variant='h6'>
             Education
           </StyledSectionHeaderText>
         </StyledSectionHeader>
         <StyledSectionUnderline />
-          <div>
-            {this.props.previousEducation.map((education, educationIndex) => {
-              return (
-                <div key={educationIndex} id={educationIndex}>
-                  <h3>College: {education.collegeName}</h3>
-                  <h4>Degree: {education.degree}</h4>
-                  <p>Start Date:{this.convertDate(education.startDate)}</p>
-                  <p>End Date: {this.convertDate(education.endDate)}</p>
-                </div>
-              );
-            })}
-          </div>
+        <div>
+          {this.props.previousEducation.map((education, educationIndex) => {
+            return (
+              <div key={educationIndex} id={educationIndex}>
+                <h3>College: {education.collegeName}</h3>
+                <h4>Degree: {education.degree}</h4>
+                <p>Start Date:{this.convertDate(education.startDate)}</p>
+                <p>End Date: {this.convertDate(education.endDate)}</p>
+              </div>
+            );
+          })}
+        </div>
       </StyledCvPreview>
     );
   }

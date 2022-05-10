@@ -100,7 +100,7 @@ class Experience extends Component {
                         experienceIndex,
                       );
                     }}
-                    value={experience.setJobDescription}
+                    value={experience.jobDescription}
                   />
                 </StyledCvInfoInputs>
                 <StyledDateAndDeleteContainer>

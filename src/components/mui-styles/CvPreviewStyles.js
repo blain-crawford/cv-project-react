@@ -1,4 +1,4 @@
-import { margin, styled } from '@mui/system';
+import { border, borderBottom, margin, styled } from '@mui/system';
 import { Typography, Button, CardMedia, Link } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -89,11 +89,54 @@ const StyledSkillsContainer = styled('div', {
 })
 
 const StyledFrontEndSkills = styled('div', {
-
+  name: 'StyledFrontEndSkills'
 }) ({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '5px'
+})
+
+const StyledExperienceContainer = styled('div', {
+  name: 'StyledExperienceContainer'
+}) ({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '85%',
+  margin: '0 auto',
+  padding: '2px',
+  gap: '10px',
+})
+
+const StyledExperienceHeader = styled('div', {
+  name: 'StyledExperienceHeader'
+}) ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  width: '100%',
+  borderBottom: '1px solid #2C041C'
+})
+
+const StyledNameAndPosition = styled('div', {
+  name: 'StyledNameAndPosition'
+}) ({
+  display: 'flex',
+  padding: '10px',
+  alignItems: 'center'
+})
+
+const StyledStartAndEndDate = styled('div', {
+  name: 'StyledStartAndEndDate '
+}) ({
+  display: 'flex',
+  padding: '10px',
+  alignItems: 'center'
+})
+
+const StyledExperienceList = styled('ul', {
+  name: 'StyledExperienceList'
+}) ({
+  margin: '0',
+  paddingLeft: '50px'
 })
 
 export { 
@@ -109,4 +152,9 @@ export {
   StyledSkillsAndToolsSection,
   StyledSkillsContainer,
   StyledFrontEndSkills,
+  StyledExperienceContainer,
+  StyledExperienceHeader, 
+  StyledNameAndPosition,
+  StyledStartAndEndDate,
+  StyledExperienceList
 }
