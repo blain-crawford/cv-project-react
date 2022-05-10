@@ -67,7 +67,7 @@ class RenderedPdf extends Component {
     if (date) {
       return date.toLocaleDateString();
     } else {
-      return 'present';
+      return 'present'
     }
   }
   render() {
