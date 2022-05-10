@@ -89,6 +89,22 @@ class CvPreview extends Component {
             })}
           </StyledFrontEndSkills>
         </StyledSkillsContainer>
+        <StyledSkillsContainer>
+          <StyledFrontEndSkills>
+            <p style={{fontWeight: 'bold'}}>Developer Tools: </p>
+            {this.props.developerTools.map((developerTool, developerToolIndex) => {
+              return (
+                <div 
+                  id={developerToolIndex} 
+                  key={developerToolIndex} 
+                  style={{marginLeft: '3px'}}
+                >
+                  <p>{developerTool}</p>
+                </div>
+              );
+            })}
+          </StyledFrontEndSkills>
+        </StyledSkillsContainer>
           <StyledSectionHeader>
             <StyledSectionHeaderText variant='h6'>
               Experience

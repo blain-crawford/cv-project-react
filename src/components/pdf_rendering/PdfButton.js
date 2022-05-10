@@ -21,6 +21,7 @@ class PdfButton extends Component {
               previousExperience={this.props.previousExperience}
               previousEducation={this.props.previousEducation}
               skills={this.props.skills}
+              developerTools={this.props.developerTools}
             />
           }
           fileName='Test_Document'

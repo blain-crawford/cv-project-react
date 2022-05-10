@@ -365,6 +365,7 @@ class RenderPage extends Component {
               previousExperience={this.state.previousExperience}
               previousEducation={this.state.previousEducation}
               skills={this.state.skills}
+              developerTools={this.state.developerTools}
             />
           </StyledMainPage>
         </div>
@@ -382,6 +383,7 @@ class RenderPage extends Component {
               previousExperience={this.state.previousExperience}
               previousEducation={this.state.previousEducation}
               skills={this.state.skills}
+              developerTools={this.state.developerTools}
             />
             <RightSideBar
               changeMode={this.changeMode}
@@ -394,6 +396,7 @@ class RenderPage extends Component {
               previousExperience={this.state.previousExperience}
               previousEducation={this.state.previousEducation}
               skills={this.state.skills}
+              developerTools={this.state.developerTools}
             />
           </StyledMainPage>
         </div>

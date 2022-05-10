@@ -6,7 +6,7 @@ import {
   View,
   StyleSheet,
   Font,
-  Link
+  Link,
 } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
@@ -59,30 +59,25 @@ Font.register({
 
 class RenderedPdf extends Component {
   constructor(props) {
-    super(props)
-    this.convertDate = this.convertDate.bind(this)
+    super(props);
+    this.convertDate = this.convertDate.bind(this);
   }
 
   convertDate(date) {
-    if(date) {
-      return date.toLocaleDateString()
+    if (date) {
+      return date.toLocaleDateString();
     }
   }
-  render () {
+  render() {
     return (
       <Document>
         <Page size='A4'>
-          <Link
-            style={styles.title}
-            src='http://www.blaincrawford.com'
-          >
+          <Link style={styles.title} src='http://www.blaincrawford.com'>
             {this.props.name}
           </Link>
           <View style={styles.body}>
             <View style={styles.row}>
-              <Text style={styles.text}>
-                {this.props.bio}
-              </Text>
+              <Text style={styles.text}>{this.props.bio}</Text>
               <View style={styles.fill1} />
             </View>
             <View style={styles.row}>
@@ -97,48 +92,56 @@ class RenderedPdf extends Component {
             </View>
             <View style={styles.row}>
               <Text style={styles.text}>
-                {this.props.previousExperience.map((experience, experienceIndex) => {
-                  return (
-                    <div 
-                    key={experienceIndex}
-                    id={experienceIndex}
-                    >
-                      <h3>Company: {experience.companyName}</h3>
-                      <h4>Position: {experience.position}</h4>
-                      <h5>Description: {experience.jobDescription}</h5>
-                      <p>Start Date: {this.convertDate(experience.startDate)}</p>
-                      <p>End Date: {this.convertDate(experience.endDate)}</p>
-                    </div>
-                  )
-                })}
+                {this.props.previousExperience.map(
+                  (experience, experienceIndex) => {
+                    return (
+                      <div key={experienceIndex} id={experienceIndex}>
+                        <h3>Company: {experience.companyName}</h3>
+                        <h4>Position: {experience.position}</h4>
+                        <h5>Description: {experience.jobDescription}</h5>
+                        <p>
+                          Start Date: {this.convertDate(experience.startDate)}
+                        </p>
+                        <p>End Date: {this.convertDate(experience.endDate)}</p>
+                      </div>
+                    );
+                  },
+                )}
               </Text>
               <View style={styles.fill3} />
               <Text style={styles.text}>
-                {this.props.previousEducation.map((education, educationIndex) => {
-                  return (
-                    <div 
-                    key={educationIndex}
-                    id={educationIndex}
-                    >
-                      <h3>College: {education.college}</h3>
-                      <h4>Degree: {education.degree}</h4>
-                      <p>Start Date: {this.convertDate(education.startDate)}</p>
-                      <p>End Date: {this.convertDate(education.endDate)}</p>
-                    </div>
-                  )
-                })}
+                {this.props.previousEducation.map(
+                  (education, educationIndex) => {
+                    return (
+                      <div key={educationIndex} id={educationIndex}>
+                        <h3>College: {education.college}</h3>
+                        <h4>Degree: {education.degree}</h4>
+                        <p>
+                          Start Date: {this.convertDate(education.startDate)}
+                        </p>
+                        <p>End Date: {this.convertDate(education.endDate)}</p>
+                      </div>
+                    );
+                  },
+                )}
               </Text>
               <Text style={styles.text}>
-              {this.props.skills.map(
-                  (skill, skillIndex) => {
+                {this.props.skills.map((skill, skillIndex) => {
+                  return (
+                    <div id={skillIndex} key={skillIndex}>
+                      <p>{skill}</p>
+                    </div>
+                  );
+                })}
+              </Text>
+              <Text>
+                {this.props.developerToold.map(
+                  (developerTool, developerTooldIndex) => {
                     return (
-                      <div
-                        id={skillIndex}
-                        key={skillIndex}
-                      >
-                        <p>{skill}</p>
+                      <div id={developerTooldIndex} key={developerTooldIndex}>
+                        <p>{tool}</p>
                       </div>
-                    )
+                    );
                   },
                 )}
               </Text>
@@ -152,8 +155,8 @@ class RenderedPdf extends Component {
           />
         </Page>
       </Document>
-    )
+    );
   }
-};
+}
 
 export default RenderedPdf;

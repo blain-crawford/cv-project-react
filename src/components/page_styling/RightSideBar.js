@@ -26,6 +26,7 @@ class RightSideBar extends Component {
           previousExperience={this.props.previousExperience}
           previousEducation={this.props.previousEducation}
           skills={this.props.skills}
+          developerTools={this.props.developerTools}
         />
       </StyledRightSideBar>
     );
