@@ -10,6 +10,7 @@ import ContactInfo from './ContactInfo';
 import Experience from './Experience';
 import Education from './Education';
 import Skills from './Skills';
+import DeveloperTools from './DeveloperTools';
 
 class CvGenerator extends Component {
   constructor(props) {
@@ -74,6 +75,15 @@ class CvGenerator extends Component {
             addSkill={this.props.addSkill}
             skills={this.props.skills}
             deleteSkill={this.props.deleteSkill}
+          />
+        </StyledExperienceContainer>
+        <StyledExperienceContainer>
+          <DeveloperTools 
+            //passing to developer tools component
+            setDeveloperToolToAdd={this.props.setDeveloperToolToAdd}
+            addDeveloperTool={this.props.addDeveloperTool}
+            developerTools={this.props.developerTools}
+            deleteDeveloperTool={this.props.deleteDeveloperTool}
           />
         </StyledExperienceContainer>
       </StyledCvGenerator>

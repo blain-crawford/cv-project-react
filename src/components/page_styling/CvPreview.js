@@ -1,5 +1,18 @@
+import { fontWeight } from '@mui/system';
 import React, { Component } from 'react';
-import { StyledCvPreview } from '../mui-styles/CvPreviewStyles';
+import {
+  StyledCvPreview,
+  StyledNameAndContactInfo,
+  StyledName,
+  StyledContactInfo,
+  StyledInfoItem,
+  StyledLink,
+  StyledSectionHeader,
+  StyledSectionHeaderText,
+  StyledSectionUnderline,
+  StyledSkillsContainer,
+  StyledFrontEndSkills
+} from '../mui-styles/CvPreviewStyles';
 
 class CvPreview extends Component {
   constructor(props) {
@@ -16,27 +29,72 @@ class CvPreview extends Component {
   render() {
     return (
       <StyledCvPreview>
-        <div>
-          <div>
-            <h1>General Info</h1>
-          </div>
-          <h1>{this.props.nameAndBio.name}</h1>
-          <h3>{this.props.nameAndBio.bio}</h3>
-        </div>
-        <div>
-          <div>
+        <StyledNameAndContactInfo>
+          <StyledName>
+            <h1>{this.props.nameAndBio.name}</h1>
+          </StyledName>
+          {/* <h3>{this.props.nameAndBio.bio}</h3> */}
+          {/* <div>
             <h1>Contact Info</h1>
-          </div>
-          <p>Location: {this.props.contactInfo.location}</p>
-          <p>Phone Number: {this.props.contactInfo.phoneNumber}</p>
-          <p>Email: {this.props.contactInfo.email}</p>
-          <p>LinkedIn: {this.props.contactInfo.linkedIn}</p>
-          <p>GitHub: {this.props.contactInfo.gitHub}</p>
-        </div>
-        <div>
-          <div>
-            <h1>Previous Work Experience</h1>
-          </div>
+          </div> */}
+          <StyledContactInfo>
+            <StyledInfoItem variant='p'>
+              {this.props.contactInfo.location}
+            </StyledInfoItem>
+            <StyledInfoItem variant='p'> | </StyledInfoItem>
+            <StyledInfoItem variant='p'>
+              {this.props.contactInfo.phoneNumber}
+            </StyledInfoItem>
+            <StyledInfoItem variant='p'> | </StyledInfoItem>
+            <StyledInfoItem variant='p'>
+              {this.props.contactInfo.email}
+            </StyledInfoItem>
+            <StyledInfoItem variant='p'> | </StyledInfoItem>
+          </StyledContactInfo>
+          <StyledContactInfo>
+            <StyledLink
+              href={`//${this.props.contactInfo.gitHub}`}
+              target='_blank'
+            >
+              {this.props.contactInfo.gitHub}
+            </StyledLink>
+            <StyledInfoItem variant='p'> | </StyledInfoItem>
+            <StyledLink
+              href={`//${this.props.contactInfo.linkedIn}`}
+              target='_blank'
+            >
+              {this.props.contactInfo.linkedIn}
+            </StyledLink>
+          </StyledContactInfo>
+        </StyledNameAndContactInfo>
+        <StyledSectionHeader>
+          <StyledSectionHeaderText variant='h6'>
+            Skills
+          </StyledSectionHeaderText>
+        </StyledSectionHeader>
+        <StyledSectionUnderline />
+        <StyledSkillsContainer>
+          <StyledFrontEndSkills>
+            <p style={{fontWeight: 'bold'}}>Front end: </p>
+            {this.props.skills.map((skill, skillIndex) => {
+              return (
+                <div 
+                  id={skillIndex} 
+                  key={skillIndex} 
+                  style={{marginLeft: '3px'}}
+                >
+                  <p>{skill}</p>
+                </div>
+              );
+            })}
+          </StyledFrontEndSkills>
+        </StyledSkillsContainer>
+          <StyledSectionHeader>
+            <StyledSectionHeaderText variant='h6'>
+              Experience
+            </StyledSectionHeaderText>
+          </StyledSectionHeader>
+          <StyledSectionUnderline />
           <div>
             {this.props.previousExperience.map(
               (experience, experienceIndex) => {
@@ -52,11 +110,12 @@ class CvPreview extends Component {
               },
             )}
           </div>
-        </div>
-        <div>
-          <div>
-            <h1>Education</h1>
-          </div>
+        <StyledSectionHeader>
+          <StyledSectionHeaderText variant='h6'>
+            Education
+          </StyledSectionHeaderText>
+        </StyledSectionHeader>
+        <StyledSectionUnderline />
           <div>
             {this.props.previousEducation.map((education, educationIndex) => {
               return (
@@ -69,21 +128,6 @@ class CvPreview extends Component {
               );
             })}
           </div>
-        </div>
-        <div>
-          <div>
-            <h1>Skills</h1>
-          </div>
-          <div>
-            {this.props.skills.map((skill, skillIndex) => {
-              return (
-                <div id={skillIndex} key={skillIndex}>
-                  <p>{skill}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </StyledCvPreview>
     );
   }

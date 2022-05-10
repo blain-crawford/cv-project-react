@@ -48,6 +48,11 @@ class RenderPage extends Component {
     this.addSkill = this.addSkill.bind(this);
     this.deleteSkill = this.deleteSkill.bind(this);
 
+    //functionality for developer tools form
+    this.setDeveloperToolToAdd = this.setDeveloperToolToAdd.bind(this);
+    this.addDeveloperTool = this.addDeveloperTool.bind(this);
+    this.deleteDeveloperTool = this.deleteDeveloperTool.bind(this)
+
     //functionality for changing between generate cv and view cv
     this.changeMode = this.changeMode.bind(this);
 
@@ -70,6 +75,8 @@ class RenderPage extends Component {
       previousEducation: [],
       skillToAdd: '',
       skills: [],
+      developerToolToAdd: '',
+      developerTools: []
     };
   }
 
@@ -255,6 +262,24 @@ class RenderPage extends Component {
     this.setState({ skills: newSkillList });
   }
 
+  //declaring developer tool functions
+  setDeveloperToolToAdd(tool) {
+    let newDeveloperTool = '';
+    newDeveloperTool += tool;
+    this.setState({developerToolToAdd: newDeveloperTool});
+  }
+
+  deleteDeveloperTool(tool) {
+    let newDeveloperToolList = [...this.state.developerTools];
+    newDeveloperToolList.splice(tool, 1);
+    this.setState({developerTools: newDeveloperToolList})
+  }
+
+  addDeveloperTool() {
+    let newDeveloperToolList = [...this.state.developerTools, this.state.developerToolToAdd];
+    this.setState({developerTools: newDeveloperToolList});
+  }
+
   //declaring view switching functions
   changeMode() {
     if (this.state.mode === 'generate') {
@@ -322,6 +347,12 @@ class RenderPage extends Component {
               addSkill={this.addSkill}
               skills={this.state.skills}
               deleteSkill={this.deleteSkill}
+
+              //passing to developer tools component
+              setDeveloperToolToAdd={this.setDeveloperToolToAdd}
+              addDeveloperTool={this.addDeveloperTool}
+              developerTools={this.state.developerTools}
+              deleteDeveloperTool={this.deleteDeveloperTool}
             />
             <RightSideBar
               changeMode={this.changeMode}

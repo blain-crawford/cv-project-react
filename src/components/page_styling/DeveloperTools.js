@@ -14,7 +14,7 @@ import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import AddIcon from '@mui/icons-material/Add';
 
-class Skills extends Component {
+class DeveloperTools extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,24 +27,24 @@ class Skills extends Component {
       <StyledExperienceHeader>
         <StyledHeaderLabel>
           <HandymanIcon />
-          <Typography variant='h4'>Skills</Typography>
+          <Typography variant='h4'>Developer Tools</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
         <StyledInputAndAddButton>
           <StyledSkillInput
             size='small'
-            label='Front End Skills'
+            label='Developer Tools'
             value={this.state.activeInputValue}
-            id='skill-input'
+            id='developer-tool-input'
             onChange={(e) => {
-              this.props.setSkillToAdd(e.target.value);
+              this.props.setDeveloperToolToAdd(e.target.value);
               let newValue = e.target.value;
               this.setState({ activeInputValue: newValue });
             }}
           />
           <StyledAddButton
             onClick={(e) => {
-              this.props.addSkill();
+              this.props.addDeveloperTool();
               let clearedInputValue = '';
               this.setState({ activeInputValue: clearedInputValue });
             }}
@@ -56,15 +56,15 @@ class Skills extends Component {
         </StyledInputAndAddButton>
         <div>
           <StyledSkillContainer>
-            {this.props.skills.map((skill, skillIndex) => {
+            {this.props.developerTools.map((developerTool, developerToolIndex) => {
               return (
-                <StyledIndividualSkill id={skillIndex} key={skillIndex}>
-                  <Typography variant='h4'>{skill}</Typography>
+                <StyledIndividualSkill id={developerToolIndex} key={developerToolIndex}>
+                  <Typography variant='h4'>{developerTool}</Typography>
                   <StyledClearIcon
                     onClick={(e) => {
-                      this.props.deleteSkill(e.currentTarget.id);
+                      this.props.deleteDeveloperTool(e.currentTarget.id);
                     }}
-                    id={skillIndex}
+                    id={developerToolIndex}
                   />
                 </StyledIndividualSkill>
               );
@@ -76,4 +76,4 @@ class Skills extends Component {
   }
 }
 
-export default Skills;
+export default DeveloperTools;
