@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Link,
 } from '@react-pdf/renderer';
-import { render } from 'react-dom';
 
 const generalInfoStyles = StyleSheet.create({
   nameAndContactInfo: {
@@ -83,8 +82,6 @@ class ResumeGeneralInfo extends Component {
             {`${this.props.contactInfo.linkedIn}`}
           </Link>
         </View>
-           
-        
       </View>
     )
   }

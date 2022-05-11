@@ -9,6 +9,7 @@ import {
   Link,
 } from '@react-pdf/renderer';
 import ResumeGeneralInfo from './ResumeGeneralInfo'; 
+import ResumeSkillsAndTools from './ResumeSkillsAndTools';
 
 const styles = StyleSheet.create({
   title: {
@@ -80,6 +81,10 @@ class FullResumePdf extends Component {
               name={this.props.name}
               contactInfo={this.props.contactInfo}
             />
+            <ResumeSkillsAndTools 
+              skills={this.props.skills}
+              developerTools={this.props.developerTools}
+            />
             <View style={styles.row}>
               <Text style={styles.text}>
                 {this.props.previousExperience.map(
@@ -115,26 +120,7 @@ class FullResumePdf extends Component {
                   },
                 )}
               </Text>
-              <Text style={styles.text}>
-                {this.props.skills.map((skill, skillIndex) => {
-                  return (
-                    <div id={skillIndex} key={skillIndex}>
-                      <p>{skill}</p>
-                    </div>
-                  );
-                })}
-              </Text>
-              <Text>
-                {this.props.developerTools.map(
-                  (developerTool, developerToolIndex) => {
-                    return (
-                      <div id={developerToolIndex} key={developerToolIndex}>
-                        <p>{developerTool}</p>
-                      </div>
-                    );
-                  },
-                )}
-              </Text>
+              
             </View>
           </View>
           <Text
