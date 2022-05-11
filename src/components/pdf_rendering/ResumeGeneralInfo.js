@@ -51,7 +51,7 @@ class ResumeGeneralInfo extends Component {
       <View style={generalInfoStyles.nameAndContactInfo}>
         <Link 
         style={generalInfoStyles.name} 
-        src={this.props.contactInfo.linkedIn}
+        href={`https://${this.props.contactInfo.linkedIn}`}
         >
             {this.props.name}
         </Link>
