@@ -10,6 +10,7 @@ import {
 } from '@react-pdf/renderer';
 import ResumeGeneralInfo from './ResumeGeneralInfo'; 
 import ResumeSkillsAndTools from './ResumeSkillsAndTools';
+import ResumeSoftwareApplications from './ResumeSoftwareApplications';
 
 const styles = StyleSheet.create({
   title: {
@@ -84,6 +85,9 @@ class FullResumePdf extends Component {
             <ResumeSkillsAndTools 
               skills={this.props.skills}
               developerTools={this.props.developerTools}
+            />
+            <ResumeSoftwareApplications 
+              applicationList={this.props.applicationList}
             />
             <View style={styles.row}>
               <Text style={styles.text}>

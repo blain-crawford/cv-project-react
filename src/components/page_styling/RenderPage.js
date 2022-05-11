@@ -434,6 +434,7 @@ class RenderPage extends Component {
               skills={this.state.skills}
               developerTools={this.state.developerTools}
               applicationList={this.state.applicationList}
+              applicationList={this.state.applicationList}
               previousExperience={this.state.previousExperience}
               previousEducation={this.state.previousEducation}
             />

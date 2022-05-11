@@ -28,7 +28,7 @@ class SoftwareApplications extends Component {
       <StyledExperienceHeader>
         <StyledHeaderLabel>
           <WorkIcon />
-          <Typography variant='h4'>SoftwareApplications</Typography>
+          <Typography variant='h4'>Software Applications</Typography>
         </StyledHeaderLabel>
         <StyledHeaderUnderline />
         <div>
