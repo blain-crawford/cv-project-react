@@ -1,61 +1,74 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Link,
-} from '@react-pdf/renderer';
-import { fontSize } from '@mui/system';
+import { Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const SoftwareStyles = StyleSheet.create({
   sectionHeader: {
     width: '100%',
-    margin: '8px auto 0 auto'
+    margin: '8px auto 0 auto',
   },
   sectionHeaderText: {
     color: '#2C041C',
-    fontSize: '13',
-    marginBottom: '8px'
+    fontSize: '14',
+    marginBottom: '8px',
   },
   sectionUnderline: {
     border: '1px solid orange',
     opacity: '.6',
     width: '100%',
-    margin: '0 auto'
+    margin: '0 auto',
+  },
+  name: {
+    fontSize: '12',
+    fontWeight: 'extrabold',
+    margin: '5px 3px 0px 3px',
+  },
+  tools: {
+    fontSize: '11',
+    margin: '6px 3px 0px 3px',
+  },
+  description: {
+    margin: '0px 3px 0px 3px',
+    fontStyle: 'italic',
+    fontSize: '10',
   },
   softwareContainer: {
     width: '85%',
-    margin: '0 auto',
-    padding: '2px'
+    margin: '3px auto 0 auto',
   },
   applicationContainer: {
     display: 'flex',
     flexDirection: 'column',
-    width: '85%',
+    width: '100%',
     margin: '0 auto',
-    padding: '2px',
     gap: '0',
   },
   nameAndDescription: {
-    padding: '0px'
+    padding: '0px',
   },
   taskList: {
-
-  }
-})
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '5px 0 0 0',
+    paddingLeft: '20px',
+    fontSize: '10',
+  },
+  taskItemContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  },
+  listDecoration: {
+    fontSize: '15',
+    marginBottom: '15px'
+  },
+  taskItem: {
+    marginBottom: '5px',
+  },
+});
 
 class ResumeSoftwareApplications extends Component {
   constructor(props) {
-    super(props)
-    this.convertDate = this.convertDate.bind(this);
-  }
-
-  convertDate(date) {
-    if (date) {
-      return date.toLocaleDateString();
-    } else {
-      return 'present';
-    }
+    super(props);
   }
 
   render() {
@@ -67,34 +80,46 @@ class ResumeSoftwareApplications extends Component {
           </Text>
         </View>
         <View style={SoftwareStyles.sectionUnderline}></View>
-        <View style={{ marginTop: '10px' }}>
-        {this.props.applicationList.map((application, applicationIndex) => {
+        <View style={{ marginTop: '5px' }}>
+          {this.props.applicationList.map((application, applicationIndex) => {
             return (
-              <View style={SoftwareStyles.applicationContainer}
+              <View
+                style={SoftwareStyles.applicationContainer}
                 key={applicationIndex}
                 id={applicationIndex}
               >
                 <View styled={SoftwareStyles.nameAndDescription}>
                   <Text style={{ margin: '0px 3px 0px 3px' }}>
-                    <Text style={{ fontWeight: 'bold' }}>
+                    <Text style={SoftwareStyles.name}>
                       {application.applicationName} -{' '}
                     </Text>
-                    {application.toolsUsed}
+                    <Text style={SoftwareStyles.tools}>
+                      {application.toolsUsed}
+                    </Text>
                   </Text>
                 </View>
                 <View styled={SoftwareStyles.nameAndDescription}>
-                  <Text style={{ margin: '0px 3px 0px 3px', fontStyle: 'italic' }}>
+                  <Text style={SoftwareStyles.description}>
                     {application.appDescription}
                   </Text>
                 </View>
                 <View style={SoftwareStyles.taskList}>
                   {application.tasksAccomplished
-                    .split(', ')
+                    .split('. ')
                     .map((task, taskIndex) => {
                       return (
-                        <Text id={taskIndex} key={taskIndex}>
-                          {task}
-                        </Text>
+                        <View
+                          id={taskIndex}
+                          key={taskIndex}
+                          style={SoftwareStyles.taskItemContainer}
+                        >
+                          <Text style={SoftwareStyles.listDecoration}>
+                            {'•  '}
+                          </Text>
+                          <Text style={SoftwareStyles.taskItem}>
+                            {`${task}`}
+                          </Text>
+                        </View>
                       );
                     })}
                 </View>
@@ -103,7 +128,7 @@ class ResumeSoftwareApplications extends Component {
           })}
         </View>
       </View>
-    )
+    );
   }
 }
 

@@ -55,10 +55,10 @@ class ResumeSkillsAndTools extends Component {
         </View>
         <View style={skillsAndToolsStyles.sectionUnderline} />
         <View style={skillsAndToolsStyles.frontEndSkills}>
-          <Text style={{fontSize: '10', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
+          <Text style={{fontSize: '11', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
             Front end: {' '}
           </Text>
-          <Text style={{fontSize: '9', margin: '6px 3px 0px 3px'}}>
+          <Text style={{fontSize: '10', margin: '6px 3px 0px 3px'}}>
             {this.props.skills.map((skill, skillIndex) => {
               return (
                 <div id={skillIndex} key={skillIndex}>
@@ -69,10 +69,10 @@ class ResumeSkillsAndTools extends Component {
           </Text>
         </View>
         <View style={skillsAndToolsStyles.frontEndSkills}>
-          <Text style={{fontSize: '10', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
+          <Text style={{fontSize: '11', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
             Developer Tools: {' '}
           </Text>
-          <Text style={{fontSize: '9', margin: '6px 3px 0px 3px'}}>
+          <Text style={{fontSize: '10', margin: '6px 3px 0px 3px'}}>
             {this.props.developerTools.map((tool, toolIndex) => {
               return (
                 <div id={toolIndex} key={toolIndex}>

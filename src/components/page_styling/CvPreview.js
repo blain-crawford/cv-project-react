@@ -138,7 +138,7 @@ class CvPreview extends Component {
                 </StyledNameAndPosition>
                 <StyledExperienceList>
                   {application.tasksAccomplished
-                    .split(', ')
+                    .split('. ')
                     .map((task, taskIndex) => {
                       return (
                         <li id={taskIndex} key={taskIndex}>
