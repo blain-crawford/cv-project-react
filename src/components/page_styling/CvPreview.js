@@ -26,7 +26,6 @@ class CvPreview extends Component {
   constructor(props) {
     super(props);
     this.convertDate = this.convertDate.bind(this);
-    this.convertToList = this.convertToList.bind(this);
   }
 
   convertDate(date) {
@@ -34,17 +33,6 @@ class CvPreview extends Component {
       return date.toLocaleDateString();
     } else {
       return 'present';
-    }
-  }
-
-  convertToList(string) {
-    if (string) {
-      let newJobDescriptionList = string.split('. ');
-      return newJobDescriptionList.map((sentence, sentenceIndex) => {
-        <li id={sentenceIndex} key={sentenceIndex}>
-          {sentence}
-        </li>;
-      });
     }
   }
 

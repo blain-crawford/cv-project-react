@@ -28,11 +28,34 @@ const SoftwareStyles = StyleSheet.create({
     margin: '0 auto',
     padding: '2px'
   },
+  applicationContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '85%',
+    margin: '0 auto',
+    padding: '2px',
+    gap: '0',
+  },
+  nameAndDescription: {
+    padding: '0px'
+  },
+  taskList: {
+
+  }
 })
 
 class ResumeSoftwareApplications extends Component {
   constructor(props) {
     super(props)
+    this.convertDate = this.convertDate.bind(this);
+  }
+
+  convertDate(date) {
+    if (date) {
+      return date.toLocaleDateString();
+    } else {
+      return 'present';
+    }
   }
 
   render() {
@@ -44,6 +67,41 @@ class ResumeSoftwareApplications extends Component {
           </Text>
         </View>
         <View style={SoftwareStyles.sectionUnderline}></View>
+        <View style={{ marginTop: '10px' }}>
+        {this.props.applicationList.map((application, applicationIndex) => {
+            return (
+              <View style={SoftwareStyles.applicationContainer}
+                key={applicationIndex}
+                id={applicationIndex}
+              >
+                <View styled={SoftwareStyles.nameAndDescription}>
+                  <Text style={{ margin: '0px 3px 0px 3px' }}>
+                    <Text style={{ fontWeight: 'bold' }}>
+                      {application.applicationName} -{' '}
+                    </Text>
+                    {application.toolsUsed}
+                  </Text>
+                </View>
+                <View styled={SoftwareStyles.nameAndDescription}>
+                  <Text style={{ margin: '0px 3px 0px 3px', fontStyle: 'italic' }}>
+                    {application.appDescription}
+                  </Text>
+                </View>
+                <View style={SoftwareStyles.taskList}>
+                  {application.tasksAccomplished
+                    .split(', ')
+                    .map((task, taskIndex) => {
+                      return (
+                        <Text id={taskIndex} key={taskIndex}>
+                          {task}
+                        </Text>
+                      );
+                    })}
+                </View>
+              </View>
+            );
+          })}
+        </View>
       </View>
     )
   }
