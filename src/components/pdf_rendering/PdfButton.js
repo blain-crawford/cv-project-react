@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import RenderedPdf from './RenderPDF';
+import FullResumePdf from './FullResumePdf';
 import '../../styles/styles.css';
 
 class PdfButton extends Component {
@@ -14,7 +14,7 @@ class PdfButton extends Component {
         <PDFDownloadLink
           className='download-button'
           document={
-            <RenderedPdf
+            <FullResumePdf
               name={this.props.name}
               bio={this.props.bio}
               contactInfo={this.props.contactInfo}

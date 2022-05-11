@@ -8,6 +8,7 @@ import {
   Font,
   Link,
 } from '@react-pdf/renderer';
+import ResumeGeneralInfo from './ResumeGeneralInfo'; 
 
 const styles = StyleSheet.create({
   title: {
@@ -57,7 +58,7 @@ Font.register({
   src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf',
 });
 
-class RenderedPdf extends Component {
+class FullResumePdf extends Component {
   constructor(props) {
     super(props);
     this.convertDate = this.convertDate.bind(this);
@@ -74,24 +75,11 @@ class RenderedPdf extends Component {
     return (
       <Document>
         <Page size='A4'>
-          <Link style={styles.title} src='http://www.blaincrawford.com'>
-            {this.props.name}
-          </Link>
-          <View style={styles.body}>
-            <View style={styles.row}>
-              <Text style={styles.text}>{this.props.bio}</Text>
-              <View style={styles.fill1} />
-            </View>
-            <View style={styles.row}>
-              <View style={styles.fill2} />
-              <Text style={styles.text}>
-                {this.props.contactInfo.location}
-                {this.props.contactInfo.phoneNumber}
-                {this.props.contactInfo.email}
-                {this.props.contactInfo.linkedIn}
-                {this.props.contactInfo.gitHub}
-              </Text>
-            </View>
+          <View>
+            <ResumeGeneralInfo 
+              name={this.props.name}
+              contactInfo={this.props.contactInfo}
+            />
             <View style={styles.row}>
               <Text style={styles.text}>
                 {this.props.previousExperience.map(
@@ -161,4 +149,4 @@ class RenderedPdf extends Component {
   }
 }
 
-export default RenderedPdf;
+export default FullResumePdf;

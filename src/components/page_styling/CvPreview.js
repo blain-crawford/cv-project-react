@@ -55,10 +55,6 @@ class CvPreview extends Component {
           <StyledName>
             <h1>{this.props.nameAndBio.name}</h1>
           </StyledName>
-          {/* <h3>{this.props.nameAndBio.bio}</h3> */}
-          {/* <div>
-            <h1>Contact Info</h1>
-          </div> */}
           <StyledContactInfo>
             <StyledInfoItem variant='p'>
               {this.props.contactInfo.location}
@@ -71,7 +67,6 @@ class CvPreview extends Component {
             <StyledInfoItem variant='p'>
               {this.props.contactInfo.email}
             </StyledInfoItem>
-            <StyledInfoItem variant='p'> | </StyledInfoItem>
           </StyledContactInfo>
           <StyledContactInfo>
             <StyledLink
@@ -101,11 +96,7 @@ class CvPreview extends Component {
               </p>
               {this.props.skills.map((skill, skillIndex) => {
                 return (
-                  <div
-                    id={skillIndex}
-                    key={skillIndex}
-                    // style={{margin: '0px 3px 0px 3px'}}
-                  >
+                  <div id={skillIndex} key={skillIndex}>
                     <p style={{ margin: '0px 3px 0px 3px' }}>{skill}</p>
                   </div>
                 );
