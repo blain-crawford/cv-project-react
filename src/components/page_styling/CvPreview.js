@@ -14,10 +14,12 @@ import {
   StyledFrontEndSkills,
   StyledSkillsAndToolsSection,
   StyledExperienceContainer,
-  StyledExperienceHeader, 
+  StyledExperienceHeader,
   StyledNameAndPosition,
-  StyledStartAndEndDate, 
-  StyledExperienceList
+  StyledStartAndEndDate,
+  StyledExperienceList,
+  StyledEducationContainer,
+  StyledApplicationContainer,
 } from '../mui-styles/CvPreviewStyles';
 
 class CvPreview extends Component {
@@ -118,11 +120,7 @@ class CvPreview extends Component {
               {this.props.developerTools.map(
                 (developerTool, developerToolIndex) => {
                   return (
-                    <div
-                      id={developerToolIndex}
-                      key={developerToolIndex}
-                      // style={{margin: '0px 3px 0px 3px'}}
-                    >
+                    <div id={developerToolIndex} key={developerToolIndex}>
                       <p style={{ margin: '0px 3px 0px 3px' }}>
                         {developerTool}
                       </p>
@@ -135,6 +133,47 @@ class CvPreview extends Component {
         </StyledSkillsAndToolsSection>
         <StyledSectionHeader>
           <StyledSectionHeaderText variant='h6'>
+            Software Applications
+          </StyledSectionHeaderText>
+        </StyledSectionHeader>
+        <StyledSectionUnderline />
+        <div style={{ marginTop: '10px' }}>
+          {this.props.applicationList.map((application, applicationIndex) => {
+            return (
+              <StyledApplicationContainer
+                key={applicationIndex}
+                id={applicationIndex}
+              >
+                <StyledNameAndPosition style={{ padding: '0' }}>
+                  <p style={{ margin: '0px 3px 0px 3px' }}>
+                    <span style={{ fontWeight: 'bold' }}>
+                      {application.applicationName} -{' '}
+                    </span>
+                    {application.toolsUsed}
+                  </p>
+                </StyledNameAndPosition>
+                <StyledNameAndPosition style={{ padding: '0' }}>
+                  <p style={{ margin: '0px 3px 0px 3px', fontStyle: 'italic' }}>
+                    {application.appDescription}
+                  </p>
+                </StyledNameAndPosition>
+                <StyledExperienceList>
+                  {application.tasksAccomplished
+                    .split(', ')
+                    .map((task, taskIndex) => {
+                      return (
+                        <li id={taskIndex} key={taskIndex}>
+                          {task}
+                        </li>
+                      );
+                    })}
+                </StyledExperienceList>
+              </StyledApplicationContainer>
+            );
+          })}
+        </div>
+        <StyledSectionHeader>
+          <StyledSectionHeaderText variant='h6'>
             Experience
           </StyledSectionHeaderText>
         </StyledSectionHeader>
@@ -142,15 +181,23 @@ class CvPreview extends Component {
         <div>
           {this.props.previousExperience.map((experience, experienceIndex) => {
             return (
-              <StyledExperienceContainer key={experienceIndex} id={experienceIndex}>
+              <StyledExperienceContainer
+                key={experienceIndex}
+                id={experienceIndex}
+              >
                 <StyledExperienceHeader>
                   <StyledNameAndPosition>
-                    <h3 style={{margin: '0px 3px 0px 3px'}}>{experience.companyName}</h3>  /  
-                    <h4 style={{margin: '0px 3px 0px 3px'}}>{experience.position}</h4>
+                    <h3 style={{ margin: '0px 3px 0px 3px' }}>
+                      {experience.companyName}
+                    </h3>{' '}
+                    /
+                    <h4 style={{ margin: '0px 3px 0px 3px' }}>
+                      {experience.position}
+                    </h4>
                   </StyledNameAndPosition>
                   <StyledStartAndEndDate>
-                    <p style={{margin: '0px 3px 0px 3px'}}>
-                      {this.convertDate(experience.startDate)}  -  
+                    <p style={{ margin: '0px 3px 0px 3px' }}>
+                      {this.convertDate(experience.startDate)} -
                       {this.convertDate(experience.endDate)}
                     </p>
                   </StyledStartAndEndDate>
@@ -182,12 +229,22 @@ class CvPreview extends Component {
         <div>
           {this.props.previousEducation.map((education, educationIndex) => {
             return (
-              <div key={educationIndex} id={educationIndex}>
-                <h3>College: {education.collegeName}</h3>
-                <h4>Degree: {education.degree}</h4>
-                <p>Start Date:{this.convertDate(education.startDate)}</p>
-                <p>End Date: {this.convertDate(education.endDate)}</p>
-              </div>
+              <StyledEducationContainer
+                key={educationIndex}
+                id={educationIndex}
+              >
+                <StyledNameAndPosition>
+                  <h4 style={{ margin: '0' }}>
+                    {education.collegeName} - {education.degree}
+                  </h4>
+                </StyledNameAndPosition>
+                <StyledStartAndEndDate>
+                  <p style={{ margin: '0' }}>
+                    {this.convertDate(education.startDate)} -{' '}
+                    {this.convertDate(education.endDate)}
+                  </p>
+                </StyledStartAndEndDate>
+              </StyledEducationContainer>
             );
           })}
         </div>

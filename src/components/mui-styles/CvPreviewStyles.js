@@ -135,8 +135,31 @@ const StyledStartAndEndDate = styled('div', {
 const StyledExperienceList = styled('ul', {
   name: 'StyledExperienceList'
 }) ({
-  margin: '0',
+  margin: '5px 0 0 0',
   paddingLeft: '50px'
+})
+
+const StyledEducationContainer = styled ('div', {
+  name:'StyledEducationContainer'
+})  ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '85%',
+  margin: '0 auto',
+  padding: '0px',
+  // gap: '2px',
+})
+
+const StyledApplicationContainer = styled ('div', {
+  name:'StyledEducationContainer'
+})  ({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '85%',
+  margin: '0 auto',
+  padding: '2px',
+  gap: '0',
 })
 
 export { 
@@ -156,5 +179,7 @@ export {
   StyledExperienceHeader, 
   StyledNameAndPosition,
   StyledStartAndEndDate,
-  StyledExperienceList
+  StyledExperienceList,
+  StyledEducationContainer,
+  StyledApplicationContainer
 }

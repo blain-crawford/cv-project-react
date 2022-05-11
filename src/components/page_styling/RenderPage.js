@@ -26,6 +26,25 @@ class RenderPage extends Component {
     this.setLinkedIn = this.setLinkedIn.bind(this);
     this.setGitHub = this.setGitHub.bind(this);
 
+
+    //functionality for skill form
+    this.setSkillToAdd = this.setSkillToAdd.bind(this);
+    this.addSkill = this.addSkill.bind(this);
+    this.deleteSkill = this.deleteSkill.bind(this);
+
+    //functionality for developer tools form
+    this.setDeveloperToolToAdd = this.setDeveloperToolToAdd.bind(this);
+    this.addDeveloperTool = this.addDeveloperTool.bind(this);
+    this.deleteDeveloperTool = this.deleteDeveloperTool.bind(this)
+
+    //functionality for software applications form
+    this.addApplication = this.addApplication.bind(this);
+    this.setApplicationName = this.setApplicationName.bind(this);
+    this.setToolsUsed = this.setToolsUsed.bind(this);
+    this.setAppDescription = this.setAppDescription.bind(this);
+    this.setTasksAccomplished = this.setTasksAccomplished.bind(this);
+    this.deleteApplication = this.deleteApplication.bind(this);
+
     //functionality for experience form
     this.setCompanyName = this.setCompanyName.bind(this);
     this.setPositionTitle = this.setPositionTitle.bind(this);
@@ -42,16 +61,6 @@ class RenderPage extends Component {
     this.setEducationEndDate = this.setEducationEndDate.bind(this);
     this.deleteEducation = this.deleteEducation.bind(this);
     this.addEducation = this.addEducation.bind(this);
-
-    //functionality for skill form
-    this.setSkillToAdd = this.setSkillToAdd.bind(this);
-    this.addSkill = this.addSkill.bind(this);
-    this.deleteSkill = this.deleteSkill.bind(this);
-
-    //functionality for developer tools form
-    this.setDeveloperToolToAdd = this.setDeveloperToolToAdd.bind(this);
-    this.addDeveloperTool = this.addDeveloperTool.bind(this);
-    this.deleteDeveloperTool = this.deleteDeveloperTool.bind(this)
 
     //functionality for changing between generate cv and view cv
     this.changeMode = this.changeMode.bind(this);
@@ -71,12 +80,13 @@ class RenderPage extends Component {
         linkedIn: '',
         gitHub: '',
       },
-      previousExperience: [],
-      previousEducation: [],
       skillToAdd: '',
       skills: [],
       developerToolToAdd: '',
-      developerTools: []
+      developerTools: [],
+      applicationList: [],
+      previousExperience: [],
+      previousEducation: []
     };
   }
 
@@ -138,6 +148,89 @@ class RenderPage extends Component {
     newGitHub.gitHub = gitHub;
     this.setState({ contactInfo: newGitHub });
   }
+
+  //declaring Skill Functions
+  setSkillToAdd(skill) {
+    let newSkill = '';
+    newSkill += skill;
+    this.setState({ skillToAdd: newSkill });
+  }
+
+  deleteSkill(skill) {
+    const newSkillList = [...this.state.skills];
+    newSkillList.splice(skill, 1);
+    this.setState({ skills: newSkillList });
+  }
+
+  addSkill() {
+    let newSkillList = [...this.state.skills, this.state.skillToAdd];
+    this.setState({ skills: newSkillList });
+  }
+
+  //declaring developer tool functions
+  setDeveloperToolToAdd(tool) {
+    let newDeveloperTool = '';
+    newDeveloperTool += tool;
+    this.setState({developerToolToAdd: newDeveloperTool});
+  }
+
+  deleteDeveloperTool(tool) {
+    let newDeveloperToolList = [...this.state.developerTools];
+    newDeveloperToolList.splice(tool, 1);
+    this.setState({developerTools: newDeveloperToolList})
+  }
+
+  addDeveloperTool() {
+    let newDeveloperToolList = [...this.state.developerTools, this.state.developerToolToAdd];
+    this.setState({developerTools: newDeveloperToolList});
+  }
+
+  //declaring Software Applications functions
+  addApplication() {
+    const newApplication = [
+      ...this.state.applicationList, 
+      {
+        applicationName: '',
+        toolsUsed: '',
+        appDescription: '',
+        tasksAccomplished: ''
+      }
+    ]
+    console.log(this.state.applicationList);
+    this.setState({applicationList: newApplication})
+  }
+
+  setApplicationName(name, applicationIndex) {
+    const newApplicationList = [...this.state.applicationList];
+    newApplicationList[applicationIndex].applicationName = name;
+    this.setState({applicationList: newApplicationList})
+  }
+
+  setToolsUsed(tools, applicationIndex) {
+    const newApplicationList = [...this.state.applicationList];
+    newApplicationList[applicationIndex].toolsUsed = tools;
+    this.setState({applicationList: newApplicationList});
+  }
+
+  setAppDescription(description, applicationIndex) {
+    const newApplicationList = [...this.state.applicationList];
+    newApplicationList[applicationIndex].appDescription = description;
+    this.setState({applicationList: newApplicationList});
+  }
+
+  setTasksAccomplished(tasks, applicationIndex) {
+    const newApplicationList = [...this.state.applicationList];
+    newApplicationList[applicationIndex].tasksAccomplished = tasks;
+    this.setState({applicationList: newApplicationList});
+    console.log(this.state.applicationList);
+  }
+
+  deleteApplication(index) {
+    const newApplicationList = [...this.state.applicationList]
+    newApplicationList.splice(index, 1);
+    this.setState({applicationList: newApplicationList});
+  }
+
 
   //declaring Experience functions
   setCompanyName(name, experienceIndex) {
@@ -244,42 +337,7 @@ class RenderPage extends Component {
     });
   }
 
-  //declaring Skill Functions
-  setSkillToAdd(skill) {
-    let newSkill = '';
-    newSkill += skill;
-    this.setState({ skillToAdd: newSkill });
-  }
-
-  deleteSkill(skill) {
-    const newSkillList = [...this.state.skills];
-    newSkillList.splice(skill, 1);
-    this.setState({ skills: newSkillList });
-  }
-
-  addSkill() {
-    let newSkillList = [...this.state.skills, this.state.skillToAdd];
-    this.setState({ skills: newSkillList });
-  }
-
-  //declaring developer tool functions
-  setDeveloperToolToAdd(tool) {
-    let newDeveloperTool = '';
-    newDeveloperTool += tool;
-    this.setState({developerToolToAdd: newDeveloperTool});
-  }
-
-  deleteDeveloperTool(tool) {
-    let newDeveloperToolList = [...this.state.developerTools];
-    newDeveloperToolList.splice(tool, 1);
-    this.setState({developerTools: newDeveloperToolList})
-  }
-
-  addDeveloperTool() {
-    let newDeveloperToolList = [...this.state.developerTools, this.state.developerToolToAdd];
-    this.setState({developerTools: newDeveloperToolList});
-  }
-
+  
   //declaring view switching functions
   changeMode() {
     if (this.state.mode === 'generate') {
@@ -323,9 +381,31 @@ class RenderPage extends Component {
               setGitHub={this.setGitHub}
               gitHub={this.state.contactInfo.gitHub}
 
+
+              //passing to skills component
+              skills={this.state.skills}
+              setSkillToAdd={this.setSkillToAdd}
+              addSkill={this.addSkill}
+              deleteSkill={this.deleteSkill}
+
+              //passing to developer tools component
+              developerTools={this.state.developerTools}
+              setDeveloperToolToAdd={this.setDeveloperToolToAdd}
+              addDeveloperTool={this.addDeveloperTool}
+              deleteDeveloperTool={this.deleteDeveloperTool}
+
+              //passing to software application component
+              applicationList={this.state.applicationList}
+              addApplication={this.addApplication}
+              setApplicationName={this.setApplicationName}
+              setToolsUsed={this.setToolsUsed}
+              setAppDescription={this.setAppDescription}
+              setTasksAccomplished={this.setTasksAccomplished}
+              deleteApplication={this.deleteApplication}
+
               //passing to experience component
-              addExperience={this.addExperience}
               previousExperience={this.state.previousExperience}
+              addExperience={this.addExperience}
               setExperienceStartDate={this.setExperienceStartDate}
               setExperienceEndDate={this.setExperienceEndDate}
               setCompanyName={this.setCompanyName}
@@ -342,17 +422,6 @@ class RenderPage extends Component {
               addEducation={this.addEducation}
               previousEducation={this.state.previousEducation}
 
-              //passing to skills component
-              setSkillToAdd={this.setSkillToAdd}
-              addSkill={this.addSkill}
-              skills={this.state.skills}
-              deleteSkill={this.deleteSkill}
-
-              //passing to developer tools component
-              setDeveloperToolToAdd={this.setDeveloperToolToAdd}
-              addDeveloperTool={this.addDeveloperTool}
-              developerTools={this.state.developerTools}
-              deleteDeveloperTool={this.deleteDeveloperTool}
             />
             <RightSideBar
               changeMode={this.changeMode}
@@ -362,10 +431,11 @@ class RenderPage extends Component {
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
               contactInfo={this.state.contactInfo}
-              previousExperience={this.state.previousExperience}
-              previousEducation={this.state.previousEducation}
               skills={this.state.skills}
               developerTools={this.state.developerTools}
+              applicationList={this.state.applicationList}
+              previousExperience={this.state.previousExperience}
+              previousEducation={this.state.previousEducation}
             />
           </StyledMainPage>
         </div>
@@ -380,10 +450,11 @@ class RenderPage extends Component {
             <CvPreview
               nameAndBio={this.state.nameAndBio}
               contactInfo={this.state.contactInfo}
-              previousExperience={this.state.previousExperience}
-              previousEducation={this.state.previousEducation}
               skills={this.state.skills}
               developerTools={this.state.developerTools}
+              applicationList={this.state.applicationList}
+              previousExperience={this.state.previousExperience}
+              previousEducation={this.state.previousEducation}
             />
             <RightSideBar
               changeMode={this.changeMode}
@@ -393,10 +464,11 @@ class RenderPage extends Component {
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
               contactInfo={this.state.contactInfo}
-              previousExperience={this.state.previousExperience}
-              previousEducation={this.state.previousEducation}
               skills={this.state.skills}
               developerTools={this.state.developerTools}
+              applicationList={this.state.applicationList}
+              previousExperience={this.state.previousExperience}
+              previousEducation={this.state.previousEducation}
             />
           </StyledMainPage>
         </div>

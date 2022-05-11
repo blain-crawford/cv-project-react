@@ -7,10 +7,11 @@ import { StyledExperienceContainer } from '../mui-styles/cvExperienceStyle';
 import Avatar from './Avatar';
 import NameAndBio from './NameAndBio';
 import ContactInfo from './ContactInfo';
-import Experience from './Experience';
-import Education from './Education';
 import Skills from './Skills';
 import DeveloperTools from './DeveloperTools';
+import SoftwareApplications from './SoftwareApplications';
+import Experience from './Experience';
+import Education from './Education';
 
 class CvGenerator extends Component {
   constructor(props) {
@@ -47,6 +48,34 @@ class CvGenerator extends Component {
           />
         </StyledGeneralInfo>
         <StyledExperienceContainer>
+          <Skills
+            setSkillToAdd={this.props.setSkillToAdd}
+            addSkill={this.props.addSkill}
+            skills={this.props.skills}
+            deleteSkill={this.props.deleteSkill}
+          />
+        </StyledExperienceContainer>
+        <StyledExperienceContainer>
+          <DeveloperTools 
+            //passing to developer tools component
+            setDeveloperToolToAdd={this.props.setDeveloperToolToAdd}
+            addDeveloperTool={this.props.addDeveloperTool}
+            developerTools={this.props.developerTools}
+            deleteDeveloperTool={this.props.deleteDeveloperTool}
+          />
+        </StyledExperienceContainer>
+        <StyledExperienceContainer>
+          <SoftwareApplications 
+            applicationList={this.props.applicationList}
+            addApplication={this.props.addApplication}
+            setApplicationName={this.props.setApplicationName}
+            setToolsUsed={this.props.setToolsUsed}
+            setAppDescription={this.props.setAppDescription}
+            setTasksAccomplished={this.props.setTasksAccomplished}
+            deleteApplication={this.props.deleteApplication}
+          />
+        </StyledExperienceContainer>
+        <StyledExperienceContainer>
           <Experience
             addExperience={this.props.addExperience}
             previousExperience={this.props.previousExperience}
@@ -67,23 +96,6 @@ class CvGenerator extends Component {
             deleteEducation={this.props.deleteEducation}
             addEducation={this.props.addEducation}
             previousEducation={this.props.previousEducation}
-          />
-        </StyledExperienceContainer>
-        <StyledExperienceContainer>
-          <Skills
-            setSkillToAdd={this.props.setSkillToAdd}
-            addSkill={this.props.addSkill}
-            skills={this.props.skills}
-            deleteSkill={this.props.deleteSkill}
-          />
-        </StyledExperienceContainer>
-        <StyledExperienceContainer>
-          <DeveloperTools 
-            //passing to developer tools component
-            setDeveloperToolToAdd={this.props.setDeveloperToolToAdd}
-            addDeveloperTool={this.props.addDeveloperTool}
-            developerTools={this.props.developerTools}
-            deleteDeveloperTool={this.props.deleteDeveloperTool}
           />
         </StyledExperienceContainer>
       </StyledCvGenerator>

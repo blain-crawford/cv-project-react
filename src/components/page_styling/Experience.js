@@ -21,31 +21,31 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 class Experience extends Component {
   constructor(props) {
     super(props);
-    this.setStartDate = this.setStartDate.bind(this);
-    this.setEndDate = this.setEndDate.bind(this);
-    this.state = {
-      startDate: '',
-      endDate: '',
-      jobNumber: 0,
-      previousJobs: [
-        {
-          jobNumber: 0,
-          companyName: '',
-          position: '',
-          startDate: '',
-          endDate: '',
-        },
-      ],
-    };
+    // this.setStartDate = this.setStartDate.bind(this);
+    // this.setEndDate = this.setEndDate.bind(this);
+    // this.state = {
+    //   startDate: '',
+    //   endDate: '',
+    //   jobNumber: 0,
+    //   previousJobs: [
+    //     {
+    //       jobNumber: 0,
+    //       companyName: '',
+    //       position: '',
+    //       startDate: '',
+    //       endDate: '',
+    //     },
+    //   ],
+    // };
   }
 
-  setStartDate(startDate) {
-    this.setState({ startDate: startDate });
-  }
+  // setStartDate(startDate) {
+  //   this.setState({ startDate: startDate });
+  // }
 
-  setEndDate(endDate) {
-    this.setState({ endDate: endDate });
-  }
+  // setEndDate(endDate) {
+  //   this.setState({ endDate: endDate });
+  // }
 
   render() {
     return (

@@ -17,7 +17,7 @@ class Header extends Component {
         <StyledHeader>
           <HeaderLeft>
             <AssignmentSharpIcon />
-            <Typography variant='h4'>Custom CV Generator</Typography>
+            <Typography variant='h4'>Dynamic CV Generator</Typography>
           </HeaderLeft>
           <HeaderRight>
             <Typography variant='h5'>Export to PDF for free!</Typography>
