@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
 
+Font.register({
+  family: '',
+  src: ''
+})
+
 const SoftwareStyles = StyleSheet.create({
   sectionHeader: {
     width: '100%',
@@ -28,6 +33,7 @@ const SoftwareStyles = StyleSheet.create({
   },
   description: {
     margin: '0px 3px 0px 3px',
+    fontFamily: 'Arial, Helvetica, sans-serif',
     fontStyle: 'italic',
     fontSize: '10',
   },
