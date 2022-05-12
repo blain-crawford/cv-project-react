@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
+import robotoBold from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
+import robotoItalic from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Italic.ttf'
 
 const SoftwareStyles = StyleSheet.create({
   sectionHeader: {
@@ -18,19 +20,18 @@ const SoftwareStyles = StyleSheet.create({
     margin: '0 auto',
   },
   name: {
-    fontSize: '12',
-    fontWeight: 'extrabold',
+    fontSize: '11',
+    fontFamily: 'robotoBold',
     margin: '5px 3px 0px 3px',
   },
   tools: {
-    fontSize: '11',
+    fontSize: '10',
     margin: '6px 3px 0px 3px',
   },
   description: {
     margin: '0px 3px 0px 3px',
     paddingLeft: '2px',
-    fontFamily: 'Times-Roman',
-    fontStyle: 'italic',
+    fontFamily: 'robotoItalic',
     fontSize: '10',
   },
   softwareContainer: {
@@ -57,16 +58,28 @@ const SoftwareStyles = StyleSheet.create({
   taskItemContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    margin: '0',
   },
   listDecoration: {
     fontSize: '15',
-    marginBottom: '15px'
+    margin: '0'
   },
   taskItem: {
-    marginBottom: '5px',
+    margin: '0'
   },
 });
+
+Font.register({
+  family:'robotoItalic',
+  src: robotoItalic
+})
+
+Font.register({
+  family: 'robotoBold',
+  src: robotoBold
+})
+
 
 class ResumeSoftwareApplications extends Component {
   constructor(props) {

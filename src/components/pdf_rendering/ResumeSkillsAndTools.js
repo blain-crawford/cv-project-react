@@ -4,7 +4,9 @@ import {
   View,
   StyleSheet,
   Link,
+  Font,
 } from '@react-pdf/renderer';
+import robotoBold from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
 
 const skillsAndToolsStyles = StyleSheet.create({
   sectionHeader: {
@@ -39,6 +41,12 @@ const skillsAndToolsStyles = StyleSheet.create({
   }
 })
 
+Font.register({
+  family: 'robotoBold',
+  src: robotoBold
+})
+
+
 class ResumeSkillsAndTools extends Component {
   constructor(props) {
     super(props)
@@ -54,7 +62,7 @@ class ResumeSkillsAndTools extends Component {
         </View>
         <View style={skillsAndToolsStyles.sectionUnderline} />
         <View style={skillsAndToolsStyles.frontEndSkills}>
-          <Text style={{fontSize: '11', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
+          <Text style={{fontSize: '11', fontFamily:'robotoBold', margin: '5px 3px 0px 3px'}}>
             Front end: {' '}
           </Text>
           <Text style={{fontSize: '10', margin: '6px 3px 0px 3px'}}>
@@ -68,7 +76,7 @@ class ResumeSkillsAndTools extends Component {
           </Text>
         </View>
         <View style={skillsAndToolsStyles.frontEndSkills}>
-          <Text style={{fontSize: '11', fontWeight: 'extrabold', margin: '5px 3px 0px 3px'}}>
+          <Text style={{fontSize: '11', fontFamily:'robotoBold', margin: '5px 3px 0px 3px'}}>
             Developer Tools: {' '}
           </Text>
           <Text style={{fontSize: '10', margin: '6px 3px 0px 3px'}}>

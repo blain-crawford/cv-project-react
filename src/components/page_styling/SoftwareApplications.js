@@ -67,7 +67,7 @@ class SoftwareApplications extends Component {
                 <StyledBioInput
                       required
                       multiline
-                      rows={4}
+                      rows={2}
                       id='outlined-required-flexible'
                       label='Application Description'
                       onChange={(e) => {
