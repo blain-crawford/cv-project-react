@@ -11,6 +11,8 @@ import {
 import ResumeGeneralInfo from './ResumeGeneralInfo'; 
 import ResumeSkillsAndTools from './ResumeSkillsAndTools';
 import ResumeSoftwareApplications from './ResumeSoftwareApplications';
+import ResumePreviousExperience from './ResumePreviousExperience';
+
 
 const styles = StyleSheet.create({
   title: {
@@ -89,8 +91,11 @@ class FullResumePdf extends Component {
             <ResumeSoftwareApplications 
               applicationList={this.props.applicationList}
             />
+            <ResumePreviousExperience 
+              previousExperience={this.props.previousExperience}
+            />
             <View style={styles.row}>
-              <Text style={styles.text}>
+              {/* <Text style={styles.text}>
                 {this.props.previousExperience.map(
                   (experience, experienceIndex) => {
                     return (
@@ -106,8 +111,8 @@ class FullResumePdf extends Component {
                     );
                   },
                 )}
-              </Text>
-              <View style={styles.fill3} />
+              </Text> */}
+              {/* <View style={styles.fill3} />
               <Text style={styles.text}>
                 {this.props.previousEducation.map(
                   (education, educationIndex) => {
@@ -123,7 +128,7 @@ class FullResumePdf extends Component {
                     );
                   },
                 )}
-              </Text>
+              </Text> */}
               
             </View>
           </View>
