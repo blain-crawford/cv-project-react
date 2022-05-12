@@ -6,7 +6,7 @@ import {
   Link,
   Font,
 } from '@react-pdf/renderer';
-import robotoBold from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
+import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
 
 const skillsAndToolsStyles = StyleSheet.create({
   sectionHeader: {

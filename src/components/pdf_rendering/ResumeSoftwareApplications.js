@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
-import robotoBold from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
-import robotoItalic from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Italic.ttf'
+import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
+import robotoItalic from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Italic.ttf'
 
 const SoftwareStyles = StyleSheet.create({
   sectionHeader: {

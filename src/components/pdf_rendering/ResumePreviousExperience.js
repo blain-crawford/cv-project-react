@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
 import { fontSize } from '@mui/system';
-import robotoBold from '/Users/blaincrawford/Desktop/odinProj/cv-project-react/src/components/pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
+import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
 import robotoThin from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Regular.ttf'
 const experienceStyles = StyleSheet.create({
   experienceContainer: {
