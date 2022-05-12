@@ -8,52 +8,16 @@ import {
   Font,
   Link,
 } from '@react-pdf/renderer';
-import ResumeGeneralInfo from './ResumeGeneralInfo'; 
+import ResumeGeneralInfo from './ResumeGeneralInfo';
 import ResumeSkillsAndTools from './ResumeSkillsAndTools';
 import ResumeSoftwareApplications from './ResumeSoftwareApplications';
 import ResumePreviousExperience from './ResumePreviousExperience';
-
+import ResumeEducation from './ResumeEducation';
 
 const styles = StyleSheet.create({
-  title: {
-    margin: 20,
-    fontSize: 25,
-    textAlign: 'center',
-    backgroundColor: '#e4e4e4',
-    textTransform: 'uppercase',
-    fontFamily: 'Oswald',
-  },
-  body: {
-    flexGrow: 1,
-  },
-  row: {
-    flexGrow: 1,
-    flexDirection: 'row',
-  },
-  block: {
-    flexGrow: 1,
-  },
-  text: {
-    width: '60%',
-    margin: 10,
-    fontFamily: 'Oswald',
-    textAlign: 'justify',
-  },
-  fill1: {
-    width: '40%',
-    backgroundColor: '#e14427',
-  },
-  fill2: {
-    flexGrow: 2,
-    backgroundColor: '#e6672d',
-  },
-  fill3: {
-    flexGrow: 2,
-    backgroundColor: '#e78632',
-  },
-  fill4: {
-    flexGrow: 2,
-    backgroundColor: '#e29e37',
+  pageBottom: {
+    borderTop: '.25px solid #2C041C',
+    borderBottom: '.25px solid #2C041C',
   },
 });
 
@@ -72,65 +36,29 @@ class FullResumePdf extends Component {
     if (date) {
       return date.toLocaleDateString();
     } else {
-      return 'present'
+      return 'present';
     }
   }
   render() {
     return (
       <Document>
-        <Page size='A4'>
+        <Page size='A4' style={styles.pageBottom}>
           <View>
-            <ResumeGeneralInfo 
+            <ResumeGeneralInfo
               name={this.props.name}
               contactInfo={this.props.contactInfo}
             />
-            <ResumeSkillsAndTools 
+            <ResumeSkillsAndTools
               skills={this.props.skills}
               developerTools={this.props.developerTools}
             />
-            <ResumeSoftwareApplications 
+            <ResumeSoftwareApplications
               applicationList={this.props.applicationList}
             />
-            <ResumePreviousExperience 
+            <ResumePreviousExperience
               previousExperience={this.props.previousExperience}
             />
-            <View style={styles.row}>
-              {/* <Text style={styles.text}>
-                {this.props.previousExperience.map(
-                  (experience, experienceIndex) => {
-                    return (
-                      <div key={experienceIndex} id={experienceIndex}>
-                        <h3>Company: {experience.companyName}</h3>
-                        <h4>Position: {experience.position}</h4>
-                        <h5>Description: {experience.jobDescription}</h5>
-                        <p>
-                          Start Date: {this.convertDate(experience.startDate)}
-                        </p>
-                        <p>End Date: {this.convertDate(experience.endDate)}</p>
-                      </div>
-                    );
-                  },
-                )}
-              </Text> */}
-              {/* <View style={styles.fill3} />
-              <Text style={styles.text}>
-                {this.props.previousEducation.map(
-                  (education, educationIndex) => {
-                    return (
-                      <div key={educationIndex} id={educationIndex}>
-                        <h3>College: {education.college}</h3>
-                        <h4>Degree: {education.degree}</h4>
-                        <p>
-                          Start Date: {this.convertDate(education.startDate)}
-                        </p>
-                        <p>End Date: {this.convertDate(education.endDate)}</p>
-                      </div>
-                    );
-                  },
-                )}
-              </Text> */}
-              
-            </View>
+            <ResumeEducation previousEducation={this.props.previousEducation} />
           </View>
           <Text
             style={styles.text}

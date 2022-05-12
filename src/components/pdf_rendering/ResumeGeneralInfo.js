@@ -10,7 +10,7 @@ const generalInfoStyles = StyleSheet.create({
   nameAndContactInfo: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   name: {
     color: '#2C041C',

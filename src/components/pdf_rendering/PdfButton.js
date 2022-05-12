@@ -25,7 +25,7 @@ class PdfButton extends Component {
               previousEducation={this.props.previousEducation}
             />
           }
-          fileName='Test_Document'
+            fileName={this.props.name.split(' ').join('-') + '-resume'}
         >
           {({ loading }) =>
             loading ? (

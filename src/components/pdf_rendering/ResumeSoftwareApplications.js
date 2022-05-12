@@ -62,11 +62,16 @@ const SoftwareStyles = StyleSheet.create({
     margin: '0',
   },
   listDecoration: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     fontSize: '15',
     margin: '0'
   },
   taskItem: {
-    margin: '0'
+    margin: '2px 0 0 0'
   },
 });
 

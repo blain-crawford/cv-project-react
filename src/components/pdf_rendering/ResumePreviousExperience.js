@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
-import { fontSize } from '@mui/system';
-import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
-import robotoThin from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Regular.ttf'
+import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf';
+import robotoRegular from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Regular.ttf';
+
 const experienceStyles = StyleSheet.create({
   experienceContainer: {
     width: '85%',
@@ -16,7 +16,6 @@ const experienceStyles = StyleSheet.create({
     color: '#2C041C',
     fontSize: '14',
     marginBottom: '8px',
-
   },
   sectionUnderline: {
     border: '1px solid orange',
@@ -38,13 +37,12 @@ const experienceStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    borderBottom: '.25px solid #2C041C'
   },
   nameAndPosition: {
     display: 'flex',
     flexDirection: 'row',
     padding: '5px',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   name: {
     margin: '0px 3px 0px 3px',
@@ -54,10 +52,10 @@ const experienceStyles = StyleSheet.create({
   position: {
     margin: '0px 3px 0px 3px',
     fontFamily: 'robotoRegular',
-    fontSize: '10'
+    fontSize: '10',
   },
   date: {
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'row',
     margin: '0px 3px 0px 3px',
   },
@@ -66,7 +64,7 @@ const experienceStyles = StyleSheet.create({
     flexDirection: 'row',
     padding: '10px',
     alignItems: 'center',
-    fontSize: '10'
+    fontSize: '10',
   },
   experienceList: {
     display: 'flex',
@@ -82,29 +80,33 @@ const experienceStyles = StyleSheet.create({
     margin: '0',
   },
   listDecoration: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
     fontSize: '15',
     margin: '0'
   },
   taskItem: {
-    margin: '0'
-  }
-})
+    margin: '2px 0 0 0',
+  },
+});
 
 Font.register({
   family: 'robotoBold',
-  src: robotoBold
-})
+  src: robotoBold,
+});
 
 Font.register({
   family: 'robotoRegular',
-  src: robotoThin
-})
-
+  src: robotoRegular,
+});
 
 class ResumePreviousExperience extends Component {
   constructor(props) {
-    super(props)
-    this.convertDate = this.convertDate.bind(this)
+    super(props);
+    this.convertDate = this.convertDate.bind(this);
   }
 
   convertDate(date) {
@@ -119,9 +121,7 @@ class ResumePreviousExperience extends Component {
     return (
       <View style={experienceStyles.experienceContainer}>
         <View style={experienceStyles.sectionHeader}>
-          <Text style={experienceStyles.sectionHeaderText}>
-           Experience
-          </Text>
+          <Text style={experienceStyles.sectionHeaderText}>Experience</Text>
         </View>
         <View style={experienceStyles.sectionUnderline} />
         <View>
@@ -137,9 +137,7 @@ class ResumePreviousExperience extends Component {
                     <Text style={experienceStyles.name}>
                       {experience.companyName}
                     </Text>
-                    <Text style={experienceStyles.name}> 
-                      {'/'} 
-                    </Text>
+                    <Text style={experienceStyles.name}>{'/'}</Text>
                     <Text style={experienceStyles.position}>
                       {experience.position}
                     </Text>
@@ -147,7 +145,7 @@ class ResumePreviousExperience extends Component {
                   <View style={experienceStyles.startAndEndDate}>
                     <Text style={experienceStyles.date}>
                       <Text>{this.convertDate(experience.startDate)}</Text>
-                      <Text> - </Text> 
+                      <Text> - </Text>
                       <Text>{this.convertDate(experience.endDate)}</Text>
                     </Text>
                   </View>
@@ -177,7 +175,7 @@ class ResumePreviousExperience extends Component {
           })}
         </View>
       </View>
-    )
+    );
   }
 }
 
