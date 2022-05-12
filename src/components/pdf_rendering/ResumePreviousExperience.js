@@ -38,12 +38,12 @@ const experienceStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    borderBottom: '1px solid #2C041C'
+    borderBottom: '.25px solid #2C041C'
   },
   nameAndPosition: {
     display: 'flex',
     flexDirection: 'row',
-    padding: '10px',
+    padding: '5px',
     alignItems: 'center'
   },
   name: {
