@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Link,
 } from '@react-pdf/renderer';
-import { fontSize } from '@mui/system';
 
 const skillsAndToolsStyles = StyleSheet.create({
   sectionHeader: {
