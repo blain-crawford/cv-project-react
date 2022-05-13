@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PDFDownloadLink, StyleSheet } from '@react-pdf/renderer';
 import FullResumePdf from './FullResumePdf';
 import '../../styles/styles.css';
+import { StyledAddButton } from '../mui-styles/cvGeneratorStyle';
+
+const buttonStyles = StyleSheet.create({
+  buttonContainer: {
+    width: '100%',
+    marginTop: '20px',
+    margin: '10px auto',
+  },
+  renderButton: {
+    padding: '10px',
+    margin: '0 auto',
+    width: '50%',
+    textDecoration: 'none'
+  }
+});
 
 class PdfButton extends Component {
   constructor(props) {
@@ -10,9 +25,13 @@ class PdfButton extends Component {
 
   render() {
     return (
-      <div className='button-container'>
+      <div 
+        style={buttonStyles.buttonContainer}
+        className='button-container'
+      >
         <PDFDownloadLink
           className='download-button'
+          
           document={
             <FullResumePdf
               name={this.props.name}
@@ -29,9 +48,9 @@ class PdfButton extends Component {
         >
           {({ loading }) =>
             loading ? (
-              <button>Loading Document. . .</button>
+              <StyledAddButton style={buttonStyles.renderButton}>Loading Resume. . .</StyledAddButton>
             ) : (
-              <button>'Download'</button>
+              <StyledAddButton style={buttonStyles.renderButton}>Download Resume</StyledAddButton>
             )
           }
         </PDFDownloadLink>
