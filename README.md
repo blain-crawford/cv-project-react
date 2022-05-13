@@ -34,3 +34,12 @@ This project is a part of the <a href='https://www.theodinproject.com/paths'>The
 - Every dynamically rendered form can be altered, deleted, or more forms added in real time and will automatically update in the pdf that will be rendered, as well as the preview section to check your work. 
 - for Software Applications and Job Descriptions, your paragraph will be split into a resumè ready list
 - When you are happy with the information you have entered, preview one more time, and hit the download button on the right hand side to save the resume as a pdf on your computer
+
+
+Top of App:
+<img src="./app_pictures/topOfApp.png">
+
+
+
+Bottom of App:
+<img src="./app_pictures/bottomOfApp.png">
