@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {
   StyledGeneralInfo,
   StyledCvGenerator,
+  StyledExperienceContainer,
 } from '../mui-styles/cvGeneratorStyle';
-import { StyledExperienceContainer } from '../mui-styles/cvExperienceStyle';
 import Avatar from './Avatar';
 import NameAndBio from './NameAndBio';
 import ContactInfo from './ContactInfo';
@@ -56,7 +56,7 @@ class CvGenerator extends Component {
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <DeveloperTools 
+          <DeveloperTools
             //passing to developer tools component
             setDeveloperToolToAdd={this.props.setDeveloperToolToAdd}
             addDeveloperTool={this.props.addDeveloperTool}
@@ -65,7 +65,7 @@ class CvGenerator extends Component {
           />
         </StyledExperienceContainer>
         <StyledExperienceContainer>
-          <SoftwareApplications 
+          <SoftwareApplications
             applicationList={this.props.applicationList}
             addApplication={this.props.addApplication}
             setApplicationName={this.props.setApplicationName}

@@ -21,7 +21,7 @@ const educationStyles = StyleSheet.create({
     border: '1px solid orange',
     opacity: '.6',
     width: '100%',
-    margin: '0 auto',
+    margin: '0 auto 10px auto',
   },
   educationDetails: {
     margin: '0',
@@ -40,7 +40,7 @@ const educationStyles = StyleSheet.create({
   },
   name: {
     fontFamily: 'robotoBold',
-    fontSize: '10'
+    fontSize: '10',
   },
   degree: {
     fontFamily: 'robotoRegular',
@@ -55,7 +55,7 @@ const educationStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     fontSize: '9',
-  }
+  },
 });
 
 Font.register({
@@ -102,9 +102,7 @@ class ResumeEducation extends Component {
                     {education.collegeName}
                   </Text>
                   <Text style={educationStyles.name}>{'/'}</Text>
-                  <Text style={educationStyles.degree}>
-                    {education.degree}
-                  </Text>
+                  <Text style={educationStyles.degree}>{education.degree}</Text>
                 </View>
                 <View style={educationStyles.startAndEndDate}>
                   <Text style={educationStyles.date}>

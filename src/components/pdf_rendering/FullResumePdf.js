@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Document,
-  Page,
-  View,
-  StyleSheet,
-  Font,
-} from '@react-pdf/renderer';
+import { Document, Page, View, StyleSheet, Font } from '@react-pdf/renderer';
 import ResumeGeneralInfo from './ResumeGeneralInfo';
 import ResumeSkillsAndTools from './ResumeSkillsAndTools';
 import ResumeSoftwareApplications from './ResumeSoftwareApplications';

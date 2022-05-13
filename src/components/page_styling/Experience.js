@@ -11,8 +11,8 @@ import {
   StyledBioInput,
   StyledDateInput,
   StyledDeleteButton,
+  StyledExperienceHeader,
 } from '../mui-styles/cvGeneratorStyle';
-import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import WorkIcon from '@mui/icons-material/Work';
 import AddIcon from '@mui/icons-material/Add';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -21,31 +21,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 class Experience extends Component {
   constructor(props) {
     super(props);
-    // this.setStartDate = this.setStartDate.bind(this);
-    // this.setEndDate = this.setEndDate.bind(this);
-    // this.state = {
-    //   startDate: '',
-    //   endDate: '',
-    //   jobNumber: 0,
-    //   previousJobs: [
-    //     {
-    //       jobNumber: 0,
-    //       companyName: '',
-    //       position: '',
-    //       startDate: '',
-    //       endDate: '',
-    //     },
-    //   ],
-    // };
   }
-
-  // setStartDate(startDate) {
-  //   this.setState({ startDate: startDate });
-  // }
-
-  // setEndDate(endDate) {
-  //   this.setState({ endDate: endDate });
-  // }
 
   render() {
     return (

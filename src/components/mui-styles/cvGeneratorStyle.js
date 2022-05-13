@@ -3,14 +3,14 @@ import { TextField, Button, CardMedia } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import ClearIcon from '@mui/icons-material/Clear';
 
-const StyledCvGenerator = styled('div', {
+export const StyledCvGenerator = styled('div', {
   name: 'CvGenerator',
 })({
   width: '80%',
   borderRight: '6px solid rgb(255,102,0,.3)',
 });
 
-const StyledGeneralInfo = styled('div', {
+export const StyledGeneralInfo = styled('div', {
   name: 'generalInfo',
 })({
   paddingLeft: '50px',
@@ -22,7 +22,7 @@ const StyledGeneralInfo = styled('div', {
   backgroundColor: '',
 });
 
-const StyledAvatarSection = styled('div', {
+export const StyledAvatarSection = styled('div', {
   name: 'StyledAvatarSection',
 })({
   display: 'flex',
@@ -31,13 +31,13 @@ const StyledAvatarSection = styled('div', {
   gap: '10px',
 });
 
-const StyledAddPhotoInput = styled('input', {
+export const StyledAddPhotoInput = styled('input', {
   name: 'StyledAddPhotoInput',
 })({
   display: 'none',
 });
 
-const StyledAddPhotoButton = styled(Button, {
+export const StyledAddPhotoButton = styled(Button, {
   name: 'StyledAddPhotoButton',
 })({
   color: '#5b083a',
@@ -56,7 +56,7 @@ const StyledAddPhotoButton = styled(Button, {
   },
 });
 
-const PictureHolder = styled(CardMedia, {
+export const PictureHolder = styled(CardMedia, {
   name: 'Avatar',
 })({
   cursor: 'pointer',
@@ -74,7 +74,7 @@ const PictureHolder = styled(CardMedia, {
   },
 });
 
-const StyledNameAndBio = styled('div', {
+export const StyledNameAndBio = styled('div', {
   name: 'NameAndBio',
 })({
   display: 'flex',
@@ -86,19 +86,19 @@ const StyledNameAndBio = styled('div', {
   width: '60%',
 });
 
-const StyledNameInput = styled(TextField, {
+export const StyledNameInput = styled(TextField, {
   name: 'Name',
 })({
   width: '100%',
 });
 
-const StyledBioInput = styled(TextField, {
+export const StyledBioInput = styled(TextField, {
   name: 'Bio',
 })({
   width: '100%',
 });
 
-const StyledContactInfo = styled('div', {
+export const StyledContactInfo = styled('div', {
   name: 'StyledContactInfo',
 })({
   width: '20%',
@@ -109,7 +109,7 @@ const StyledContactInfo = styled('div', {
   gap: '5px',
 });
 
-const StyledContactDiv = styled('div', {
+export const StyledContactDiv = styled('div', {
   name: 'StyledContactDiv',
 })({
   display: 'flex',
@@ -117,7 +117,7 @@ const StyledContactDiv = styled('div', {
   justifyContent: 'space-between',
 });
 
-const StyledContactInput = styled(TextField, {
+export const StyledContactInput = styled(TextField, {
   name: 'StyledContactInput',
 })({
   height: '10%',
@@ -125,14 +125,14 @@ const StyledContactInput = styled(TextField, {
   margin: '0 auto',
 });
 
-const StyledHeaderLabel = styled('div', {
+export const StyledHeaderLabel = styled('div', {
   name: 'StyledHeaderLabel',
 })({
   display: 'flex',
   marginLeft: '50px',
 });
 
-const StyledHeaderUnderline = styled('div', {
+export const StyledHeaderUnderline = styled('div', {
   name: 'StyledHeaderUnderline',
 })({
   border: '1px solid #5b083a',
@@ -140,7 +140,7 @@ const StyledHeaderUnderline = styled('div', {
   width: '95%',
 });
 
-const StyledAddButton = styled(Button, {
+export const StyledAddButton = styled(Button, {
   name: 'StyledAddButton',
 })({
   color: '#5b083a',
@@ -159,7 +159,7 @@ const StyledAddButton = styled(Button, {
     backgroundColor: 'rgb(91, 8, 58)',
   },
 });
-const StyledDeleteButton = styled(Button, {
+export const StyledDeleteButton = styled(Button, {
   name: 'StyledAddButton',
 })({
   color: '#5b083a',
@@ -179,7 +179,7 @@ const StyledDeleteButton = styled(Button, {
   },
 });
 
-const StyledSkillInput = styled(TextField, {
+export const StyledSkillInput = styled(TextField, {
   name: 'StyledSkillInput',
 })({
   height: '10%',
@@ -187,7 +187,7 @@ const StyledSkillInput = styled(TextField, {
   margin: '0 auto',
 });
 
-const StyledSkillContainer = styled('div', {
+export const StyledSkillContainer = styled('div', {
   name: 'StyledSkillContainer',
 })({
   marginTop: '30px',
@@ -198,7 +198,7 @@ const StyledSkillContainer = styled('div', {
   width: '95%',
 });
 
-const StyledIndividualSkill = styled('div', {
+export const StyledIndividualSkill = styled('div', {
   name: 'StyledIndividualSkill',
 })({
   color: '#5b083a',
@@ -212,7 +212,7 @@ const StyledIndividualSkill = styled('div', {
   gap: '20px',
 });
 
-const StyledClearIcon = styled(ClearIcon, {
+export const StyledClearIcon = styled(ClearIcon, {
   name: 'styledClearIcon',
 })({
   cursor: 'pointer',
@@ -221,13 +221,13 @@ const StyledClearIcon = styled(ClearIcon, {
   },
 });
 
-const StyledInputAndAddButton = styled('div', {
+export const StyledInputAndAddButton = styled('div', {
   name: 'StyledInputAndAddButton',
 })({
   marginTop: '20px',
 });
 
-const StyledCvForm = styled('div', {
+export const StyledCvForm = styled('div', {
   name: 'formContainer',
 })({
   display: 'flex',
@@ -238,7 +238,7 @@ const StyledCvForm = styled('div', {
   borderBottom: '2px solid rgb(255,102,0,.3)',
 });
 
-const StyledCvInfoInputs = styled('div', {
+export const StyledCvInfoInputs = styled('div', {
   name: 'InfoInput',
 })({
   display: 'flex',
@@ -247,7 +247,7 @@ const StyledCvInfoInputs = styled('div', {
   gap: '10px',
 });
 
-const StyledDateAndDeleteContainer = styled('div', {
+export const StyledDateAndDeleteContainer = styled('div', {
   name: 'DateAndDeleteContainer',
 })({
   display: 'flex',
@@ -258,36 +258,30 @@ const StyledDateAndDeleteContainer = styled('div', {
   margin: '0 5px 0 5px',
 });
 
-const StyledDateInput = styled(DesktopDatePicker, {
+export const StyledDateInput = styled(DesktopDatePicker, {
   name: 'DateInput',
 })({
   margin: 'auto',
 });
 
-export {
-  StyledAvatarSection,
-  StyledAddPhotoInput,
-  StyledAddPhotoButton,
-  PictureHolder,
-  StyledGeneralInfo,
-  StyledNameAndBio,
-  StyledNameInput,
-  StyledBioInput,
-  StyledCvGenerator,
-  StyledContactInfo,
-  StyledContactDiv,
-  StyledContactInput,
-  StyledHeaderLabel,
-  StyledHeaderUnderline,
-  StyledAddButton,
-  StyledDeleteButton,
-  StyledSkillInput,
-  StyledSkillContainer,
-  StyledIndividualSkill,
-  StyledClearIcon,
-  StyledInputAndAddButton,
-  StyledCvForm,
-  StyledCvInfoInputs,
-  StyledDateAndDeleteContainer,
-  StyledDateInput,
-};
+export const StyledExperienceContainer = styled('div', {
+  name: 'StyledExperienceContainer',
+})({
+  display: 'flex',
+  flexDirection: 'column',
+  color: '#5b083a',
+  paddingLeft: '50px',
+  paddingTop: '50px',
+});
+
+export const StyledExperienceHeader = styled('div', {
+  name: 'StyledExperienceHeader',
+})({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  '.MuiSvgIcon-root': {
+    fontSize: '40px',
+    marginRight: '10px',
+  },
+});

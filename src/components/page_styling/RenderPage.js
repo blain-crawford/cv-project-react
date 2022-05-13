@@ -26,7 +26,6 @@ class RenderPage extends Component {
     this.setLinkedIn = this.setLinkedIn.bind(this);
     this.setGitHub = this.setGitHub.bind(this);
 
-
     //functionality for skill form
     this.setSkillToAdd = this.setSkillToAdd.bind(this);
     this.addSkill = this.addSkill.bind(this);
@@ -35,7 +34,7 @@ class RenderPage extends Component {
     //functionality for developer tools form
     this.setDeveloperToolToAdd = this.setDeveloperToolToAdd.bind(this);
     this.addDeveloperTool = this.addDeveloperTool.bind(this);
-    this.deleteDeveloperTool = this.deleteDeveloperTool.bind(this)
+    this.deleteDeveloperTool = this.deleteDeveloperTool.bind(this);
 
     //functionality for software applications form
     this.addApplication = this.addApplication.bind(this);
@@ -86,7 +85,7 @@ class RenderPage extends Component {
       developerTools: [],
       applicationList: [],
       previousExperience: [],
-      previousEducation: []
+      previousEducation: [],
     };
   }
 
@@ -171,66 +170,68 @@ class RenderPage extends Component {
   setDeveloperToolToAdd(tool) {
     let newDeveloperTool = '';
     newDeveloperTool += tool;
-    this.setState({developerToolToAdd: newDeveloperTool});
+    this.setState({ developerToolToAdd: newDeveloperTool });
   }
 
   deleteDeveloperTool(tool) {
     let newDeveloperToolList = [...this.state.developerTools];
     newDeveloperToolList.splice(tool, 1);
-    this.setState({developerTools: newDeveloperToolList})
+    this.setState({ developerTools: newDeveloperToolList });
   }
 
   addDeveloperTool() {
-    let newDeveloperToolList = [...this.state.developerTools, this.state.developerToolToAdd];
-    this.setState({developerTools: newDeveloperToolList});
+    let newDeveloperToolList = [
+      ...this.state.developerTools,
+      this.state.developerToolToAdd,
+    ];
+    this.setState({ developerTools: newDeveloperToolList });
   }
 
   //declaring Software Applications functions
   addApplication() {
     const newApplication = [
-      ...this.state.applicationList, 
+      ...this.state.applicationList,
       {
         applicationName: '',
         toolsUsed: '',
         appDescription: '',
-        tasksAccomplished: ''
-      }
-    ]
+        tasksAccomplished: '',
+      },
+    ];
     console.log(this.state.applicationList);
-    this.setState({applicationList: newApplication})
+    this.setState({ applicationList: newApplication });
   }
 
   setApplicationName(name, applicationIndex) {
     const newApplicationList = [...this.state.applicationList];
     newApplicationList[applicationIndex].applicationName = name;
-    this.setState({applicationList: newApplicationList})
+    this.setState({ applicationList: newApplicationList });
   }
 
   setToolsUsed(tools, applicationIndex) {
     const newApplicationList = [...this.state.applicationList];
     newApplicationList[applicationIndex].toolsUsed = tools;
-    this.setState({applicationList: newApplicationList});
+    this.setState({ applicationList: newApplicationList });
   }
 
   setAppDescription(description, applicationIndex) {
     const newApplicationList = [...this.state.applicationList];
     newApplicationList[applicationIndex].appDescription = description;
-    this.setState({applicationList: newApplicationList});
+    this.setState({ applicationList: newApplicationList });
   }
 
   setTasksAccomplished(tasks, applicationIndex) {
     const newApplicationList = [...this.state.applicationList];
     newApplicationList[applicationIndex].tasksAccomplished = tasks;
-    this.setState({applicationList: newApplicationList});
+    this.setState({ applicationList: newApplicationList });
     console.log(this.state.applicationList);
   }
 
   deleteApplication(index) {
-    const newApplicationList = [...this.state.applicationList]
+    const newApplicationList = [...this.state.applicationList];
     newApplicationList.splice(index, 1);
-    this.setState({applicationList: newApplicationList});
+    this.setState({ applicationList: newApplicationList });
   }
-
 
   //declaring Experience functions
   setCompanyName(name, experienceIndex) {
@@ -337,7 +338,6 @@ class RenderPage extends Component {
     });
   }
 
-  
   //declaring view switching functions
   changeMode() {
     if (this.state.mode === 'generate') {
@@ -362,7 +362,7 @@ class RenderPage extends Component {
               imageSrc={this.state.avatarImage}
               setAvatarImage={this.setAvatarImage}
               imagePlaceHolder={this.state.imagePlaceHolder}
-              
+
               //passing to name and bio component
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
@@ -380,7 +380,6 @@ class RenderPage extends Component {
               linkedIn={this.state.contactInfo.linkedIn}
               setGitHub={this.setGitHub}
               gitHub={this.state.contactInfo.gitHub}
-
 
               //passing to skills component
               skills={this.state.skills}
@@ -421,7 +420,6 @@ class RenderPage extends Component {
               deleteEducation={this.deleteEducation}
               addEducation={this.addEducation}
               previousEducation={this.state.previousEducation}
-
             />
             <RightSideBar
               changeMode={this.changeMode}
@@ -460,7 +458,7 @@ class RenderPage extends Component {
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
-
+              
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}

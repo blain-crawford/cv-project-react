@@ -86,7 +86,7 @@ const experienceStyles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     fontSize: '15',
-    margin: '0'
+    margin: '0',
   },
   taskItem: {
     margin: '2px 0 0 0',

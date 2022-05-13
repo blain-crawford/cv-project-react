@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 
-const StyledMainPage = styled('div', {
+export const StyledMainPage = styled('div', {
   name: 'StyledMainPage',
 })({
   display: 'flex',
@@ -8,5 +8,3 @@ const StyledMainPage = styled('div', {
   justifyContent: 'center',
   width: '100%',
 });
-
-export { StyledMainPage };
