@@ -21,7 +21,7 @@ const educationStyles = StyleSheet.create({
     border: '1px solid orange',
     opacity: '.6',
     width: '100%',
-    margin: '0 auto',
+    margin: '0 auto 10px auto',
   },
   educationDetails: {
     margin: '0',

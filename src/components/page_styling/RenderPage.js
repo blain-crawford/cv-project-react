@@ -362,11 +362,13 @@ class RenderPage extends Component {
               imageSrc={this.state.avatarImage}
               setAvatarImage={this.setAvatarImage}
               imagePlaceHolder={this.state.imagePlaceHolder}
+
               //passing to name and bio component
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
               setName={this.setName}
               setBio={this.setBio}
+
               //passing to contact info component
               setLocation={this.setLocation}
               location={this.state.contactInfo.location}
@@ -378,16 +380,19 @@ class RenderPage extends Component {
               linkedIn={this.state.contactInfo.linkedIn}
               setGitHub={this.setGitHub}
               gitHub={this.state.contactInfo.gitHub}
+
               //passing to skills component
               skills={this.state.skills}
               setSkillToAdd={this.setSkillToAdd}
               addSkill={this.addSkill}
               deleteSkill={this.deleteSkill}
+
               //passing to developer tools component
               developerTools={this.state.developerTools}
               setDeveloperToolToAdd={this.setDeveloperToolToAdd}
               addDeveloperTool={this.addDeveloperTool}
               deleteDeveloperTool={this.deleteDeveloperTool}
+
               //passing to software application component
               applicationList={this.state.applicationList}
               addApplication={this.addApplication}
@@ -396,6 +401,7 @@ class RenderPage extends Component {
               setAppDescription={this.setAppDescription}
               setTasksAccomplished={this.setTasksAccomplished}
               deleteApplication={this.deleteApplication}
+
               //passing to experience component
               previousExperience={this.state.previousExperience}
               addExperience={this.addExperience}
@@ -405,6 +411,7 @@ class RenderPage extends Component {
               setPositionTitle={this.setPositionTitle}
               setJobDescription={this.setJobDescription}
               deleteExperience={this.deleteExperience}
+
               //passing to education Component
               setCollegeName={this.setCollegeName}
               setDegree={this.setDegree}
@@ -417,6 +424,7 @@ class RenderPage extends Component {
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
+
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
@@ -450,6 +458,7 @@ class RenderPage extends Component {
             <RightSideBar
               changeMode={this.changeMode}
               mode={this.state.mode}
+              
               //sending name and bio state to RightSideBar
               name={this.state.nameAndBio.name}
               bio={this.state.nameAndBio.bio}
