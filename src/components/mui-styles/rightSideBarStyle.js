@@ -38,9 +38,10 @@ export const PreviewSwitch = styled(Switch, {
   },
 });
 
-export const StyledInstructions = styled('div', {
-
-}) ({
+export const StyledInstructions = styled(
+  'div',
+  {},
+)({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -53,4 +54,4 @@ export const StyledInstructions = styled('div', {
   border: '1px solid purple',
   justifyContent: 'center',
   margin: '20px auto',
-})
+});
