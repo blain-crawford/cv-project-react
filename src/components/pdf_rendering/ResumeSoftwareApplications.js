@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Font } from '@react-pdf/renderer';
-import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf'
-import robotoItalic from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Italic.ttf'
+import robotoBold from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Bold.ttf';
+import robotoItalic from '../pdf_rendering/pdf_fonts/Roboto/Roboto-Italic.ttf';
 
 const SoftwareStyles = StyleSheet.create({
   sectionHeader: {
@@ -68,23 +68,22 @@ const SoftwareStyles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     fontSize: '15',
-    margin: '0'
+    margin: '0',
   },
   taskItem: {
-    margin: '2px 0 0 0'
+    margin: '2px 0 0 0',
   },
 });
 
 Font.register({
-  family:'robotoItalic',
-  src: robotoItalic
-})
+  family: 'robotoItalic',
+  src: robotoItalic,
+});
 
 Font.register({
   family: 'robotoBold',
-  src: robotoBold
-})
-
+  src: robotoBold,
+});
 
 class ResumeSoftwareApplications extends Component {
   constructor(props) {

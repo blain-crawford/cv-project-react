@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 
-const StyledHeader = styled('div', {
+export const StyledHeader = styled('div', {
   name: 'StyledHeader',
   slot: 'PageTopper',
 })({
@@ -19,7 +19,7 @@ const StyledHeader = styled('div', {
   boxShadow: '0px 15px 29px 5px rgba(0,0,0,0.46)',
 });
 
-const HeaderLeft = styled(
+export const HeaderLeft = styled(
   'div',
   {},
 )({
@@ -29,7 +29,7 @@ const HeaderLeft = styled(
   gap: '20px',
 });
 
-const HeaderRight = styled(
+export const HeaderRight = styled(
   'div',
   {},
 )({
@@ -39,5 +39,3 @@ const HeaderRight = styled(
   alignItems: 'center',
   justifyContent: 'center',
 });
-
-export { StyledHeader, HeaderLeft, HeaderRight };

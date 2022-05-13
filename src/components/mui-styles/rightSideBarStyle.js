@@ -2,7 +2,7 @@ import { styled } from '@mui/system';
 import { Switch } from '@mui/material';
 import { orange, purple } from '@mui/material/colors';
 
-const StyledRightSideBar = styled('div', {
+export const StyledRightSideBar = styled('div', {
   name: 'StyledRightSideBar',
 })({
   width: '20%',
@@ -13,7 +13,7 @@ const StyledRightSideBar = styled('div', {
   alignItems: 'center',
 });
 
-const StyledRightSideHeader = styled('div', {
+export const StyledRightSideHeader = styled('div', {
   name: 'StyledRightSideHeader',
 })({
   border: '1px solid black',
@@ -23,7 +23,7 @@ const StyledRightSideHeader = styled('div', {
   borderRadius: '10px',
 });
 
-const PreviewSwitch = styled(Switch, {
+export const PreviewSwitch = styled(Switch, {
   name: 'PreviewSwitch',
 })({
   switchBase: {
@@ -33,5 +33,3 @@ const PreviewSwitch = styled(Switch, {
     },
   },
 });
-
-export { StyledRightSideBar, StyledRightSideHeader, PreviewSwitch };

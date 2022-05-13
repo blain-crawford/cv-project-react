@@ -10,8 +10,8 @@ import {
   StyledDateAndDeleteContainer,
   StyledDateInput,
   StyledDeleteButton,
+  StyledExperienceHeader,
 } from '../mui-styles/cvGeneratorStyle';
-import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import SchoolIcon from '@mui/icons-material/School';
 import AddIcon from '@mui/icons-material/Add';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';

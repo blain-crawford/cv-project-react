@@ -9,8 +9,8 @@ import {
   StyledSkillContainer,
   StyledIndividualSkill,
   StyledClearIcon,
+  StyledExperienceHeader,
 } from '../mui-styles/cvGeneratorStyle';
-import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import AddIcon from '@mui/icons-material/Add';
 
@@ -56,19 +56,24 @@ class DeveloperTools extends Component {
         </StyledInputAndAddButton>
         <div>
           <StyledSkillContainer>
-            {this.props.developerTools.map((developerTool, developerToolIndex) => {
-              return (
-                <StyledIndividualSkill id={developerToolIndex} key={developerToolIndex}>
-                  <Typography variant='h4'>{developerTool}</Typography>
-                  <StyledClearIcon
-                    onClick={(e) => {
-                      this.props.deleteDeveloperTool(e.currentTarget.id);
-                    }}
+            {this.props.developerTools.map(
+              (developerTool, developerToolIndex) => {
+                return (
+                  <StyledIndividualSkill
                     id={developerToolIndex}
-                  />
-                </StyledIndividualSkill>
-              );
-            })}
+                    key={developerToolIndex}
+                  >
+                    <Typography variant='h4'>{developerTool}</Typography>
+                    <StyledClearIcon
+                      onClick={(e) => {
+                        this.props.deleteDeveloperTool(e.currentTarget.id);
+                      }}
+                      id={developerToolIndex}
+                    />
+                  </StyledIndividualSkill>
+                );
+              },
+            )}
           </StyledSkillContainer>
         </div>
       </StyledExperienceHeader>

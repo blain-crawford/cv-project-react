@@ -9,8 +9,8 @@ import {
   StyledSkillContainer,
   StyledIndividualSkill,
   StyledClearIcon,
+  StyledExperienceHeader,
 } from '../mui-styles/cvGeneratorStyle';
-import { StyledExperienceHeader } from '../mui-styles/cvExperienceStyle';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import AddIcon from '@mui/icons-material/Add';
 
