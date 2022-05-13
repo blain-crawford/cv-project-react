@@ -42,7 +42,7 @@ class FullResumePdf extends Component {
   render() {
     return (
       <Document>
-        <Page size='A4' style={styles.pageBottom}>
+        <Page size='LETTER' style={styles.pageBottom}>
           <View>
             <ResumeGeneralInfo
               name={this.props.name}
@@ -60,12 +60,6 @@ class FullResumePdf extends Component {
             />
             <ResumeEducation previousEducation={this.props.previousEducation} />
           </View>
-          <Text
-            style={styles.text}
-            render={({ pageNumber, totalPages }) => {
-              `${pageNumber / totalPages}`;
-            }}
-          />
         </Page>
       </Document>
     );
